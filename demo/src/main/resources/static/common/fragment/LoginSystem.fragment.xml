@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout">
+	
+	<l:VerticalLayout
+		class="sapUiTinyMargin marginLeft15"
+		width="160px">
+		<l:content>
+			<Text text="{user>/userName}" class="sapUserName" />
+			<Text text="{user>/roleName}" class="sapRoleName" />
+			<Button text="logout" press="onLogout" width="160px" />
+			<Select selectedKey="{/systemId}" change="onChangeSystem" items="{path:'systemLink>/list', templateShareable:true}">
+				<core:Item key="{systemLink>system_id}" text="{systemLink>system_name}" />
+			</Select>
+		</l:content>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

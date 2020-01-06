@@ -1,0 +1,97 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Dialog
+		showHeader="true"
+		draggable="true"
+		afterOpen="onAfterOpen"
+		beforeClose="beforeClose"
+		class="sapUiContentPadding" >
+		<content>
+			<VBox>
+				<MultiComboBox width="220px" selectedKeys="1,2" editable="false">
+					<items> 
+						<core:Item key="1" text="ULD Input" />
+						<core:Item key="2" text="Load" />
+					</items>
+				</MultiComboBox>
+				<HBox class="sapUiTinyMarginTopBottom">
+					<FlexBox alignItems="Center" justifyContent="End" width="70px">
+						<Text text="Period"></Text>
+					</FlexBox>
+					<Button class="marginLeft15" width="70px" text="1D" press="setPeriodD" app:type="d" app:flag="true"/>
+					<Button class="marginLeft5" width="70px" text="1W" press="setPeriodD" app:type="w" app:flag="true"/>
+					<Button class="marginLeft5" width="70px" text="3W" press="setPeriodD" app:type="3w" app:flag="true"/>
+					<Button class="marginLeft5" width="70px" text="1M" press="setPeriodD" app:type="m" app:flag="true"/>
+					<Button class="marginLeft5" width="70px" text="3M" press="setPeriodD" app:type="3m" app:flag="true"/>
+					<Button class="marginLeft5" width="70px" text="6M" press="setPeriodD" app:type="6m" app:flag="true"/>
+					<DateTimePicker class="marginLeft5" textAlign="Center" width="200px" valueFormat="dd-MM-yyyy HH:mm:ss" displayFormat="dd-MM-yyyy HH:mm:ss" change="dpHandleChange"/>
+					<Text class="marginTop12 font20" textAlign="Center" width="27px" text="~"></Text>
+					<DateTimePicker textAlign="Center" width="200px" valueFormat="dd-MM-yyyy HH:mm:ss" displayFormat="dd-MM-yyyy HH:mm:ss" change="dpHandleChange"/>
+					<Button press="onSearch" class="marginLeft15 dateSearch" width="100px" text="Search"></Button>
+				</HBox> 
+				<VBox class="sapUiTinyMarginTop">
+					<HBox>
+						<viz:VizFrame id="NNChart" height="340px" width="920px" renderComplete="renderComplete" uiConfig="{applicationSet:'fiori'}" busyIndicatorDelay="0"/>
+						<html:svg name="svgNN" style="margin-top:13px;" height="100" width="135">
+							<html:g name="firstBalance" transform="translate(0,0)">
+								<html:g transform="translate(19,10)">
+									<html:line x1="-14" y1="0" x2="14" y2="0" stroke="#5899DA" stroke-width="2"/>
+									<html:path fill="#5899da" stroke-width="1" stroke="#ffffff" opacity="1" d="M-3,0 A3,3 0 1,0 3,0 A3,3 0 1,0 -3,0z"/>
+								</html:g>
+								<html:text text-anchor="start" transform="translate(39, 4)" height="21">
+									<html:tspan y="0" x="0" font-weight="normal" font-family="Arial,Helvetica,sans-serif" font-size="12px" font-style="normal" dy="0.85em"/>
+								</html:text>
+							</html:g>
+							<html:g name="secondBalance" transform="translate(0,21)" style="display:none;">
+								<html:g transform="translate(19,10)">
+									<html:line x1="-14" y1="0" x2="14" y2="0" stroke="#e8743b" stroke-width="2"/>
+									<html:path fill="#e8743b" stroke-width="1" stroke="#ffffff" opacity="1" d="M-3,0 A3,3 0 1,0 3,0 A3,3 0 1,0 -3,0z"/>
+								</html:g>
+								<html:text text-anchor="start" transform="translate(39, 4)" height="21">
+									<html:tspan y="0" x="0" font-weight="normal" font-family="Arial,Helvetica,sans-serif" font-size="12px" font-style="normal" dy="0.85em"/>
+								</html:text>
+							</html:g>
+						</html:svg>
+					</HBox>
+					<viz:VizSlider id="NNSlider" class="marginLeft40 sapUiSmallMarginTop" rangeChanged="rangeChanged"
+						uiConfig="{applicationSet:'fiori'}" showPercentageLabel="true" showStartEndLabel="true" height="100px" width="827px" busyIndicatorDelay="0"/>
+				</VBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="120px" text="Training Data"/>
+					<DateTimePicker id="dpNNtrainingStart" editable="false" textAlign="Center" width="210px" valueFormat="dd-MM-yyyy HH:mm:ss" displayFormat="dd-MM-yyyy HH:mm:ss" change="dpHandleChange"/>
+					<Text class="font20" textAlign="Center" width="27px" text="~"/>
+					<DateTimePicker id="dpNNtrainingEnd" editable="false" textAlign="Center" width="210px" valueFormat="dd-MM-yyyy HH:mm:ss" displayFormat="dd-MM-yyyy HH:mm:ss" change="dpHandleChange"/>
+					<Button id="btnNNtrainSet" class="sapUiSmallMarginBegin" width="120px" text="Set" press="OnSetPress" icon="sap-icon://pushpin-off"/>
+					<Button id="btnNNtrainReset" class="sapUiTinyMarginBegin" width="120px" text="Reset" press="OnResetPress" icon="sap-icon://refresh"/>
+					<Button id="btnNNtrainDownload" class="sapUiTinyMarginBegin" width="120px" text="Download" press="OnDownloadPress" icon="sap-icon://download"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="120px" text="Validation Data"/>
+					<DateTimePicker id="dpNNvalidationStart" editable="false" textAlign="Center" width="210px" valueFormat="dd-MM-yyyy HH:mm:ss" displayFormat="dd-MM-yyyy HH:mm:ss" change="dpHandleChange"/>
+					<Text class="font20" textAlign="Center" width="27px" text="~"/>
+					<DateTimePicker id="dpNNvalidationEnd" editable="false" textAlign="Center" width="210px" valueFormat="dd-MM-yyyy HH:mm:ss" displayFormat="dd-MM-yyyy HH:mm:ss" change="dpHandleChange"/>
+					<Button id="btnNNvalidationSet" class="sapUiSmallMarginBegin" width="120px" text="Set" press="OnSetPress" icon="sap-icon://pushpin-off"/>
+					<Button id="btnNNvalidationReset" class="sapUiTinyMarginBegin" width="120px" text="Reset" press="OnResetPress" icon="sap-icon://refresh"/>
+					<Button id="btnNNvalidationDownload" class="sapUiTinyMarginBegin" width="120px" text="Download" press="OnDownloadPress" icon="sap-icon://download"/>
+				</FlexBox>
+			</VBox>
+		</content>
+		<beginButton>
+			<Button text="Close" press="onCloseDialog" />
+		</beginButton>
+		<customHeader>
+			<Bar>
+	            <contentMiddle>
+	                <Title text="Data Studio"/>
+	            </contentMiddle>
+	            <contentRight>
+	            	<core:Icon src="sap-icon://decline" class="fragIconLine" size="18px" press="onClosePress"/>
+	            </contentRight>
+        	</Bar>
+		</customHeader>
+	</Dialog>
+</core:FragmentDefinition>

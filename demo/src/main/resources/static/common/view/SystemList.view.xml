@@ -1,0 +1,32 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="dhi.common.controller.SystemList">
+	
+	<VBox class="systemConBoxBg">
+		<items>
+			<HBox class="systemHead" />
+			<VBox class="systemviewBg">
+				<items>
+					<VBox class="Oredersystem">
+						<Image width="102px" src="common/img/Tips_Logo_3C_RGB.png" />
+						<Text text="Service Package 1.0" class="OredersystemTitle paddingLeft10" />
+					</VBox>
+					<ScrollContainer height="630px" width="100%" vertical="true">
+						<l:Grid class="OrederSolution">
+							<l:Grid class="systemSolution" />
+						</l:Grid>
+					</ScrollContainer>
+				</items>
+			</VBox>
+			<HBox class="systemFooter" justifyContent="Center">
+				<HBox class="systemFooterBox">
+					<Image src="common/img/footerTipsLogo.png" />
+					<Text text="COPYRIGHT &#169; 2018 Tips HEAVY INDUSTRIES &amp; CONSTRUCTION. ALL RIGHT RESERVED" class="txtCommonFooterCopy" />
+				</HBox>
+			</HBox>
+		</items>
+	</VBox>
+	
+</mvc:View>

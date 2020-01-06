@@ -1,0 +1,65 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog contentWidth="482px"
+		showHeader="false"
+		afterOpen="afterOpen"
+		class="sapUiContentPadding" >
+		<content>
+			<Label text="Combustion Optimizer" design="Bold" class="font18 sapControlIcon"/>
+			<SegmentedButton id="btnOverviewOptimizer" selectionChange="selectionChange" width="100%" 
+				selectedKey="{operation>/result/optimize_mode/0/status}">
+				<items>
+					<SegmentedButtonItem width="150px" text="OFF" key="OFF" />
+					<SegmentedButtonItem width="150px" text="ON" key="ON" />
+				</items>
+			</SegmentedButton>
+			<Label text="Learning Mode" design="Bold" class="font18 marginTop30 sapControlIcon"/>
+			<SegmentedButton id="btnOverviewLearing" selectionChange="selectionChange" width="100%"
+				selectedKey="{operation>/result/optimize_mode/1/status}">
+				<items>
+					<SegmentedButtonItem width="150px" text="OFF" key="OFF"/>
+					<SegmentedButtonItem width="150px" text="ON" key="ON"/>
+					<SegmentedButtonItem width="150px" text="Self ON" key="Self ON"/>
+				</items>
+			</SegmentedButton>
+			<HBox>
+				<Label text="Control Mode" design="Bold" class="font18 marginTop30 sapControlIcon"/>
+				<Text width="30px"/>
+				<Image class="marginTop30" width="60px" height="25px" src="{= (${operation>/result/optimize_mode/2/status}==='RUN' &amp;&amp; 
+					${operation>/result/optimize_mode/4/status}!=='true')?'img/hold.png':'img/invisibleMask.png' }"/>
+			</HBox>
+			<SegmentedButton id="btnOverviewController" selectionChange="selectionChange" width="100%"
+				selectedKey="{operation>/result/optimize_mode/2/status}"
+				enabled="{= ${operation>/result/optimize_mode/2/status}==='RUN'||
+					(${operation>/result/optimize_mode/0/status}==='ON' &amp;&amp; ${operation>/result/optimize_mode/4/status}==='true') }">
+				<items>
+					<SegmentedButtonItem width="150px" text="STOP" key="STOP"/> 
+					<SegmentedButtonItem width="150px" text="RUN" key="RUN"/>
+				</items>
+			</SegmentedButton>
+			<Label text="Optimization Mode" design="Bold" class="font18 marginTop30 sapControlIcon"/>
+			<SegmentedButton id="btnOverviewPSO" selectionChange="selectionChange" width="100%"
+				selectedKey="{operation>/result/optimize_mode/3/status}">
+				<items>
+					<SegmentedButtonItem width="150px" text="Profit" key="Profit" />
+					<SegmentedButtonItem width="150px" text="Emission" key="Emission"/>
+					<SegmentedButtonItem width="150px" text="Equipment" key="Equipment"/>
+				</items>
+			</SegmentedButton>
+		</content>
+		<beginButton>
+			<Button text="Close" press="onCloseDialog" />
+		</beginButton>
+		<customHeader>
+			<Bar>
+	            <contentMiddle>
+	                <Title text="OverView Operation"/>
+	            </contentMiddle>
+	            <contentRight>
+	            	<core:Icon src="sap-icon://decline" class="fragIconLine" size="18px" press="onClosePress"/>
+	            </contentRight>
+        	</Bar>
+		</customHeader>
+	</Dialog>
+</core:FragmentDefinition>

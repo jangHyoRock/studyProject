@@ -1,0 +1,48 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:core="sap.ui.core">
+	<Dialog 
+		draggable="true"
+		class="sapUiContentPadding" >
+		<customHeader>
+			<Bar>
+	            <contentMiddle>
+	                <Title text="Performance Efficiency Report Download (.xlsx)"/>
+	            </contentMiddle>
+	            <contentRight>
+	            	<core:Icon src="sap-icon://decline" class="fragIconLine" size="18px" press="onClosePress"/>
+	            </contentRight>
+        	</Bar>
+		</customHeader>
+		<content>
+			<VBox class="dateSearchBox">
+				<HBox class="sapUiTinyMarginTop">
+					<FlexBox alignItems="Center" justifyContent="End">
+						<Text width="70px" textAlign="Right" text="Date type"/>
+					</FlexBox>
+					<Button class="marginLeft5" width="80px" text="1 Day" press="setPeriodDate" app:type="d" />
+					<Button class="marginLeft5" width="80px" text="1 Week" press="setPeriodDate" app:type="w" />
+					<Button class="marginLeft5" width="80px" text="1 Month" press="setPeriodDate" app:type="m" />
+					<Button class="marginLeft5" width="80px" text="1 Year" press="setPeriodDate" app:type="y" />
+				</HBox>
+				<HBox class="sapUiTinyMarginBottom">
+					<FlexBox alignItems="Center" justifyContent="End">
+						<Text width="70px" textAlign="Right" text="Period"/>
+					</FlexBox>
+					<DatePicker id="dpStart" class="marginLeft5 datePickerPadding" textAlign="Center" width="154px" valueFormat="dd-MM-yyyy" displayFormat="dd-MM-yyyy" change="dpHandleChange"/>
+					<Text class="marginTop12 font20" textAlign="Center" width="26px" text="~"></Text>
+					<DatePicker id="dpEnd" class="dateTimePickerPadding" textAlign="Center" width="154px" valueFormat="dd-MM-yyyy" displayFormat="dd-MM-yyyy" change="dpHandleChange"/>
+					<Text width="10px" text=""></Text>
+				</HBox>				
+			</VBox>			
+		</content>
+		<beginButton>
+			<Button width="100px" text="Download" type="Accept" press="onReportDownload"/>
+		</beginButton>
+		<endButton>
+			<Button width="70px" text="Cancel" type="Reject" press="onReportClose"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

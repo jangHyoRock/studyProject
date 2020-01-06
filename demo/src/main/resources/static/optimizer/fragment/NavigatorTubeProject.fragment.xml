@@ -1,0 +1,324 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:core="sap.ui.core">
+	<Dialog 
+		draggable="true"
+		afterOpen="onAfterOpenTube"
+		beforeOpen="onBeforeOpenTube"
+		afterClose="onAfterCloseTube"
+		class="sapUiContentPadding" >
+		<customHeader>
+			<Bar>
+	            <contentMiddle>
+	                <Title text="Tips Mode – Tube Project Set"/>
+	            </contentMiddle>
+	            <contentRight>
+	            	<core:Icon src="sap-icon://decline" class="fragIconLine" size="18px" press="onClosePress"/>
+	            </contentRight>
+        	</Bar>
+		</customHeader>
+		<content>
+			<FlexBox alignItems="Start" justifyContent="Center" direction="Column">
+				<t:Table id="tblNavigatorAA" width="1100px" selectionMode="None" editable="false" enableColumnReordering="false" visibleRowCount="24" rowHeight="19px"
+					rows="{tube>/result/deviation}">
+					<t:rowSettingsTemplate>
+						<t:RowSettings highlight="{tube>status}"/>
+					</t:rowSettingsTemplate>
+					<t:columns>
+						<t:Column hAlign="Center" resizable="false">
+							<Label text="1st(조정)" />
+							<t:template>
+								<Text text="{tube>p1}"/>
+							</t:template>
+						</t:Column>
+						<t:Column hAlign="Center" resizable="false">
+							<Label text="2nd(조정)" />
+							<t:template>
+								<Text text="{tube>p2}"/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<Label text="3rd (미조정)" />
+							<t:template>
+								<Text text="{tube>p3}"/>
+							</t:template>
+						</t:Column>
+						<t:Column hAlign="Center" resizable="false">
+							<Label text="4th(조정)" />
+							<t:template>
+								<Text text="{tube>p4}"/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" headerSpan="3" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="Corner #1(Left)" />
+								<Label text="aa" />
+							</t:multiLabels>
+							<t:template>
+								<Select items="{path:'tubeStatus>/data', templateShareable:true}" selectedKey="{tube>aa1}" change="onDeviationChange">
+									<core:Item key="{tubeStatus>value}" text="{tubeStatus>value}" />
+								</Select>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="ab ~ fg" />
+							</t:multiLabels>
+							<t:template>
+								<Select items="{path:'tubeStatus>/data', templateShareable:true}" selectedKey="{tube>abfg1}" change="onDeviationChange">
+									<core:Item key="{tubeStatus>value}" text="{tubeStatus>value}" />
+								</Select>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="gg" />
+							</t:multiLabels>
+							<t:template>
+								<Text/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" headerSpan="3" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="Corner #2(Rear)" />
+								<Label text="aa" />
+							</t:multiLabels>
+							<t:template>
+								<Select items="{path:'tubeStatus>/data', templateShareable:true}" selectedKey="{tube>aa2}" change="onDeviationChange">
+									<core:Item key="{tubeStatus>value}" text="{tubeStatus>value}" />
+								</Select>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="ab ~ fg" />
+							</t:multiLabels>
+							<t:template>
+								<Select items="{path:'tubeStatus>/data', templateShareable:true}" selectedKey="{tube>abfg2}" change="onDeviationChange">
+									<core:Item key="{tubeStatus>value}" text="{tubeStatus>value}" />
+								</Select>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="gg" />
+							</t:multiLabels>
+							<t:template>
+								<Text/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" headerSpan="3" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="Corner #3(Right)" />
+								<Label text="aa" />
+							</t:multiLabels>
+							<t:template>
+								<Select items="{path:'tubeStatus>/data', templateShareable:true}" selectedKey="{tube>aa3}" change="onDeviationChange">
+									<core:Item key="{tubeStatus>value}" text="{tubeStatus>value}" />
+								</Select>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="ab ~ fg" />
+							</t:multiLabels>
+							<t:template>
+								<Select items="{path:'tubeStatus>/data', templateShareable:true}" selectedKey="{tube>abfg3}" change="onDeviationChange">
+									<core:Item key="{tubeStatus>value}" text="{tubeStatus>value}" />
+								</Select>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="gg" />
+							</t:multiLabels>
+							<t:template>
+								<Text/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" headerSpan="3" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="Corner #4(Front)" />
+								<Label text="aa" />
+							</t:multiLabels>
+							<t:template>
+								<Select items="{path:'tubeStatus>/data', templateShareable:true}" selectedKey="{tube>aa4}" change="onDeviationChange">
+									<core:Item key="{tubeStatus>value}" text="{tubeStatus>value}" />
+								</Select>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="ab ~ fg" />
+							</t:multiLabels>
+							<t:template>
+								<Select items="{path:'tubeStatus>/data', templateShareable:true}" selectedKey="{tube>abfg4}" change="onDeviationChange">
+									<core:Item key="{tubeStatus>value}" text="{tubeStatus>value}" />
+								</Select>
+							</t:template>
+						</t:Column>
+						<t:Column class="parentGray" width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="gg" />
+							</t:multiLabels>
+							<t:template>
+								<Text/>
+							</t:template>
+						</t:Column>
+					</t:columns>
+				</t:Table>
+				<t:Table id="tblNavigatorGG" width="1100px" selectionMode="None" editable="false" enableColumnReordering="false" visibleRowCount="8" rowHeight="19px"
+					class="sapUiSmallMarginTop" rows="{tube>/result/highLow}">
+					<t:rowSettingsTemplate>
+						<t:RowSettings highlight="{tube>status}"/>
+					</t:rowSettingsTemplate>
+					<t:columns>
+						<t:Column hAlign="Center" resizable="false">
+							<Label text="단면" />
+							<t:template>
+								<Text text="{tube>p1}"/>
+							</t:template>
+						</t:Column>
+						<t:Column hAlign="Center" resizable="false">
+							<Label text="우측온도편차" />
+							<t:template>
+								<Text text="{tube>p2}"/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" headerSpan="3" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="Corner #1(Left)" />
+								<Label text="aa" />
+							</t:multiLabels>
+							<t:template>
+								<Text/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="ab ~ fg" />
+							</t:multiLabels>
+							<t:template>
+								<Text/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="gg" />
+							</t:multiLabels>
+							<t:template>
+								<Select items="{path:'tubeStatus>/data', templateShareable:true}" selectedKey="{tube>gg1}" change="onHighLowChange">
+									<core:Item key="{tubeStatus>value}" text="{tubeStatus>value}" />
+								</Select>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" headerSpan="3" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="Corner #2(Rear)" />
+								<Label text="aa" />
+							</t:multiLabels>
+							<t:template>
+								<Text/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="ab ~ fg" />
+							</t:multiLabels>
+							<t:template>
+								<Text/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="gg" />
+							</t:multiLabels>
+							<t:template>
+								<Select items="{path:'tubeStatus>/data', templateShareable:true}" selectedKey="{tube>gg2}" change="onHighLowChange">
+									<core:Item key="{tubeStatus>value}" text="{tubeStatus>value}" />
+								</Select>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" headerSpan="3" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="Corner #3(Right)" />
+								<Label text="aa" />
+							</t:multiLabels>
+							<t:template>
+								<Text/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="ab ~ fg" />
+							</t:multiLabels>
+							<t:template>
+								<Text/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="gg" />
+							</t:multiLabels>
+							<t:template>
+								<Select items="{path:'tubeStatus>/data', templateShareable:true}" selectedKey="{tube>gg3}" change="onHighLowChange">
+									<core:Item key="{tubeStatus>value}" text="{tubeStatus>value}" />
+								</Select>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" headerSpan="3" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="Corner #4(Front)" />
+								<Label text="aa" />
+							</t:multiLabels>
+							<t:template>
+								<Text/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="ab ~ fg" />
+							</t:multiLabels>
+							<t:template>
+								<Text/>
+							</t:template>
+						</t:Column>
+						<t:Column width="70px" hAlign="Center" resizable="false">
+							<t:multiLabels>
+								<Label text="" />
+								<Label text="gg" />
+							</t:multiLabels>
+							<t:template>
+								<Select items="{path:'tubeStatus>/data', templateShareable:true}" selectedKey="{tube>gg4}" change="onHighLowChange">
+									<core:Item key="{tubeStatus>value}" text="{tubeStatus>value}" />
+								</Select>
+							</t:template>
+						</t:Column>
+					</t:columns>
+				</t:Table>
+			</FlexBox>
+		</content>
+		<beginButton>
+			<Button width="70px" text="SAVE" type="Accept" press="onTubeSave"/>
+		</beginButton>
+		<endButton>
+			<Button width="70px" text="Cancel" type="Reject" press="onLimitClose"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>Combustion Optimization</title>
+	<script id="sap-ui-bootstrap"
+		src="https://sapui5.hana.ondemand.com/1.71.0/resources/sap-ui-core.js"
+		data-sap-ui-libs="sap.ui.core,sap.m,sap.ui.table"
+		data-sap-ui-theme="sap_belize"
+		data-sap-ui-compatVersion="edge"
+		data-sap-ui-xx-waitForTheme="true"
+		data-sap-ui-logLevel="2"
+		data-sap-ui-appCacheBuster=".././sapui5/1.52.9/"
+		data-sap-ui-resourceRoots='{"dhi.optimizer": "./", "dhi.common": "../common"}'>
+	</script>
+	
+	<script>
+	// src=".././sapui5/1.52.9/sap-ui-cachebuster/sap-ui-core.js"
+	// src=".././sapui5/1.52.9/sap-ui-core.js"
+	// src="https://sapui5.hana.ondemand.com/1.52.9/resources/sap-ui-core.js"
+	// data-sap-ui-appCacheBuster=".././sapui5/1.52.9/"
+		sap.ui.getCore().attachInit(function() {
+			new sap.ui.core.ComponentContainer("dhiOptimizer", {
+				height : "100%",
+				name : "dhi.optimizer"
+			}).placeAt("content");
+		});
+	</script>
+
+</head>
+<body id="content" class="sapUiBody">
+</body>
+</html>

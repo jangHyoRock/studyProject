@@ -1,0 +1,22 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	controllerName="dhi.optimizer.controller.Index">
+	
+	<mvc:XMLView id="headerView" viewName="dhi.optimizer.view.Header" height="91px" />
+	<l:FixFlex class="fixFlexFixedSize" vertical="false" fixContentSize="192px">
+		<l:fixContent>
+			<mvc:XMLView id="leftView" viewName="dhi.optimizer.view.Left" />
+		</l:fixContent>
+		<l:flexContent>
+			<VBox class="contentLayout" alignContent="SpaceAround">
+				<Text class="contentTopMargin"/>
+				<App id="rootControl" height="654px"/>
+				<mvc:XMLView id="footerView" viewName="dhi.optimizer.view.Footer" height="160px" />
+			</VBox>
+<!--			<l:VerticalLayout class="heightAuto contentLayout">-->
+<!--			</l:VerticalLayout>-->
+		</l:flexContent>
+	</l:FixFlex>
+</mvc:View>

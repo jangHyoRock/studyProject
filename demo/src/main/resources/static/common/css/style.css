@@ -1,0 +1,608 @@
+body{margin:0px auto; padding:0px;font-family: Arial, sans-serif !important; }
+.sapUiBody { background-color: #FFFFFF !important; overflow: hidden !important; }
+.fixFlexFixedSize > .sapUiFixFlexFixed { background-color: #FAFAFA;}
+.fixFlexFixedSize > .sapUiFixFlexFlexible, .fixFlexFixedSize .sapUiGlobalBackgroundColor { background-color: #FFFFFF; }
+.sapMNavItem { background-color: #FFFFFF; overflow: auto; }
+#rootControl { overflow:scroll; }
+.borderTopSolid { border-top: 1px solid #e5e5e5 !important;}
+
+.fragIconLine { width:35px;margin-right:5px; }
+
+.padding5 { padding: 5px; }
+.padding10 { padding: 10px; }
+.padding20 { padding: 20px; }
+.padding25 { padding: 25px; }
+.padding30 { padding: 30px; }
+.paddingTop20{ padding-top: 20px;}
+.paddingTop25{ padding-top: 25px;}
+.paddingTop50{ padding-top: 50px;}
+.paddingLeft10 { padding-left: 10px;}
+.paddingLeft20 { padding-left: 20px;}
+.paddingLeft25 { padding-left: 25px;}
+.paddingLeft30 { padding-left: 30px;}
+.paddingLeft40 { padding-left: 40px;}
+.paddingRight25 { padding-right: 25px;}
+.paddingBottom10{ padding-bottom: 10px;}
+.paddingBottom15{ padding-bottom: 15px;}
+.paddingBottom20{ padding-bottom: 20px;}
+.cursor {cursor: pointer;}
+.margin5 { margin: 5px; }
+.margin25 { margin: 25px; }
+.margin25 { margin: 25px; }
+.marginTop100 { margin-top: 100px; }
+.marginTop4 { margin-top: 4px; }
+.marginTop5 { margin-top: 5px; }
+.marginTop8 { margin-top: 8px; }
+.marginTop12 { margin-top: 12px; }
+.marginTop10 { margin-top: 10px; }
+.marginTop13 { margin-top: 13px; }
+.marginTop25 { margin-top: 25px; }
+.marginTop30 { margin-top: 30px; }
+.marginTop50 { margin-top: 50px; }
+.marginTop60 { margin-top: 60px; }
+.marginTop100 { margin-top: 100px; }
+.marginTop130 { margin-top: 130px; }
+.marginLeftAuto { margin-left: auto !important; }
+.marginLeft5 { margin-left: 5px !important; }
+.marginLeft15 { margin-left: 15px !important; }
+.marginLeft20 { margin-left: 20px !important; }
+.marginLeft25 { margin-left: 25px !important; }
+.marginLeft30 { margin-left: 30px !important; }
+.marginLeft36 { margin-left: 36px !important; }
+.marginLeft40 { margin-left: 40px !important; }
+.marginLeft48 { margin-left: 48px !important; }
+.marginRight25 { margin-right: 25px !important; }
+.marginBottom12 {margin-bottom: 12px; }
+.font12 { font-size: 12px !important; }
+.font14 { font-size: 14px !important; }
+.font16 { font-size: 16px !important; }
+.font18 { font-size: 18px !important; }
+.font20 { font-size: 20px !important; }
+.font40 { font-size: 40px !important; }
+.fontColor01{color:#616365;}
+.fontColor02{color:#b7b1a9;}
+.fontColor03{color:#616365;}
+.fontColor04{color:#616365;}
+.fontColor05{color:#8b8e91;}
+.dateTimePickerPadding input.sapMInputBaseInner {padding-left:10px;}
+
+
+.sapMText{
+    font-family: Arial, sans-serif !important;
+    font-size: 14px;
+    font-weight: 300 !important;
+    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:subpixel-antialiased;
+    -webkit-text-size-adjust:none;
+    -moz-osx-font-smoothing:grayscale;
+    font-smooth:always;
+    color: #616365;
+}
+.conHBox .sapMText{
+    font-weight: 400 !important;
+    text-shadow:1px 0px 1px #d5d5d6;
+    -webkit-filter: blur(0.1px);
+    filter: blur(0.1px);
+}
+.sapMTB{border-bottom: none !important;}
+.sapMTB-Transparent-CTX>.sapMTitleTB.sapMTitleStyleAuto{
+    font-size: 13pt;
+    font-weight: 500 !important;
+}
+.sapMTB-Transparent-CTX .sapMTitle{
+    text-shadow:0.5px 0px 0.5px #a0a1a3 !important;
+    -webkit-filter: blur(0.2px) !important;
+    filter: blur(0.2px) !important;
+}
+.sapMTitle{
+    font-family: Arial, sans-serif !important;
+    font-weight: 400 !important;
+    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:subpixel-antialiased;
+    -webkit-text-size-adjust:none;
+    -moz-osx-font-smoothing:grayscale;
+    font-smooth:always;
+    color: #616365 !important;
+    text-shadow:1px 0px 1px #d5d5d6 !important;
+}
+.sapMILILabel{
+    color: #616365;
+    text-shadow:1px 0px #d5d5d6;
+}
+
+/*font*/
+/*login*/
+.loginBody{background:#f5f5f5;margin:0px auto; padding:0px;text-align: center;}
+.LoginHead{height: 230px;}
+.ConBoxBg{background:#f5f5f5; width: 100%; margin:0px auto; padding:0px; text-align: center;}
+.loginviewBg{background:url("../img/LoginviewBg.png") no-repeat center top; height: 368px; text-align: center;}
+.Oreder{ vertical-align:middle; height: 50px; padding-top: 35px; margin-bottom: 62px;}
+.OrederTitle{position:relative; top:20px; color:#1e1e1e;font-size: 18px;font-weight: 600 !important;text-shadow:1px 0px 1px #ebebeb !important;}
+.login{height:175px;}
+.BtnLogin{position:relative;top:-109px;left:300px; background:url("../img/BtnLogin.png") no-repeat center top; width: 120px; height: 120px;border:0px !important; display:block;  cursor: pointer; overflow: hidden;border-spacing: 0;outline: none;}
+.BtnLogin:hover{ -webkit-filter: grayscale(1);filter: grayscale(1); }
+.login ul,.login ul li{ list-style: none; }
+.login ul li input{ boder:1px solid #d4d4d4;font-weight: bold; color: #000495;}
+.login ul li ::-webkit-input-placeholder {color: #000495;} /* WebKit browsers */
+.login ul li :-ms-input-placeholder {color: #000495;}/* Internet Explorer 10+ */
+.LoginIdInput{width:381px;height:42px;position:relative; left:-15px; padding:0px; border:1px solid #d4d4d4 !important;background:#fff; margin-bottom:15px; margin-top:40px; }
+.LoginIdInput div input[placeholder] {text-overflow:ellipsis;}
+.LoginIdInput div input::-webkit-input-placeholder{color: #000495;font-size: 14px;font-weight: 600 !important; font-style:normal !important;text-shadow:1px 0px 1px #dddef1;}
+.LoginPwdInput{width:381px;height:42px;position:relative; left:-15px; padding:0px;border:1px solid #d4d4d4 !important;}
+.LoginPwdInput div input[placeholder] {text-overflow:ellipsis;}
+.LoginPwdInput div input::-webkit-input-placeholder{color: #000495;font-size: 14px;font-weight: 600 !important;font-style:normal !important;text-shadow:1px 0px 1px #dddef1;}
+.txtLoginCopy{color:#616365;font-size: 13px;font-weight:500; letter-spacing: -0.05px;text-shadow:1px 0px 1px #b4b5b6 !important;}
+.LoginFooterBox{padding-top: 8px;}
+.txtCommonFooterCopy{position:relative; top:7px; margin-left:13px;color:#838383;font-size: 9px;font-weight:500; letter-spacing: -0.5px;text-shadow:1px 1px 1px #c0c0c0 !important;}
+/*login*/
+/*system*/
+.OrederSolution a{text-decoration: none !important;}
+.systemConBoxBg{background:#ececec; margin:0px auto; padding:0px; text-align: center;clear: both;}
+.systemConBoxBg .systemHead{height: 4px;background: #0018a8;text-align: center;}
+.systemConBoxBg .systemviewBg{background:url("../img/systemviewBg.png") no-repeat center top;height:820px; text-align: center;}
+.Oredersystem{ vertical-align:middle; height: 220px; padding-top: 46px; margin-bottom: 12px;}
+.Oredersystem .OredersystemTitle{position:relative; top:8px; color:#1e1e1e;font-size: 46px;font-weight: bold;text-shadow:1px 0px 1px #d5d5d6 !important;}
+.OrederSolution{margin:0px auto; padding:0px; text-align: center;}
+.OrederSolution .systemSolution{position:absolute; left:50%; margin-left:-445px; text-align: center;padding:0px;}
+.OrederSolution .systemSolution ul{}
+.OrederSolution .systemSolution ul li{list-style: none; text-align: center;}
+.OrederSolution .systemSolution ul li.solutionList{float:left;width:248px;height: 240px;  border: 1px solid #e5e5e5;background: #f9f9f9; text-align: center; margin-right:40px;}
+.OrederSolution .systemSolution ul li.solutionList a{width:248px;height: 170px;display: block;cursor: pointer;padding-top:70px;}
+.OrederSolution .systemSolution ul li.solutionList a > .systemMenuIcon{height: 82px;-webkit-filter: grayscale(1);filter: grayscale(1); opacity: 0.7;}
+.OrederSolution .systemSolution ul li.solutionList a:hover > .systemMenuIcon{-webkit-filter: grayscale(0);filter: grayscale(0);opacity: 1;}
+.OrederSolution .systemSolution ul li.solutionList a > .systemMenuTxt{margin-top: 35px;font-size: 16px; color: #616365; font-weight: 600 !important;text-shadow:1px 0px -0.5px #bcbdbe;margin-bottom: 28px; text-decoration: none !important;}
+.OrederSolution .systemSolution ul li.solutionList a:hover > .systemMenuTxt{color: #0018a8;text-shadow:1px 0px 1px #b7bde3; }
+.OrederSolution .systemSolution ul li.solutionList a > .systemMenuBg{width:100%; height: 12px;background: #616365;}
+.OrederSolution .systemSolution ul li.solutionList a:hover > .systemMenuBg{background: #0018a8; }
+.clearBoth{clear: both; position: relative; top:20px;}
+.systemConBoxBg .systemFooter{height:130px; background:url("../img/systemFooterBg.png") no-repeat center bottom; vertical-align: bottom; }
+.systemConBoxBg .systemFooter .systemFooterBox{padding-top: 59px;}
+.systemConBoxBg .systemFooter .systemFooterBox img{}
+.systemConBoxBg .systemFooter .systemFooterBox .txtCommonFooterCopy{position:relative; top:8px;color:#838383;font-size: 9px; letter-spacing: -0.3px;text-shadow:1px 1px 1px #c0c0c0 !important;}
+/*system*/
+
+/*table*/
+.tableOptimizerMode table[id$=table] tbody tr:first-child{
+    background: #fafafa !important;
+}
+.tableOptimizerMode table[id$=table] tbody tr:nth-child(n+2){
+    background: #ffffff !important;
+}
+.sapUiTableCell .sapMLabel, .sapUiTableColCell>.sapMLabel {
+    color: #616365 !important;
+    text-shadow:1px 0px #d5d5d6;
+}
+.sapUiTable{
+    font-family: Arial, sans-serif !important;
+    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:subpixel-antialiased;
+    -webkit-text-size-adjust:none;
+    -moz-osx-font-smoothing:grayscale;
+}
+.sapUiTableTd{
+    font-family: Arial, sans-serif !important;
+    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:subpixel-antialiased;
+    -webkit-text-size-adjust:none;
+    -moz-osx-font-smoothing:grayscale;
+    font-size: 12px !important;
+    color: #616365 !important;
+}
+.sapUiTableCnt {
+    border-left: none/*1px solid #536b80*/ !important;
+    border-right: none /*1px solid #536b80*/ !important;
+    border-top: none /*1px solid #4d6377*/ !important;
+}
+.sapContrast.sapUiTableCnt, .sapContrast .sapUiTableCnt {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    background-color: #3f5161;
+}
+.sapUiTable {
+    color: #616365;
+    text-shadow:1px 0px #d5d5d6;
+    position: relative;
+    box-sizing: border-box;
+    min-width: 1rem
+}
+.sapUiTableColHdrCnt{
+    border-top: 1px solid #cdced2 !important;
+    color: #616365 !important;
+    text-shadow:1px 0px #d5d5d6;
+}
+.sapUiTableCell {
+    height: inherit;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0 0.5rem;
+    white-space: normal;
+    box-sizing: border-box;
+}
+.sapUiTableFtr {
+    border-bottom: none !important ; /*1px solid #e5e5e5*/
+    border-left: none !important; /*1px solid #e5e5e5*/
+    border-right: none !important; /*1px solid #e5e5e5*/
+    box-sizing: border-box;
+    padding: 0 0.625rem;
+    min-height: 1.5rem;
+    background-color: #ffffff;
+    padding-top: 0.25rem;
+    font-weight: bold;
+}
+.sapMLabel {
+    font-family: Arial, sans-serif !important;
+    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:subpixel-antialiased;
+    -webkit-text-size-adjust:none;
+    -moz-osx-font-smoothing:grayscale;
+    font-weight: 300 !important;
+    color: #616365;
+    text-shadow:1px 0px #d5d5d6;
+    font-size: 12px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
+    cursor: text;
+}
+.sapMLabel bdi{font-weight: 400 !important;}
+.sapUiTableTr{color: #626365 !important; font-size: 13px !important;}
+.sapUiTableCol{border-right: none !important;}
+.sapUiTableTr>td{border-right: none !important;}
+.tableOptimizerMode table {
+    border-top:1px solid #cdced2 !important;
+    border-bottom: 1px solid #ececec !important;
+    border-left: none  !important;
+    border-right: none  !important;
+}
+.sapMObjStatusError>.sapMObjStatusText, .sapMObjStatusError>.sapMObjStatusIcon{
+    color:#ff0000 !important;
+    font-weight: 500 !important;
+    text-shadow:1px 0px #ffbfbf;
+}
+.sapMObjStatusSuccess>.sapMObjStatusText, .sapMObjStatusSuccess>.sapMObjStatusIcon {
+    color: #7ab800 !important;
+    font-weight: 500 !important;
+    text-shadow:1px 0px #d5e9af;
+}
+bdi, output{
+    letter-spacing: -0.1px;
+}
+
+th {
+    color: #616365;
+    text-align: -internal-center;
+}
+.sapMListTbl th{ border-bottom: none !important;border-top: 1px solid #cdced2;}
+.sapMListTbl .sapMText, .sapMListTbl .sapMLabel{
+    color: #616365 !important;
+    text-shadow:1px 0px #d5d5d6;
+}
+.sapMITH{box-shadow: inset 0 -0.25rem 0 -0.125rem #ececec;background-color: #f7f7f7;border-bottom: 1px solid #fff;}
+.sapMITBTextOnly .sapMITBFilterDefault>.sapMITBText{color: #616365 !important;text-shadow:1px 0px #d5d5d6;}
+.sapMITBSelected>.sapMITBContentArrow{border-bottom-color: #0018a8;}
+.sapMITBTextOnly .sapMITBText{font-size: 14px;}
+.sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected>.sapMITBText{color: #0018a8;text-shadow:1px 0px #cacfec;}
+.sapMITBContent{border-bottom:2px solid #ececec;padding:0px !important;}
+.sapMListTbl .sapMText, .sapMListTbl .sapMLabel{font-size: 12px;text-shadow:1px 0px #d5d5d6;}
+/*table*/
+
+/*button*/
+button {
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: #616365;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: #cdced2;
+    border-image: initial;
+}
+/*
+html.sap-desktop .sapMSegBBtnFocusable:hover {
+    background: #B7B1A9 !important;
+    color: #ffffff !important;
+}
+*/
+.sapMBtnDefault{
+    background: #ffffff !important;
+    border: 1px solid #d6dce3 !important;
+    color:  #616365 !important;
+    text-transform: capitalize !important;
+    font-family: Arial, sans-serif !important;
+    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:subpixel-antialiased;
+    -webkit-text-size-adjust:none;
+    -moz-osx-font-smoothing:grayscale;
+    text-shadow:0.1px 0px 0.1px #efefef;
+    -webkit-filter: blur(0.2px);
+    filter: blur(0.2px);
+}
+
+.dateSearchBox {background: #f7f7f7 !important; border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd;}
+.dateSearch .sapMBtnDefault {background: #6e6f73 !important; color:  #fff !important;}
+.dateSearch:hover > .sapMBtnDefault{background: #ececec !important; color:  #616365 !important;}
+.sapMFocusable:hover, .sapMBtnInner:hover{background:#f5f5f5 !important;}
+:not (.sapMBtnDisabled )>.sapMBtnInner.sapMBtnActive {
+    background-color: #f5f5f5;
+}
+
+.sapMSegB .sapMSegBBtn {
+    font-size: 0.875rem;
+    height: 2.5rem;
+    line-height: 2.375rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    text-shadow: none;
+    /*color: #616365;*/
+    border-top: 1px solid #cdced2;
+    border-left: 1px solid #cdced2;
+    border-bottom: 1px solid #cdced2;
+    border-right: 1px solid transparent;
+    /*background-color: #ffffff;*/
+}
+.sapMSegBBtn:last-child {
+    border-right: 1px solid #cdced2;
+}
+span.sapMBtnInner.sapMBtnEmphasized{background: #241773 !important;border-color: #241773 !important;}
+span.sapMBtnInner:hover.sapMBtnEmphasized{background: #005b82 !important;}
+/*button 20180509 */
+.conHBox .sapMBtnDefault{
+    border: 1px solid #ececec !important;
+}
+.conHBox .sapMBtnInner{
+    font-size: 12px;
+    border-radius: 0px !important;
+}
+.conHBox .sapMComboBoxTextField{
+    border: 1px solid #ececec !important;
+    background: #fff !important;
+}
+.sapMToken{
+    font-size: 12px;
+    color:#616365;
+}
+.sapMBtnExport{
+	position:absolute;
+    padding: 0px;
+    margin: 0px;
+    z-index:1;
+}
+.exportPrint .sapMBtnInner{
+    background-color: transparent !important;
+    border: none !important;
+    color:#ffffff !important;
+    position: relative;
+    top:-4px;
+    padding:0 !important;
+    font-size: 12px;
+    height:27px;
+    line-height: 27px;
+}
+.exportPrint .btnExport .sapMBtnContent{
+    line-height: 27px;
+}
+.exportPrint .btnPrint .sapMBtnContent{
+    line-height: 27px;
+}
+.exportPrint .btnReport .sapMBtnContent{
+    line-height: 27px;
+}
+.exportPrint .btnExport {
+    background-color: #319758;
+    border-radius: 0rem;
+    height: 27px !important;
+}
+.exportPrint .btnExport:hover{
+    background-color: #8ab919;
+}
+.exportPrint .btnPrint{
+    background: #005b82;
+    position: relative;
+    height: 27px !important;
+}
+.exportPrint .btnPrint:hover{
+    background: #0018a8;
+}
+.exportPrint .btnReport{
+    background: #616365;
+    position: relative;
+    height: 27px !important;
+}
+.exportPrint .btnReport:hover{
+    background: #2E9AFE;
+}
+.sapMTokenIcon{color:  #a2a2a2; }
+.sapUiIcon::before{font-weight:16px;}
+.sapMBtnIcon{color:  #a2a2a2;}
+/* save cancel*/
+.saveBTN > span.sapMBtnInner.sapMBtnAccept{background: #6e6f73 !important;border-color: #6e6f73 !important;color: #fff !important; text-shadow: 0px 0px 0px #6e6f73 !important;width: 88px;}
+.saveBTN > span.sapMBtnInner:hover.sapMBtnAccept{background: #585858 !important;border-color: #585858 !important;}
+.cancelBTN > span.sapMBtnInner.sapMBtnReject{background: #d3d3d3 !important;border-color: #d3d3d3 !important;color:#616365 !important;width: 88px;}
+.cancelBTN > span.sapMBtnInner:hover.sapMBtnReject{background: #cecece !important;border-color: #cecece !important;}
+/* save cancel*/
+/*button*/
+
+/*input*/
+.sapMInputBaseInner{
+    border:1px solid #ececec !important;
+    color:  #616365;text-shadow:1px 0px #d5d5d6;
+}
+.sapMInputValHelpInner{
+    color:  #616365;
+}
+.conHBox .sapMMultiComboBoxInputContainer > .sapMInputBaseInner {
+    border: none !important;
+    border-right: 1px solid #ececec !important;
+}
+.sapMLIB.sapMLIBSelected{
+    background:#f9f9f9;
+}
+.sapMLIBHoverable.sapMLIBSelected:hover{
+    background:#ececec;
+}
+.sapMInputVH:not(.sapMInputBaseReadonly) .sapMInputValHelp>.sapMInputValHelpInner:active {
+    background-color: #0018a8 !important;
+}
+/**/
+/*select*/
+.sapMSelectListItemBase{color:  #616365;text-shadow:1px 0px #d5d5d6;font-size:12px;}
+.sapMSelectListItemBaseSelected.sapMSelectListItemBaseHoverable:hover{background-color: #fafafa !important;}
+.sapMSelectListItemBaseSelected{background-color: #ececec !important;}
+.sapMSltPressed>.sapMSltArrow{background: #0018a8 !important;}
+/**/
+/*ComboBox*/
+.sapMComboBoxBasePressed .sapMComboBoxBaseArrow, html.sap-desktop .sapMComboBoxBasePressed .sapMComboBoxBaseArrow:hover {
+    background: #0018a8 !important;
+}
+/*ComboBox*/
+/*label*/
+.sapMCb > label[id=__component0---coal--chkAuto-label] {height:25px !important;line-height: 25px !important;}
+html.sap-desktop .sapMCb:not(.sapMCbBgDis).sapMCbHasLabel:focus:before{top:0px !important; bottom: 0px !important;border:0px !important;}
+.sapMSlt>.sapMSltLabel{color:  #616365;}
+.sapMSlt{border:1px solid #ececec !important ;}
+.sapMSltArrow{border-left:1px solid #ececec !important ;}
+/*label*/
+
+/* header */
+.headerHbox {border-right:1px solid #c0bbb4;cursor: pointer; text-align: center; background: #6e6f73; padding-left: 10px;}
+.headerHbox:hover {background: #0088EE;}
+.headerHbox span {color: #fff;}
+.headerHboxOver {background: #0088EE !important;}
+/*.popoverSubMenu {top: 90.5px !important;}*/
+.popSubMenu {height: 2.2rem !important;}
+.popSubMenu .sapMBtnInner {text-align: left !important;}
+.popSubMenu .sapMBtnIcon {font-size:10px;}
+.minWidth{min-width: 1080px; width: 100%;}
+.headerMenuLayout {width: 1258px;padding: 10px;
+    border-left: 1px #f7f7f7 solid; border-right: 1px #f7f7f7 solid; border-bottom: 1px #f7f7f7 solid; box-shadow: 1px 4px 2px #cccccc;}
+.headerLogo{float: left;}
+.heightAuto {height: auto !important;}
+.systemTitle {padding: 14px 0px 0px 72px; font-size: 21px; color: #909090; font-weight: bold !important;}
+.headerMenuLayout .sapUserName {padding-top: 15px;font-weight: bold !important;}
+.headerMenuLayout .sapRoleName {padding-top: 15px;font-size:19px !important;color: #b9b9b9;}
+.headerMenuLayout .headerUserIcon {border-left: 1px #cccccc solid; padding-left: 15px; margin-right: 15px;}
+.logout .sapMBtnHoverable {background: #EEEEEE !important;}
+.logout .sapMBtnHoverable:hover {background: #FFFFFF !important;}
+.logout bdi {color: #888888 !important; font-size: 15px;}
+.headerUserHBox > div:first-child {top:4px;}
+/* header */
+
+/* left */
+.leftUnits .sapMPanelContent {padding: 0px;}
+.leftUnits li {background: #FAFAFA;}
+.sapUserName{
+    font-family: Arial, sans-serif !important;
+    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:subpixel-antialiased;
+    -webkit-text-size-adjust:none;
+    -moz-osx-font-smoothing:grayscale;
+    font-size:19px;
+    font-weight: 300 !important;
+    color:#212121;
+    text-shadow:1px 0px 1px #d2d2d2;
+    -webkit-filter: blur(0.3px);
+    filter: blur(0.3px);
+}
+
+.sapRoleName{
+    font-family: Arial, sans-serif !important;
+    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:subpixel-antialiased;
+    -webkit-text-size-adjust:none;
+    -moz-osx-font-smoothing:grayscale;
+    font-size:14px;
+    font-weight: 300 !important;
+    color:#909090;
+    text-shadow:1px 0px 1px #efefef;
+    -webkit-filter: blur(0.3px);
+    filter: blur(0.3px);
+}
+
+div[id$=--leftView].sapUiView.sapUiXMLView {min-height: 910px;}
+.leftIcon {margin: 0px 16px 0px 16px;}
+.leftListHeader {background: #EEEEEE;}
+.leftListHeader .sapMText {font-size: 17px;}
+.leftList .sapMSLIImgIcon {font-size: 16px;}
+.leftList .sapMLIB {border-bottom: unset;}
+.leftList .sapMLIBHoverable.sapMLIBSelected .sapMSLITitleOnly{ color:#2979FF; font-weight: bold; }
+.leftList .sapMSLIInfo {display: none;}
+.leftList li {height: 33px;}
+.leftList li span.sapMSLIImgIcon {height: 22px; line-height: 19px; width: 40px;}
+.menuLayout {height: 30%;}
+.menuLayout div.sapUiVltCell.sapuiVltCell {cursor: pointer;}
+.menuLayout img {opacity: 0.5; width: 16px; margin: 3px 0px 1px 22px; border: 1px #cccccc solid; border-radius: 30px; padding: 4px;}
+.menuLayout .sapMText {cursor: pointer;}
+.menuLayout .menuSelection .sapMText {color: #2979FF; font-weight: bold !important;}
+.menuLayout .sapMHBox:hover {background: #f0f0f0;}
+div[id$=--leftView].sapUiView.sapUiXMLView {height: inherit;}
+.systemInformationTitleBox {background-color: #EEEEEE; padding-top: 8px; border: 1px solid #e5e5e5; border-bottom-width: 0px;margin: 0px 10px 0px 10px;}
+.systemInformationTitleBox .sapMText { font-size: 13px !important;text-shadow: 1px 0px #d5d5d6; color: #4E4E4E;}
+.systemInfomationTable {margin: 0px 10px 0px 10px;border: 1px solid #e5e5e5; border-top-width: 0px;}
+.systemInfomationTable tbody tr::after {content:"";width: 90%;border-bottom: 1px solid #e8e8e8; position: absolute;left:7px;}
+.systemInfomationTable tr > td:first-child div {padding-right: 0px;}
+.systemInfomationTable tr > td:first-child div span {margin-right: 0px !important;font-size: 13px;}
+.systemInfomationTable tr > td:nth-child(2) div {padding-left: 0px;}
+.systemInfomationTable .sapUiTableTr>td {border-bottom: none;}
+.systemInfomationTable .sapUiTableCCnt {border-bottom: none;}
+.systemInfomationTable .sapUiTableCnt {background: none;}
+.systemInfomationTable .sapUiTableCtrl tr.sapUiTableRowHvr {background: none;}
+.systemInfomationTable .sapUiTableTr.sapUiTableRowHvr>td:not(.sapUiTableTDDummy) {background: none;}
+.systemInfomationTable .sapMObjectNumberUnit {font-size: 11px;}
+.txtFTDay { font-size: 15px;color: #1f96d3; font-weight: bold !important;}
+.txtFTTime { font-size: 15px;color: #bbbbbb;font-weight: bold !important; }
+/* left */
+
+/*contents*/
+.txtContentTitle{font-size: 22px !important;}
+.conHBox{border: 1px solid #b7b1a9;font-family: Arial, sans-serif !important;}
+.txtTitle{font-size: 19px !important; font-weight: 300; color:#616365 !important;text-shadow:1px 0px #d5d5d6;}
+.conVHBox{border: 1px solid #efefef; padding: 15px 0px 15px 15px;font-family: Arial, sans-serif !important;}
+.sapChartIcon{background-image: url("../../common/img/chartZoneIcon.png") !important; background-repeat: no-repeat; background-position: 0px 4px;padding-left: 20px;font-size: 22px !important; font-weight: 300 !important; color:#616365 !important;text-shadow:1px 0px #d5d5d6; margin-bottom: 12px;}
+.sapTableIcon{background-image: url("../../common/img/tableZoneIcon.png") !important; background-repeat: no-repeat; background-position: 0px 4px;padding-left: 20px;font-size: 22px !important; font-weight: 300 !important; color:#616365 !important;text-shadow:1px 0px #d5d5d6; margin-bottom: 12px;}
+.sapControlIcon{background-image: url("../../common/img/controlZoneIcon.png") !important; background-repeat: no-repeat; background-position: 0px 4px;padding-left: 20px;font-size: 22px !important; font-weight: 300 !important; color:#616365 !important;text-shadow:1px 0px #d5d5d6; margin-bottom: 12px;}
+.saplistIcon{background-image: url("../../common/img/listZoneIcon.png") !important; background-repeat: no-repeat; background-position: 0px 4px;padding-left: 20px;font-size: 22px !important; font-weight: 300 !important; color:#616365 !important;text-shadow:1px 0px #d5d5d6; margin-bottom: 12px;}
+.txtConIcon{background-image: url("../../common/img/listConIcon.png") !important; background-repeat: no-repeat; background-position: 0px 3px;padding-left: 15px;font-size: 13px !important; font-weight: 300 !important; color:#616365 !important;text-shadow:1px 0px #d5d5d6;}
+.conVHBox .txtSTitle:only-of-type{font-size: 14px !important; font-weight: 400 !important; color:#616365 !important;text-shadow:1px 0px #d5d5d6; text-align: right !important;}
+.conVHBox .txtNumber:only-of-type{font-size: 14px !important; font-weight: 600 !important; color:#616365 !important;text-shadow:1px 0px #d5d5d6; text-align: right !important;}
+.theadHeight{ padding-top: 5px !important; padding-bottom: 3px !important;}
+.trHeight{ padding-top: 10px !important; padding-bottom: 9px !important;}
+.sapMObjectNumber{color: #616365;}
+.sapMObjectNumberStatusError{color: #ff0000 !important;}
+.sapMObjectNumberStatusSuccess{color: #7fb810 !important;}
+footer span.sapMBtnContent bdi {text-shadow:none;}
+.contentLayout {height: unset !important;}
+/*contents*/
+
+/* footer */
+.txtFTCopy {font-size:8px; letter-spacing:-0.7px; color:#838383;font-weight: 400;}
+.footerTable {bottom: unset;margin-top: 28px;}
+.footerTable table.sapUiTableCHT td span.sapMText {background: #eeeeee; color: #2b2b2b; font-size: 13px; font-weight: bold !important;}
+.footerTable table.sapUiTableCHT {border-top: none;}
+.footerTable table.sapUiTableCHT td {background: #eeeeee;}
+.footerTable div.sapUiTableCtrlCnt table td {background: #fafafa;}
+.footerTable div.sapUiTableColHdrCnt {border-top: none !important; border-bottom: none;}
+/* footer */
+
+@media only print {
+    @page {size: landscape}
+    div[id$=headerView] { display:none; }
+    div.sapUiFixFlexFixed { width:0px !important; }
+    div[id$=footerView] { display:none; }
+    div,span { filter:none !important; }
+}
+@media only screen and (min-width: 1280px) {
+    .sapUiBody {justify-content:center; display:flex;}
+    .sapUiBody > div.sapUiComponentContainer {width:1280px;}
+    .sapUiBody > div[id$=Common].sapUiComponentContainer {width:100%;}
+}
+@media only screen and (min-height: 935px) {
+    .leftBottomBox {position: fixed; bottom: 10px;}
+    .footerTable {bottom: 90px; margin-top: unset; position: absolute;}
+    .contentLayout {height: 100% !important;}
+}

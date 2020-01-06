@@ -1,0 +1,168 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="dhi.optimizer.controller.algorithm.SolutionStatus">
+	
+	<HBox class="marginLeft25 marginTop25 conHBox padding10" width="1018px" height="652px">
+		<VBox>
+			<Text class="sapTableIcon" text="Last Time"/>
+			<VBox width="460px" class="conVHBox sapUiSmallMarginBegin">
+				<HBox>
+					<Text width="270px" class="txtConIcon" text="LAST MODEL GENERATION TIME" />
+					<Text text="{path:'/result/last_model_generation_time', formatter:'.dateFormat'} " />
+				</HBox>
+				<HBox height="15px"/>
+				<HBox>
+					<Text width="270px" class="txtConIcon" text="LAST PSO RUNNING TIME" />
+					<Text text="{path:'/result/last_pso_running_time', formatter:'.dateFormat'} " />
+				</HBox>
+			</VBox>
+			<Text class="sapUiSmallMarginTop sapTableIcon" text="Optimization Performance Overview"/>
+			<HBox height="10px"/>
+			<html:svg style="position:absolute;top:-15px;left:250px;" height="30" width="180">
+				<html:rect fill="#b2b2b2" x="10" y="10" width="12" height="12"/>
+				<html:text x="28" y="20" style="font-size: 10px;">BASELINE</html:text>
+				<html:rect x="110" y="10" width="12" height="3" fill="#9bca3f"/>
+				<html:rect x="110" y="13" width="12" height="3" fill="#4cb6e3"/>
+				<html:rect x="110" y="16" width="12" height="3" fill="#ff6666"/>
+				<html:rect x="110" y="19" width="12" height="3" fill="#f0ab00"/>
+				<html:text x="128" y="20" style="font-size:10px;">CURRENT</html:text>
+			</html:svg>
+			<viz:VizFrame id="solutionStatusChart" height="333px" width="460px"
+				renderComplete="renderComplete" uiConfig="{applicationSet:'fiori'}" busyIndicatorDelay="0"/>
+			<html:svg style="position:absolute;top:-50px;left:44px;" height="50" width="420">
+				<html:g style="font-size:12px;">
+					<html:text item="unit1" x="1" y="45"/>
+					<html:text item="unit2" x="1" y="45"/>
+					<html:text item="unit3" x="1" y="45"/>
+					<html:text item="unit4" x="1" y="45"/>
+				</html:g>
+			</html:svg>
+			<Text class="sapTableIcon" text="Efficiency Status"/>
+			<t:Table class="sapUiTinyMarginTop" width="450px"
+				rows="{/result/efficiency_status}"
+				selectionMode="None"
+				editable="false"
+				enableColumnReordering="false"
+				visibleRowCount="2">
+				<t:columns>
+					<t:Column width="40%" hAlign="Center" resizable="false">
+						<Label text="EFFICIENCY ITEM" />
+						<t:template>
+							<Text text="{item}" />
+						</t:template>
+					</t:Column>
+					<t:Column width="30%" hAlign="Center" resizable="false">
+						<Label text="BASE LINE" />
+						<t:template>
+							<Text textAlign="right" text="{baseline} {unit}" />
+						</t:template>
+					</t:Column>
+					<t:Column width="30%" hAlign="Center" resizable="false">
+						<Label text="CURRENT" />
+						<t:template>
+							<Text textAlign="right" text="{current} {unit}" />
+						</t:template>
+					</t:Column>
+				</t:columns>	
+			</t:Table>
+		</VBox>
+		<Text width="10px"/>
+		<VBox>
+			<Text class="sapTableIcon" text="Solution Mode &amp; Control"/>
+			<VBox class="conModeBox">
+				<FlexBox alignItems="Center" justifyContent="Begin" direction="Row">
+					<Text class="txtConIcon" width="180px" text="{/result/solution_mode_control/0/item}" wrapping="false"/>
+					<Text textAlign="Center" text="{/result/solution_mode_control/0/value}" width="110px" class="modeText"/>
+					<Text textAlign="Right" text="{path:'/result/solution_mode_control/0/timestamp', formatter:'.dateFormat'}" width="160px"/>
+					<Text width="20px"/>
+				</FlexBox>
+				<FlexBox class="sapUiTinyMarginTopBottom" alignItems="Center" justifyContent="Begin" direction="Row">
+					<Text class="txtConIcon" width="180px" text="{/result/solution_mode_control/1/item}" wrapping="false"/>
+					<Text textAlign="Center" text="{/result/solution_mode_control/1/value}" width="110px" class="modeText"/>
+					<Text textAlign="Right" text="{path:'/result/solution_mode_control/1/timestamp', formatter:'.dateFormat'}" width="160px"/>
+					<Text width="20px"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Begin" direction="Row">
+					<Text class="txtConIcon" width="180px" text="{/result/solution_mode_control/2/item}" wrapping="false"/>
+					<Text textAlign="Center" text="{/result/solution_mode_control/2/value}" width="110px" class="modeText"/>
+					<Text textAlign="Right" text="{path:'/result/solution_mode_control/2/timestamp', formatter:'.dateFormat'}" width="160px"/>
+					<Text width="20px"/>
+				</FlexBox>
+			</VBox>
+			<Text class="sapTableIcon sapUiTinyMarginTop" text="Solution Diagnostic"/>
+			<t:Table id="solutionDiagnosticTable" class="sapUiTinyMarginTop" width="500px"
+				rows="{/result/solution_diagnostic}"
+				selectionMode="None"
+				editable="false"
+				enableColumnReordering="false"
+				visibleRowCount="4">
+				<t:columns>
+					<t:Column width="50%" hAlign="Center" resizable="false">
+						<Label text="DIAGNOSTIC ITEM" />
+						<t:template>
+							<Text textAlign="Begin" text="{item}" />
+						</t:template>
+					</t:Column>
+					<t:Column width="50%" hAlign="Center" resizable="false">
+						<Label text="STATUS" />
+						<t:template>
+							<ObjectStatus icon="sap-icon://circle-task-2" state="{path:'current', formatter:'.formatNoneStatus'}" text=" "/>
+						</t:template>
+					</t:Column>
+				</t:columns>	
+			</t:Table>
+			<Text class="sapTableIcon sapUiTinyMarginTop" text="Optimizer MV Status"/>
+			<t:Table id="solutionOptimizerMVstatusTable" class="sapUiTinyMarginTop" width="500px"
+				rows="{/result/optimizer_mv_status/mv_status}"
+				selectionMode="None"
+				editable="false"
+				enableColumnReordering="false"
+				firstVisibleRowChanged="firstVisibleRowChanged"
+				visibleRowCount="9">
+				<t:columns>
+					<t:Column width="20%" hAlign="Center" resizable="false">
+						<Label text="GROUP" />
+						<t:template>
+							<Text text="{group}" />
+						</t:template>
+					</t:Column>
+					<t:Column width="35%" hAlign="Center" resizable="false">
+						<Label text="OPTIMIZATION BIAS" />
+						<t:template>
+							<Text text="{item}" />
+						</t:template>
+					</t:Column>
+					<t:Column width="17%" hAlign="Center" resizable="false">
+						<Label text="VALUE" />
+						<t:template>
+							<Text text="{value}" />
+						</t:template>
+					</t:Column>
+					<t:Column width="13%" hAlign="Center" resizable="false">
+						<Label text="MV HOLD" />
+						<t:template>
+							<ObjectStatus icon="sap-icon://circle-task-2" state="{path:'status', formatter:'.formatStatus'}" />
+						</t:template>
+					</t:Column>
+					<t:Column width="15%" hAlign="Center" resizable="false">
+						<Label text="STATUS" />
+						<t:template>
+							<Text/>
+						</t:template>
+					</t:Column>
+				</t:columns>	
+			</t:Table>
+			<Text class="sapTableIcon" text="Boiler Process Danger"/>
+			<VBox class="conModeBox">
+				<FlexBox alignItems="Center" justifyContent="SpaceAround" direction="Row">
+					<ObjectStatus icon="sap-icon://circle-task-2" state="{path:'/result/boiler_process_danger_status', formatter:'.formatStatus'}"/>
+					<Text text="{path:'/result/boiler_process_danger_change_time', formatter:'.dateFormat'}"/>
+				</FlexBox>
+			</VBox>
+		</VBox>
+	</HBox>
+</mvc:View>

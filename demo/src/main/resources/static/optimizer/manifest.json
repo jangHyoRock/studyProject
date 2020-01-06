@@ -1,0 +1,111 @@
+{
+	"_version": "1.0.0",
+	"sap.app": {
+		"id": "dhi.optimizer",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"i18nCommon": "../common/i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": false,
+			"phone": false
+		},
+		"supportedThemes": [
+			"sap_belize",
+			"sap_bluecrystal"
+		]
+  	},
+	"sap.ui5": {
+		"config": {
+			"systemId": "optimizer",
+			"apiPort": "9091",
+			"commonInterval": 10,
+			"systemInterval": 5,
+			"navigatorTrendSelect": [4,5,12,15]
+		},
+		"rootView": {
+			"viewName": "dhi.optimizer.view.Index",
+			"type": "XML",
+			"async": true
+		},
+		"dependencies": {
+			"minUI5Version": "1.52.0",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.52.0"
+				},
+				"sap.m": {
+					"minVersion": "1.52.0"
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.52.0"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"resources": {
+			"css": [{
+				"uri": "../common/css/style.css", "id": "commoncss"
+			}, {
+				"uri": "css/style.css", "id": "eachcss"
+			}]
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "dhi.optimizer.i18n.i18n"
+				}
+			},
+			"i18nCommon": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "dhi.common.i18n.i18n"
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "dhi.optimizer.view",
+				"controlId": "rootControl",
+				"controlAggregation": "pages",
+				"transition": "show",
+				"bypassed": {
+					"target": [
+						"notFound"
+					]
+				},
+				"async": true
+			},
+			"routes": [{
+					"name": "overview",
+					"pattern": "",
+					"target": "overview"
+				}],
+			"targets": {
+				"overview": {
+					"viewName": "Overview",
+					"viewLevel": 1,
+					"viewId": "overview"
+				},
+				"notFound": {
+					"viewName": "NotFound",
+					"viewPath": "dhi.common.view"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,96 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog
+		showHeader="true"
+		draggable="true"
+		afterOpen="onAfterOpen" 
+		class="sapUiContentPadding" >
+		<customHeader>
+			<Bar>
+	            <contentMiddle>
+	                <Title text="Tips Mode – Priority Setup"/>
+	            </contentMiddle>
+	            <contentRight>
+	            	<core:Icon src="sap-icon://decline" class="fragIconLine" size="18px" press="onClosePress"/>
+	            </contentRight>
+        	</Bar>
+		</customHeader>
+		<content>
+			<HBox>
+				<VBox>
+					<Text class="headerColumn" width="205px" textAlign="Center" text="Limits"/>
+					<FlexBox height="5px"/>
+					<VBox class="contentColumn"/>
+				</VBox>
+				<HBox width="5px"/>
+				<VBox>
+					<Text class="headerColumn" width="80px" textAlign="Center" text="High"/>
+					<FlexBox height="5px"/>
+					<FlexBox class="contentColumn" alignItems="Center" justifyContent="Center" direction="Column"/>
+				</VBox>
+				<HBox width="5px"/>
+				<VBox>
+					<Text class="headerColumn" width="80px" textAlign="Center" text="Margin"/>
+					<FlexBox height="5px"/>
+					<FlexBox class="contentColumn" alignItems="Center" justifyContent="Center" direction="Column"/>
+				</VBox>
+				<FlexBox width="5px"/>
+				<VBox>
+					<Text class="headerColumn" width="70px" textAlign="Center" text="Unit"/>
+					<FlexBox height="5px"/>
+					<FlexBox class="contentColumn" alignItems="Center" justifyContent="Center" direction="Column"/>
+				</VBox>
+				<FlexBox width="5px"/>
+				<VBox>
+					<Text class="headerColumn" width="669px" textAlign="Center" text="Fire Ball Centering"/>
+					<FlexBox height="5px"/>
+					<FlexBox class="contentColumn" height="100%" alignItems="Center">
+						<FlexBox alignItems="Center" justifyContent="Center" direction="Row">
+							<FlexBox alignItems="Center" justifyContent="Center" direction="Column">
+								<HBox>
+									<Text class="txtFireBallPosition" width="70px" textAlign="Center" text="FL"/>
+									<FlexBox width="45px"/>
+									<Text class="txtFireBallPosition" width="70px" textAlign="Center" text="Left"/>
+									<FlexBox width="45px"/>
+									<Text class="txtFireBallPosition" width="70px" textAlign="Center" text="RL"/>
+								</HBox>
+								<FlexBox height="15px"/>
+								<FlexBox alignItems="Center">
+									<Text class="txtFireBallPosition rotate270" width="70px" textAlign="Center" text="Front"/>
+									<Image width="200px" height="200px" src="img/navigatorFireBall.png"/>
+									<Text class="txtFireBallPosition rotate90" width="70px" textAlign="Center" text="Rear"/>
+								</FlexBox>
+								<FlexBox height="15px"/>
+								<HBox>
+									<Text class="txtFireBallPosition" width="70px" textAlign="Center" text="FR"/>
+									<FlexBox width="45px"/>
+									<Text class="txtFireBallPosition" width="70px" textAlign="Center" text="Right"/>
+									<FlexBox width="45px"/>
+									<Text class="txtFireBallPosition" width="70px" textAlign="Center" text="RR"/>
+								</HBox>
+							</FlexBox>
+							<VBox>
+								<HBox class="fireBallheader">
+									<Text textAlign="Center" width="60px" text="Direction"/>
+									<Text textAlign="Center" width="60px" text="C1"/>
+									<Text textAlign="Center" width="60px" text="C2"/>
+									<Text textAlign="Center" width="60px" text="C3"/>
+									<Text textAlign="Center" width="60px" text="C4"/>
+								</HBox>
+								<VBox class="fireBallContent"/>
+							</VBox>
+							<FlexBox width="15px"/>
+						</FlexBox>
+					</FlexBox>
+				</VBox>
+			</HBox>
+		</content>
+		<beginButton>
+			<Button width="70px" text="SAVE" type="Accept" press="onLimitSave"/>
+		</beginButton>
+		<endButton>
+			<Button width="70px" text="Cancel" type="Reject" press="onLimitClose"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,11 @@
+<mvc:View
+	controllerName="dhi.common.controller.NotFound"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<MessagePage
+		title="{i18nCommon>NotFound}"
+		text="{i18nCommon>NotFound.text}"
+		description="{i18nCommon>NotFound.description}"
+		showNavButton="true"
+		navButtonPress="onNavBack"/>
+</mvc:View>

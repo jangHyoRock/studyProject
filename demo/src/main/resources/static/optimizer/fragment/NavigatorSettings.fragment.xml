@@ -1,0 +1,46 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog 
+		draggable="true"
+		class="sapUiContentPadding" >
+		<customHeader>
+			<Bar>
+	            <contentMiddle>
+	                <Title text="Tips Mode – Settings"/>
+	            </contentMiddle>
+	            <contentRight>
+	            	<core:Icon src="sap-icon://decline" class="fragIconLine" size="18px" press="onClosePress"/>
+	            </contentRight>
+        	</Bar>
+		</customHeader>
+		<content>
+			<FlexBox alignItems="Center" justifyContent="End" direction="row">
+				<Text class="sapUiSmallMarginEnd" text="Excess Air Ratio"/>
+				<Input width="100px" type="Number" value="{settings>/result/excess_air_ratio}"/>
+			</FlexBox>
+			<FlexBox alignItems="Center" justifyContent="End" direction="row">
+				<Text class="sapUiSmallMarginEnd" text="Metal Temp. Dev for Filtering(%)"/> 
+				<Input width="100px" type="Number" value="{settings>/result/metal_temp_filter_rate}"/>
+			</FlexBox>
+			<FlexBox alignItems="Center" justifyContent="End" direction="row">
+				<Text class="sapUiSmallMarginEnd" text="Allowable Metal Temp. Dev(Deg)"/> 
+				<Input width="100px" type="Number" value="{settings>/result/metal_temp_allowable_vlaue}"/>
+			</FlexBox>
+			<FlexBox alignItems="Center" justifyContent="End" direction="row">
+				<Text class="sapUiSmallMarginEnd" text="Allowable Flue Gas Temp.(Deg)"/> 
+				<Input width="100px" type="Number" value="{settings>/result/allowable_flue_gas_temp_dev}"/>
+			</FlexBox>
+			<FlexBox alignItems="Center" justifyContent="End" direction="row">
+				<Text class="sapUiSmallMarginEnd" text="Allowable Spray Flow. Dev(t/h)"/> 
+				<Input width="100px" type="Number" value="{settings>/result/allowable_spray_flow_dev}"/>
+			</FlexBox>
+		</content>
+		<beginButton>
+			<Button width="70px" text="SAVE" type="Accept" press="onSettingsSave"/>
+		</beginButton>
+		<endButton>
+			<Button width="70px" text="Cancel" type="Reject" press="onLimitClose"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

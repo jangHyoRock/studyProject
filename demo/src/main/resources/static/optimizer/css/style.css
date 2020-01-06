@@ -1,0 +1,372 @@
+/* variable */
+div[id*=popover] ul li.sapMSelectListItem {}
+.sapMPopover {}
+.sapMPopoverCont {}
+div[id$=footerView] .sapMListTbl .sapMText {font-size:14px;}
+div[id$=footerView] div.tblTitle .sapMListTblCell {padding-top:9px;padding-bottom:8.5px;}
+div[id$=footerView] td.sapMListTblCell {padding:0px;vertical-align:middle;}
+div[id$=footerView] .sapMListTblRow {height:33px;}
+div[id$=footerView] .sapMListTbl th {vertical-align:middle;}
+.responsiveWidth {min-width: 1088px !important; width:calc(100% - 192px) !important;}
+/* variable */
+
+/* Overview */
+.outLineRed {outline: thick ridge orangered;}
+.outLineGreen {outline: thick ridge limegreen;}
+.outLineGold {outline: thick ridge gold;}
+.redText {color: red !important;}
+.tableOverView table tbody tr td span {white-space: initial; font-size: 14px;}
+.tableOverView table[id$=header] tbody tr td span {font-weight: 500;text-shadow:1px 0px #dddede;}
+.tableOverView table[id$=table] tbody tr td:first-child {background: #ffffff;}
+.tableOverView table[id$=table] tbody tr td:first-child span{color: #626365 !important;text-shadow:1px 0px #d5d5d6;}
+.tableOverView table[id$=table] tbody tr td span[id*=status] {font-weight: bold;}
+.tableOptimizerMode table tbody span {white-space: initial; font-size: 13px;color: #626365 !important;text-shadow:1px 0px #d5d5d6;}
+.tableOptimizerMode table[id$=table] tbody tr:first-child {background: moccasin;}
+.tableOptimizerMode table[id$=table] tbody tr:nth-child(n+2) {background: floralwhite;}
+.tableOptimizerMode table {border:1px solid;}
+.tableOptimizerMode table tr td:first-child {border-right:1px solid;}
+.tableOptimizerMode table tr:nth-last-child(n+2) td {border-bottom: 1px solid #ececec;}
+.txtOverViewTitle {font-size: 22px !important; font-weight: 300; color:#616365 !important;text-shadow:1px 0px #d5d5d6;}
+.optimum {position:absolute; top:-367px; left:2px;}
+.optimumMask {position:absolute; top:-367px; left:2px;}
+.optimumCross {position:absolute; top:-350px; left:-1px;}
+.optimumFragmentCross {position:absolute; top:17px; left:64px;}
+.optimumFragment {position: absolute;top: 13px;left: 70px;width: 600px;height: 600px;}
+.imgFireball {position: absolute;left: 0px;top: -368px;}
+.v-datalabel-group text{font-weight: bold; font-size: 12px;}
+.chartItem {position: absolute; font-size: 14px; font-weight: bold; background: white;opacity: 0.9;}
+.txtOptimumZone {font-size: 14px;font-weight: bold;position: absolute;top: -192px;left: 140px; color: #616365;}
+.txtOptimumFragmentZone {font-size: 20px;font-weight: bold;position: absolute;top: 293px;left: 317px;}
+.fireBallStatus {position:absolute;top:-160px;border: 1px #e5e5e5 solid;}
+.sapModeIcon {background:gray;width:16px;height:17px;transform:scaleX(-1);margin-top:3px;margin-right:5px;}
+.overviewChartMask {position:absolute;top:-134px;}
+.conModeBox {border:1px solid #efefef;padding:10px 0px 10px 30px;}
+.modeText {border: 1px Gainsboro solid; padding: 7px; border-radius: 2px;color:white;background-color:#346187;}
+.modeBlueText {border: 1px Gainsboro solid; padding: 7px; border-radius: 2px;color:#346187;}
+img[src*=hold].imgCtrlNotReady {position:absolute;top:-78px;left:136px;}
+img[src*=notReady].imgCtrlNotReady {position:absolute;top:-78px;left:126px;}
+div[id$=overview] .sapMBtnExport {margin-left: calc(40% - 183px);}
+.minWidth1016 {min-width: 1016px;}
+/* Overview */
+
+/* Combustion Dynamics */
+.dynamicsImgContainer {
+	position: relative;
+}
+.dynamicsChartBox {
+	border: 1px solid;
+	border-color: #efefef;
+}
+.dynamicsChartBox .sapMPanelBGTranslucent {
+	padding: 0 !important;
+	height: calc(331px) !important;
+}
+.fakeImageLeftArea {
+	position: absolute; left: 25px; top: 172px; z-index: 1; width: 111px; height: 95px;
+}
+.fakeImageRightArea {
+	position: absolute; left: 182px; top: 170px; z-index: 1; width: 96px; height: 33px;
+}
+.chartVboxContainer {
+/* 	background-image: url("../img/noChart.jpg"); background-repeat: no-repeat; z-index:-1; */
+}
+.hmChart {
+	width:auto;height:330px;position:absolute;left:0px; right: 0px; top:0px; bottom:0px;float:left
+}
+.rmChart {
+	position:absolute; left:430px;top:220px;
+}
+.hbLoading {position:absolute;top:24px;left:23px;}
+/* Combustion Dynamics */
+
+/* Combustion Status */
+.lblCSTitle {font-size: 22px !important; font-weight: 300; color:#616365 !important;text-shadow:1px 0px #d5d5d6;}
+.bgLightGray {background: lightgray;}
+.bgWhite {background: white;}
+.bgGold {background: rgba(240,171,0,0.35);}
+.bgLimeGreen {background: rgba(155,202,63,0.35);}
+.lblBold {font-weight: bold;}
+.rotateY180 {transform:rotateY(180deg);}
+.outLinePurple {outline: thick ridge DarkOrchid;}
+.fireballLeftTopMask {position: absolute;top: 48px;left: -466px;width: 94px;height: 30px;}
+.fireballRightTopMask {position: absolute;top: 48px;left: -358px;width: 30px;height: 94px;}
+.fireballLeftBottomMask {position: absolute;top: 91px;left: -466px;width: 30px;height: 94px;}
+.fireballRightBottomMask {position: absolute;top: 155px;left: -423px;width: 94px;height: 30px;}
+div[id$=combustionStatus] table span[id$=icon].sapMObjStatusIcon {padding-right:0px;}
+div[id$=combustionStatus] table span[id$=icon].sapMObjStatusIcon span {font-size:1.5rem;}
+.hbCSCoalProperty span {font-size:12px;}
+.txtCSTitle {margin-top:9px;margin-left:5px;}
+div[id$=combustionStatus] div[class*=sapUiTableColHdrCnt] table tbody td {padding:4px 0px 0px 0px;}
+div[id$=combustionStatus] table tbody td {padding:0px 0px 0px 0px;}
+div[id$=combustionStatus] table tbody td div {padding:0px 0px 0px 0px;}
+div[id$=combustionStatus] table tbody tr {height:26px !important;}
+div[id$=combustionStatus] div[class*=sapUiTableCtrlCnt] {min-height:0px !important;}
+div[id$=combustionStatus] div[class*=sapUiTableCtrlCnt] span.sapMText {font-size:12px;}
+div[id$=combustionStatus] div[class*=sapUiTableColHdrCnt] {min-height:0px !important;}
+.txtCScolumn11 {position:absolute;left:-260px;top:162px;font-size:11px;}
+.txtCScolumn12 {position:absolute;left:-259px;top:242px;font-size:11px;}
+.txtCScolumn13 {position:absolute;left:-259px;top:291px;font-size:11px;}
+.txtCScolumn14 {position:absolute;left:-260px;top:330px;font-size:11px;}
+.txtCScolumn15 {position:absolute;left:-260px;top:396px;font-size:11px;}
+.txtCScolumn16 {position:absolute;left:-260px;top:445px;font-size:11px;}
+.txtCScolumn21 {position:absolute;left:-185px;top:222px;font-size:11px;}
+.txtCScolumn22 {position:absolute;left:-185px;top:284px;font-size:11px;}
+.txtCScolumn23 {position:absolute;left:-185px;top:386px;font-size:11px;}
+.txtCScolumn24 {position:absolute;left:-185px;top:439px;font-size:11px;}
+.txtCScolumn31 {position:absolute;left:-79px;top:162px;font-size:11px;}
+.txtCScolumn32 {position:absolute;left:-79px;top:271px;font-size:11px;}
+.txtCScolumn33 {position:absolute;left:-79px;top:324px;font-size:11px;}
+.txtCScolumn34 {position:absolute;left:-79px;top:428px;font-size:11px;}
+.txtCScolumn35 {position:absolute;left:-79px;top:480px;font-size:11px;}
+/* Combustion Status */
+
+/* performanceEfficiency */
+span[class*=txtPEmillRed] { color:white;background:#ff0000;display:inline-block; }
+span[class*=txtPEmillBlue] { color:white;background:#7ab800;display:inline-block; }
+.costSavingInformation {width: 530px; padding:0px;}
+.CostSavingDot0 {display:none;}
+.CostSavingDot1 {position:relative;top:23px;margin-left:-98px;}
+.CostSavingDot2 {position:relative;top:23px;margin-left:-72px;}
+.CostSavingDot3 {position:relative;top:23px;margin-left:-45px;}
+.txtConT{font-size: 13px !important; font-weight: 300 !important; color:#8b8e91 !important;text-shadow:1px 0px #f7f7f7;}
+.txtUnit{font-size: 13px !important; font-weight: 300 !important; color:#8b8e91 !important;text-shadow:1px 0px #f7f7f7; padding-top:21px;}
+.CostBg{background-color: #fafafa; height: 262px;}
+.costSavingRound01{border-radius: 5px; background-image:url("../img/CostSavingRoundBg01.png"); background-repeat: no-repeat; width:88px; height: 50px;color: #fff;font-size: 24px; padding: 15px 1px; text-align: right !important; letter-spacing: 12px;}
+.costSavingRound02{border-radius: 5px; background-image:url("../img/CostSavingRoundBg02.png"); background-repeat: no-repeat; width:88px; height: 50px;color: #fff;font-size: 24px; padding: 15px 8px; text-align: right !important; letter-spacing: 3px;}
+.costSavingRound03{border-radius: 5px; background-image:url("../img/CostSavingRoundBg03.png"); background-repeat: no-repeat; width:88px; height: 37px;color: #fff;font-size: 24px; padding: 6px 1px; text-align: right !important; letter-spacing: 12px;}
+.costSavingRound04{border-radius: 5px; background-image:url("../img/CostSavingRoundBg04.png"); background-repeat: no-repeat; width:114px; height: 37px;color: #fff;font-size: 24px; padding: 6px 1px; text-align: right !important; letter-spacing: 12px;}
+.txtPETitle {color:#444444;font-size:15px !important;}
+span[id$=performanceEfficiency--btnReset-inner] {height:30px;}
+span[id$=performanceEfficiency--btnReset-inner] span {height:30px;line-height:30px;}
+span[id$=performanceEfficiency--btnReset-inner] span.sapMBtnIcon {top:-1px;}
+.minWidth20 {min-width:20px;}
+.performanceEfficiencyLayout {width: 100%; min-width: 1016px;}
+/*.performanceEfficiencyLayout > div:first-child {width: 15%;}*/
+.performanceEfficiencyLayout > div:nth-child(2) {width: 4%;}
+.width423 {width:423px;}
+/* performanceEfficiency */
+
+/* Settings */
+div[id$=Settings] div.vbLeft .sapMInputBase {height:39px;}
+div[id$=Settings] div.vbLeft .sapMInputDivWrapper {height:35px;}
+div[id$=Settings] div.vbRight .sapMInputBase {height:41px;}
+div[id$=Settings] div.vbRight .sapMInputDivWrapper {height:36px;}
+div[id$=Settings] div.vbRight .sapMInputValHelpInner {height: 1.875rem;line-height: 1.875rem;}
+div[id$=Settings] .segmentText {border: 1px Gainsboro solid; padding: 8px; border-radius: 2px;color:#346187;}
+.txtPSOsup {font-size:xx-small;margin-bottom:12px;}
+.txtPSOsub {font-size:xx-small;}
+.colorBlack {color:black;}
+ul[id$=sgmtBtnPSO] li {height:40px !important;line-height:40px !important;}
+div[id$=Settings] div.nn .sapMInputBase {height:2.5rem;}
+div[id$=Settings] div.nn .sapMInputDivWrapper {height:2rem;}
+div[id$=Settings] div.nn .sapMInputValHelpInner {height: 1.875rem;line-height: 1.875rem;}
+div[id$=Settings] div.nn .fileUpload {display:none;}
+.ui5-sap-viz-vizSliderMock.ui5-sap-viz-vizSliderMock-right{right:-1px !important;}
+div[id$=Settings] .sapMInputBaseErrorInner { border-color: #ee0000 !important; }
+div[id$=Settings] .sapTableIcon {margin-bottom:0px;}
+div[id$=Settings] div.outputController .sapMInputBase {height:2.1rem;}
+div[id$=Settings] div.outputController .sapMInputDivWrapper {height:1.6rem;}
+div[id$=Settings] div.outputController .conVHBox {padding:4px 0px 4px 25px;}
+div[id$=Settings] div.pso .vbRight .sapMInputBase {height:30px;}
+div[id$=Settings] div.pso .vbRight .sapMInputDivWrapper {height:25px;}
+div[id$=Settings] div.pso .condensed {font-stretch:condensed;}
+/* Setting */
+
+
+/* Navigator */
+div[id$=Navigator] tbody tr td div {padding-left:0px;padding-right:0px;}
+div[id$=Navigator] table tbody td {padding-left:0px;padding-right:0px;}
+div[id$=Navigator] table tbody tr {height:26px !important;}
+div[id$=Navigator] table[id$=tblBnr-table] tbody tr {height:25.2px !important;}
+div[id$=Navigator] div[class*=sapUiTableCtrlCnt] {min-height:0px !important;}
+div[id$=Navigator] div[class*=sapUiTableCtrlCnt] span.sapMText {font-size:12px;}
+.saFlow {padding:5px;border-top:1px #dddddd solid;border-bottom:1px #dddddd solid;background-color:#f7f7f7;font-size:12px;}
+.saFlowBottom {padding:5px;border-bottom:1px #dddddd solid;background-color:#f7f7f7;font-size:12px;}
+div[id$=Navigator] .hmChart {width:90px;top:25px;left:12px;}
+.rotate270 {transform:rotate(270deg);}
+.rotate90 {transform:rotate(90deg);}
+div[id$=Navigator] button[id*=Navigator--tgBtn] .sapMToggleBtnPressed {background-color:#2d5475 !important;border-color:#2d5475 !important;color:#ffffff !important;text-shadow:none !important;}
+section[id*=dialog] .txtNavigatorUnit {line-height:36px;}
+section[id*=dialog] .contentColumn {border:1px grey solid;background:aliceblue;height:722px;}
+section[id*=dialog] .contentColumn .sapMCb {height:36px;}
+section[id*=dialog] .contentColumn .sapMCb .sapMCbBg {top:8px;}
+section[id*=dialog] div[id*=input].sapMInputBase {height:36px;padding-top:5px;}
+section[id*=dialog] div[id*=input] .sapMInputDivWrapper {height:28px;}
+section[id*=dialog] div[id*=input] .sapMInputBaseInner {padding:0px;text-align:center;}
+section[id*=dialog] .headerColumn {padding:5px;border:1px grey solid;background:#2e75b6;color:white;}
+section[id*=dialog] .fireBallheader {padding:5px;border:1px white solid;background:black;}
+section[id*=dialog] .fireBallheader span {color:white;}
+section[id*=dialog] .fireBallContent {padding:5px;border:1px white solid;background:#a9a9a9;}
+section[id*=dialog] .fireBallContent span {color:white;}
+section[id*=dialog] .txtFireBallPosition {padding:5px;border:1px #a9a9a9 solid;background:white;}
+section[id*=dialog] .rotate270 {transform:rotate(270deg);}
+section[id*=dialog] .rotate90 {transform:rotate(90deg);}
+section[id*=dialog] div[id*=tblNavigator] td div.sapUiTableColCell {padding:0px;}
+section[id*=dialog] div[id*=tblNavigator] table tbody tr {height:18px !important;}
+section[id*=dialog] div[id*=tblNavigator] div[class*=sapUiTableCtrlCnt] {min-height:0px !important;}
+section[id*=dialog] div[id*=tblNavigator] td div[role=combobox] {height:18px !important;min-width:0px;}
+section[id*=dialog] div[id*=tblNavigator] td div[role=combobox] label {line-height:18px;}
+section[id*=dialog] div[id*=tblNavigator] td div[role=combobox] span.sapMSltArrow {width:20px;line-height:18px;}
+section[id*=dialog] div[id*=tblNavigator] td div.sapUiTableCell {padding-left:4px;}
+section[id*=dialog] ul[id=sgmtMtTemp] {position:absolute;left:13px;top:4px;}
+section[id*=dialog] div[id=ckbMtTempMinimum] {position:absolute;left:0px;top:45px;}
+section[id*=dialog] div[id=inputMtTempMinimum] {position:absolute;left:128px;top:51px;}
+section[id*=dialog] div[id=ckbMtTempMaximum] {position:absolute;left:0px;top:75px;}
+section[id*=dialog] div[id=ckbMtTempNumber] {position:absolute;left:0px;top:105px;}
+section[id*=dialog] div[id=ckbMtTempBorder] {position:absolute;left:0px;top:135px;}
+section[id*=dialog] li.sapMSegBBtn {padding:0px;}
+section[id*=dialog] div[id=tblNavigatorAA] tbody tr.sapUiTableTr:nth-child(6) td {border-bottom:1px solid black;}
+section[id*=dialog] div[id=tblNavigatorAA] tbody tr.sapUiTableTr:nth-child(12) td {border-bottom:1px solid black;}
+section[id*=dialog] div[id=tblNavigatorAA] tbody tr.sapUiTableTr:nth-last-child(7) td {border-bottom:1px solid black;}
+section[id*=dialog] div[id=tblNavigatorAA] tbody tr.sapUiTableTr td:nth-child(4) {border-right:1px solid black !important;}
+section[id*=dialog] div[id=tblNavigatorAA] tbody tr.sapUiTableTr td:nth-child(7) {border-right:1px solid black !important;}
+section[id*=dialog] div[id=tblNavigatorAA] tbody tr.sapUiTableTr td:nth-child(10) {border-right:1px solid black !important;}
+section[id*=dialog] div[id=tblNavigatorAA] tbody tr.sapUiTableTr td:nth-last-child(4) {border-right:1px solid black !important;}
+section[id*=dialog] div[id=tblNavigatorGG] tbody tr.sapUiTableTr:nth-child(2) td {border-bottom:1px solid black;}
+section[id*=dialog] div[id=tblNavigatorGG] tbody tr.sapUiTableTr:nth-child(4) td {border-bottom:1px solid black;}
+section[id*=dialog] div[id=tblNavigatorGG] tbody tr.sapUiTableTr:nth-child(6) td {border-bottom:1px solid black;}
+section[id*=dialog] div[id=tblNavigatorGG] tbody tr.sapUiTableTr:nth-child(1) td:first-child {border-bottom:1px solid black;}
+section[id*=dialog] div[id=tblNavigatorGG] tbody tr.sapUiTableTr:nth-child(3) td:first-child {border-bottom:1px solid black;}
+section[id*=dialog] div[id=tblNavigatorGG] tbody tr.sapUiTableTr:nth-child(5) td:first-child {border-bottom:1px solid black;}
+section[id*=dialog] div[id=tblNavigatorGG] tbody tr.sapUiTableTr td:nth-last-child(13) {border-right:1px solid black !important;}
+section[id*=dialog] div[id=tblNavigatorGG] tbody tr.sapUiTableTr td:nth-last-child(10) {border-right:1px solid black !important;}
+section[id*=dialog] div[id=tblNavigatorGG] tbody tr.sapUiTableTr td:nth-last-child(7) {border-right:1px solid black !important;}
+section[id*=dialog] div[id=tblNavigatorGG] tbody tr.sapUiTableTr td:nth-last-child(4) {border-right:1px solid black !important;}
+div[id$=Navigator] tbody .sapMInputBase {height:25px;padding-top:3px;}
+div[id$=Navigator] tbody .sapMInputDivWrapper {height:20px;}
+div[id$=Navigator] tbody .sapMInputBaseInner {padding:0px;text-align:center;}
+div[id$=Navigator] div[id$=tblBnr] tbody .sapMInputBase {height:24px;padding-top:3px;}
+div[id$=Navigator] div[id$=tblBnr] tbody .sapMInputDivWrapper {height:19px;}
+div[id$=Navigator] .fakeTd {font-size:12px;border-bottom:1px #e5e5e5 solid;padding:5px;}
+div[id$=Navigator] .noHeaderTable .sapUiTableCCnt tr[id$=row0] td {border-top:1px #dddddd solid;}
+div[id$=Navigator] svg.sap_viz_ext_heatmap_lines {stroke:#cccccc;border:#cccccc 1px solid;background:#f7f7f7;}
+div[id$=Navigator] Button.myTemp span.sapMBtnDefault { font-size:11px; }
+div[id$=Navigator] Button.tubeProjectSet span span { font-size:9px;left:1px;position:absolute; }
+.navigatorMask {position:absolute;left:-307px;top:271px;}
+/* Navigator */
+
+/* trend */
+.unit1Color {color:#5899DA;font-size:13px;}
+.unit2Color {color:#e8743b;font-size:13px;}
+.sapMComboBoxBasePicker .sapMPopoverCont {height:580px;}
+.sapMComboBoxBasePicker li.sapMMultiComboBoxItem {height:24.9px;}
+.sapMComboBoxBasePicker .sapMCbBg.sapMCbMarkChecked:before {position:absolute;left:1px;top:-2px;}
+.sapMComboBoxBasePicker .sapMCbBg {height:14px;width:14px;} 
+/* trend */
+/*Conf*/
+.conf .sapMInputBaseInner {
+	font-size: 0.7rem !important;
+}
+.conf .sapMSlt>.sapMSltLabel{
+	font-size: 0.7rem !important;
+}
+.conf .sapMCb:not(.sapMCbBgDis).sapMCbHasLabel:focus:before {
+	border : 0px !important;
+}
+[id$=opConfTable] input[id*=picker][id$=inner] {
+	padding-left:2px;
+	padding-right:0px;
+}
+[id$=opConfTable] label.sapMSltLabel {
+	padding-left:2px;
+}
+[id$=opConfTable] input[id*=input][id$=inner] {
+	padding:0px;text-align:center;
+}
+/*Conf*/
+
+/*Alarm*/
+div[id$=alarmEvent] .sapMInputBase.sapMTextArea .sapMTextAreaInner {padding:1px 5px 1px 5px;}
+/*Alarm*/
+
+/* Status */
+div[id$=---Status] tbody tr td div {padding-left:0px;padding-right:0px;}
+div[id$=---Status] table tbody td {padding-left:0px;padding-right:0px;}
+div[id$=---Status] div[id$=solutionDiagnosticTable] tbody tr {height:20px !important;}
+div[id$=---Status] div[id$=solutionDiagnosticTable] tbody tr td:first-child {text-align:left !important;padding-left:40px;}
+div[id$=---Status] div[id$=solutionOptimizerMVstatusTable] tbody tr {height:20px !important;}
+div[id$=---Status] div[class*=sapUiTableCtrlCnt] {min-height:0px !important;}
+div[id$=---Status] .modeText {padding:2px;}
+div[id$=---Status] .modeBlueText {padding:2px;}
+div[id$=---Status] .sapMObjStatusIcon {padding-right:0px;}
+div[id$=---Status] tbody tr td div {padding-left:0px;padding-right:0px;}
+div[id$=---Status] table tbody td {padding-left:0px;padding-right:0px;}
+div[id$=---Status] tbody tr.sapUiTableTr {height:25px !important;}
+div[id$=---Status] div[class*=sapUiTableCtrlCnt] {min-height:0px !important;}
+div[id$=---Status] .sapTableIcon {margin-bottom:2px;}
+div[id$=---Status] img[class*=flowArrow] {position:absolute;}
+div[id$=---Status] .flowArrow1 {left:-6px;top:105px;}
+div[id$=---Status] .flowArrow2 {left:475px;top:105px;}
+div[id$=---Status] .flowArrow3 {left:731px;top:217px;transform:rotate(90Deg);display:none;}
+div[id$=---Status] .flowArrow4 {left:475px;top:410px;transform:rotate(180Deg);}
+div[id$=---Status] .flowArrow5 {left:-6px;top:410px;transform:rotate(180Deg);}
+div[id$=---Status] div[id$=algorithmStatusChart] {margin-top:10px;}
+div[id$=---Status] .statusVBox {height:131px;}
+div[id$=---Status] .statusVBox span.sapMText {padding:3px;width:138px;}
+div[id$=---Status] .statusVBox div.sapMObjStatus {padding:2px;text-align:center;width:134px;}
+div[id$=---Status] .statusVBox div[id*=data] {border:1px gray solid;}
+div[id$=---Status] .statusVBox div[id*=hbox]:first-child span.sapMText {color:white;}
+div[id$=---Status] .statusVBox div[id*=hbox]:nth-child(3) span.sapMText {color:white;}
+div[id$=---Status] .statusVBox div[id*=hbox]:first-child div[id*=data] {background:black;}
+div[id$=---Status] .statusVBox div[id*=hbox]:nth-child(3) div[id*=data] {background:black;}
+div[id$=---Status] .statusVBox2 span.sapMText {width:182px;}
+div[id$=---Status] .statusVBox2 div.sapMObjStatus {width:138px;}
+div[id$=---Status] .statusVBox2 div[id*=hbox]:first-child div[id*=data]:nth-child(3) {background:yellow;}
+div[id$=---Status] .statusVBox2 div[id*=hbox]:first-child div[id*=data]:nth-child(3) span.sapMText {color:black;}
+.linehight20 span.sapMText {line-height:20px;}
+div[id$=---Status] div[id$=algorithmOptimalBiasTable] tbody tr.sapUiTableColHdrTr td {background:yellow;}
+div[id$=---Status] div[id$=algorithmMVstatusTable] tbody tr.sapUiTableColHdrTr td:nth-child(4) {background:yellow;}
+div[id$=---Status] .font12 span.sapMText {font-size:12px;}
+div[id$=---Status] .segment li {padding:0px;height:35px;line-height:35px;}
+div[id$=---Status] .borderBox {border:1px solid #efefef;padding-top:1px;padding-bottom:1px;}
+div[id$=---Status] .conHBox {padding-top:2px;}
+div[id$=---Status] .algorithmStatus .conVHBox {padding-top:9px;padding-bottom:9px;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(1) div {padding:3px;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(3) div {padding:3px;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(1) div[id*=data] {border:1px gray solid;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(3) div[id*=data] {border:1px gray solid;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(1) div[id*=data]:nth-child(2) {border-right:none;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(1) div[id*=data]:nth-child(3) {border-left:none;border-right:none;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(1) div[id*=data]:nth-child(4) {border-left:none;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(3) div[id*=data]:nth-child(2) {border-right:none;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(3) div[id*=data]:nth-child(3) {border-left:none;border-right:none;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(3) div[id*=data]:nth-child(4) {border-left:none;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(1) div[id*=data]:first-child {background:black;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(3) div[id*=data]:first-child {background:black;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(1) div[id*=data]:first-child span.sapMText {color:white;padding-left:3px;}
+div[id$=---Status] .algorithmStatus .statusBottomVBox div[id*=hbox]:nth-child(3) div[id*=data]:first-child span.sapMText {color:white;padding-left:3px;}
+div[id$=---Status] .algorithmStatus .chartStatus div[id*=hbox] {padding-top:2px;padding-bottom:2px;border:1px gray solid;border-left-width:0px;border-right-width:0px;}
+div[id$=---Status] .algorithmStatus .chartStatus div[id*=hbox]:nth-child(2) {border:none;}
+div[id$=---Status] .algorithmStatus .chartStatus div[id*=hbox]:nth-child(1) {font-weight:bold;}
+div[id$=---Status] .algorithmStatus .usedBackground {background:yellow;}
+/* Status */
+
+/* Navigator */
+.sapMBtnNavigatorExport{
+    width: 76px;
+    padding: 0px;
+    margin: 0px;
+    z-index:1;
+}
+.navigatorExportPrint .sapMBtnInner{
+	background-color: transparent !important;
+	border: none !important;
+	color:#ffffff !important;
+    position: relative;
+    top:-4px;
+    padding:0 !important;
+    font-size: 12px;
+    height:27px;
+	line-height: 27px;
+}
+.navigatorExportPrint .btnExport .sapMBtnContent{
+	line-height: 27px;
+}
+.navigatorExportPrint .btnExport {
+	background-color: #319758;
+    border-radius: 0rem;
+	height: 27px !important;
+}
+.navigatorExportPrint .btnExport:hover{
+	background-color: #8ab919;
+}
