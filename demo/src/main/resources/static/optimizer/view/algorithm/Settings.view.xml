@@ -1,0 +1,480 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+	xmlns:l="sap.ui.layout"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="dhi.optimizer.controller.algorithm.Settings">
+	
+	<l:VerticalLayout class="marginLeft25 marginTop25 conHBox padding10" width="1018px" height="652px">
+		<HBox alignItems="Center">
+			<Text class="sapTableIcon sapUiSmallMarginEnd" text="Settings"/>
+			<Select id="selectSettings" width="170px" change="onChange" selectedKey="{settings>/key}">
+				<items>
+					<core:Item key="NN" text="NN" />
+					<core:Item key="PSO" text="PSO" />
+					<core:Item key="output" text="Output Controller" />
+				</items>
+			</Select>
+		</HBox>
+		<l:VerticalLayout class="nn" visible="{= ${settings>/key}==='NN'?true:false }">
+			<l:HorizontalLayout>
+				<FlexBox width="50px"/>
+				<l:VerticalLayout>
+					<FlexBox alignItems="Center" justifyContent="Center">
+						<Text width="{widthNN>/left}" text="Learning Rate"/>
+						<Input textAlign="Center" type="Number" value="{NN>/result/learning_rate}" width="{widthNN>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Center">
+						<Text width="{widthNN>/left}" text="Momentum"/>
+						<Input textAlign="Center" type="Number" value="{NN>/result/momentum}" width="{widthNN>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Center">
+						<Text width="{widthNN>/left}" text="Sigmoid's Alpha Values"/>
+						<Input textAlign="Center" type="Number" value="{NN>/result/sigmoid_alpha_value}" width="{widthNN>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Center">
+						<Text width="{widthNN>/left}" text="Neurons in 1st Layer"/>
+						<Input textAlign="Center" type="Number" value="{NN>/result/neruons_1st_layer}" width="{widthNN>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Center">
+						<Text width="{widthNN>/left}" text="Neurons in 2nd Layer"/>
+						<Input textAlign="Center" type="Number" value="{NN>/result/neruons_2nd_layer}" width="{widthNN>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Center">
+						<Text width="{widthNN>/left}" text="Training Algotithm"/>
+						<Select width="{widthNN>/right}" selectedKey="{select>NN>/result/training_algorithm}">
+							<items>
+								<core:Item text="Backpropagation" key="Backpropagation"/>
+								<core:Item text="ResilientBackpropagation" key="ResilientBackpropagation"/>
+							</items>
+						</Select>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Center">
+						<Text width="{widthNN>/left}" text="Iterations"/>
+						<Input textAlign="Center" type="Number" value="{NN>/result/iterations}" width="{widthNN>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Center">
+						<Text width="{widthNN>/left}" text="Training Time"/>
+						<TimePicker textAlign="Center" value="{NN>/result/training_time}" valueFormat="HH:mm:ss" displayFormat="HH:mm:ss" width="{widthNN>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Center">
+						<Text width="{widthNN>/left}" text="MU"/>
+						<Input textAlign="Center" type="Number" value="{NN>/result/mu}" width="{widthNN>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Center">
+						<Text width="{widthNN>/left}" text="Validation Check"/>
+						<Input textAlign="Center" type="Number" value="{NN>/result/validation_check}" width="{widthNN>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Center">
+						<Text width="{widthNN>/left}" text="Training MSE"/>
+						<Input textAlign="Center" type="Number" value="{NN>/result/training_mse}" width="{widthNN>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Center">
+						<Text width="{widthNN>/left}" text="Validation MSE"/>
+						<Input textAlign="Center" type="Number" value="{NN>/result/validation_mse}" width="{widthNN>/right}"/>
+					</FlexBox>
+				</l:VerticalLayout>
+				<FlexBox width="40px"/>
+				<l:VerticalLayout>
+					<FlexBox height="40px" alignItems="Center">
+						<Text text="Training Data Period (ex: 3 ~ 100 days)"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Start">
+						<Text width="30px"/>
+						<Text text="\{ D -"/>
+						<Text width="8px"/>
+						<Input id="iptTrainTime" textAlign="Center" type="Number" width="100px" app:min="3" app:max="100" liveChange="validNumber"
+							value="{NN>/result/training_data_last_days}"/>
+						<Text width="8px"/>
+						<Text text="days \} ~ \{ Now - "/>
+						<Text width="8px"/>
+						<Input id="iptValidTimeCopy" textAlign="Center" type="Number" width="100px" editable="false"
+							value="{NN>/result/validation_data_last_hours}"/>
+						<Text width="8px"/>
+						<Text text="hours }"/>
+					</FlexBox>
+					<FlexBox height="40px"/>
+					<FlexBox height="40px" alignItems="Center">
+						<Text text="Minimum Count of Training Data (ex: 100 ~ 10000)"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Start">
+						<Text width="30px"/>
+						<Input textAlign="Center" type="Number" width="100px" app:min="100" app:max="10000" liveChange="validNumber"
+							value="{NN>/result/training_data_min_count}"/>
+					</FlexBox>
+					<FlexBox height="48px"/>
+					<FlexBox height="40px" alignItems="Center">
+						<Text text="Validation Data Period (ex: 2 ~ 200 hours)"/>
+					</FlexBox>
+					<FlexBox height="40px" alignItems="Center" justifyContent="Start">
+						<Text width="30px"/>
+						<Text text="\{ Now -"/>
+						<Text width="8px"/>
+						<Input id="iptValidTime" textAlign="Center" type="Number" width="100px" app:min="2" app:max="200" liveChange="validNumber"
+							value="{NN>/result/validation_data_last_hours}"/>
+						<Text width="8px"/>
+						<Text text="hours \} ~ \{ Now \}"/>
+					</FlexBox>
+					<FlexBox height="40px"/>
+					<FlexBox height="40px" alignItems="Center">
+						<Text text="Minimum Count of Validation Data (ex: 10 ~ 1000)"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Start">
+						<Text width="30px"/>
+						<Input textAlign="Center" type="Number" width="100px" app:min="10" app:max="1000" liveChange="validNumber"
+							value="{NN>/result/validation_data_min_count}"/>
+					</FlexBox>
+				</l:VerticalLayout>
+			</l:HorizontalLayout>
+			<FlexBox height="30px"/>
+			<FlexBox alignItems="Center" justifyContent="Center">
+				<Button width="140px" icon="sap-icon://save" text="Save" press="onPressNN"/>
+				<Button width="140px" class="sapUiTinyMarginBeginEnd" text="Upload" press="onExcelUpload" icon="sap-icon://upload" busyIndicatorDelay="0"/>
+				<Button width="140px" text="Data Studio" press="onStudioDialog" icon="sap-icon://business-objects-experience"/>
+			</FlexBox>
+			<u:FileUploader class="fileUpload" name="NNFileUpload" buttonOnly="true" fileType="xml,mdl"
+				change="handleUploadPress" typeMissmatch="typeMissmatch" sameFilenameAllowed="true"/>
+		</l:VerticalLayout>
+		<l:VerticalLayout class="pso" visible="{= ${settings>/key}==='PSO'?true:false }">
+			<l:HorizontalLayout>
+				<FlexBox width="50px"/>
+				<l:VerticalLayout class="vbLeft">
+					<HBox alignItems="Center">
+						<Text class="" width="{widthPSO>/left}" text="PSO Control Mode"/>
+						<SegmentedButton id="sgmtBtnPSO" selectedKey="{PSO>/result/pso_control_mode}">
+							<items>
+								<SegmentedButtonItem width="100px" text="PSO" key="CL" />
+								<SegmentedButtonItem width="100px" text="PSO-Adv" key="CLA" />
+							</items>
+						</SegmentedButton>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text width="{widthPSO>/left}" text="Correction Factor"/>
+						<Input textAlign="Center" type="Number" value="{PSO>/result/correction_factor}" description="(1.2)" width="{widthPSO>/right}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text width="{widthPSO>/left}" text="Inertia"/>
+						<Input textAlign="Center" type="Number" value="{PSO>/result/inertia}" description="(0.3)" width="{widthPSO>/right}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text width="{widthPSO>/left}" text="Number of MV to search"/>
+						<Input editable="false" textAlign="Center" type="Number" value="{PSO>/result/mv_count}" description="(1 ~ 24)" width="{widthPSO>/right}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text width="{widthPSO>/left}" text="Number of particle per MV"/>
+						<Input textAlign="Center" type="Number" value="{PSO>/result/particles_count}" description="( > 2)" width="{widthPSO>/right}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text width="{widthPSO>/left}" text="Total Number of Particles"/>
+						<Input id="iptPSOtotalPacticles" editable="false" textAlign="Center" type="Number" width="100px"/>
+						<Text class="colorBlack" width="20px" textAlign="Right" text="({PSO>/result/particles_count}"/>
+						<Text class="txtPSOsup colorBlack" text="{PSO>/result/mv_count}"/>
+						<Text class="colorBlack" text=")"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text width="{widthPSO>/left}" text="Iterations"/>
+						<Input textAlign="Center" type="Number" value="{PSO>/result/iterations}" description="(100)" width="{widthPSO>/right}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text width="{widthPSO>/left}" text="NNModel allow value"/>
+						<Input textAlign="Center" type="Number" value="{PSO>/result/nn_model_allow_value}" description="(^2)" width="{widthPSO>/right}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text width="{widthPSO>/left}" text="CPU usage limit value ({= (${PSO>/result/cpu_usage_limit_value}/${PSO>/result/cpu_usage_limit_max_value}*100).toFixed() }%)"/>
+						<Input id="inputCPU" textAlign="Center" type="Number" value="{PSO>/result/cpu_usage_limit_value}" description="(1 ~ {PSO>/result/cpu_usage_limit_max_value})" 
+							 app:min="1" app:max="{PSO>/result/cpu_usage_limit_max_value}" liveChange="validNumber" width="{widthPSO>/right}"/>
+					</HBox>
+					<Text width="{widthPSO>/left}" text="Optimization mode / weight"/>
+					<l:HorizontalLayout alignItems="Center">
+						<Text width="160px" text=""/>
+						<FlexBox width="70px" alignItems="Center" justifyContent="Center">
+							<Text text="C"/><Text class="txtPSOsub" text="profit"/>
+						</FlexBox>
+						<Text width="30px" textAlign="Center" text=":"/>
+						<FlexBox width="70px" alignItems="Center" justifyContent="Center">
+							<Text text="C"/><Text class="txtPSOsub" text="emission"/>
+						</FlexBox>
+						<Text width="30px" textAlign="Center" text=":"/>
+						<FlexBox width="70px" alignItems="Center" justifyContent="Center">
+							<Text text="C"/><Text class="txtPSOsub" text="equipment"/>
+						</FlexBox>
+					</l:HorizontalLayout>
+					<HBox alignItems="Center">
+						<Text id="sgmtPSOprofit" class="segmentText" width="130px" textAlign="Center" text="Profit Max" />
+						<Text width="30px" textAlign="Center" text="=" />
+						<Input width="70px" textAlign="Center" type="Number" value="{PSO>/result/opt_profit_max_profit_weight}"/>
+						<Text width="30px" textAlign="Center" text=":"/>
+						<Input width="70px" textAlign="Center" type="Number" value="{PSO>/result/opt_profit_max_emission_weight}"/>
+						<Text width="30px" textAlign="Center" text=":"/>
+						<Input width="70px" textAlign="Center" type="Number" value="{PSO>/result/opt_profit_max_equipment_weight}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text id="sgmtPSOemission" class="segmentText" width="130px" textAlign="Center" text="Emission Min" />
+						<Text width="30px" textAlign="Center" text="=" />
+						<Input width="70px" textAlign="Center" type="Number" value="{PSO>/result/opt_emission_min_profit_weight}"/>
+						<Text width="30px" textAlign="Center" text=":"/>
+						<Input width="70px" textAlign="Center" type="Number" value="{PSO>/result/opt_emission_min_emission_weight}"/>
+						<Text width="30px" textAlign="Center" text=":"/>
+						<Input width="70px" textAlign="Center" type="Number" value="{PSO>/result/opt_emission_min_equipment_weight}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text id="sgmtPSOequipment" class="segmentText" width="130px" textAlign="Center" text="Equipment Dura" />
+						<Text width="30px" textAlign="Center" text="=" />
+						<Input width="70px" textAlign="Center" type="Number" value="{PSO>/result/opt_equipment_dura_profit_weight}"/>
+						<Text width="30px" textAlign="Center" text=":"/>
+						<Input width="70px" textAlign="Center" type="Number" value="{PSO>/result/opt_equipment_dura_emission_weight}"/>
+						<Text width="30px" textAlign="Center" text=":"/>
+						<Input width="70px" textAlign="Center" type="Number" value="{PSO>/result/opt_equipment_dura_equipment_weight}"/>
+					</HBox>
+				</l:VerticalLayout>
+				<FlexBox width="20px"/>
+				<l:VerticalLayout class="vbRight">
+					<HBox alignItems="Center" height="30px">
+						<Text text="C"/><Text class="txtPSOsub" text="profit"/><Text width="5px"/><Text text="×"/><Text width="5px"/>
+						<Text text="\{ K"/><Text class="txtPSOsub" text="RHspray"/><Text width="5px"/><Text text="×"/><Text width="5px"/>
+						<Text text="RHspray(1) + K"/><Text class="txtPSOsub" text="O2avg"/><Text width="5px"/><Text text="×"/><Text width="5px"/>
+						<Text text="O"/><Text class="txtPSOsub" text="2"/><Text text="avg(4) + K"/><Text class="txtPSOsub" text="CO"/>
+						<Text width="5px"/><Text text="×"/><Text width="5px"/><Text text="FG-CO(1) \}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text text="K"/><Text width="65px" class="txtPSOsub" text="RHspray"/>
+						<Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_rh_spary_k}"/>
+						<Text width="15px"/>
+						<Text text="(ex: 12.67/10 ; $12.67 Per 10 ton/h)"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text text="K"/><Text width="65px" class="txtPSOsub" text="O2avg"/>
+						<Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_o2_avg_k}"/>
+						<Text width="15px"/>
+						<Text text="(ex: 4.52/0.1 ; $4.52 Per 0.1 %p/h)"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text text="K"/><Text width="65px" class="txtPSOsub" text="CO"/>
+						<Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_co_k}"/>
+						<Text width="15px"/>
+						<Text text="(ex: 1.66/50 ; $1.66 Per 50 mg/h)"/>
+					</HBox>
+					<FlexBox height="2px"/>
+					<HBox alignItems="Center" height="30px">
+						<Text text="C"/><Text class="txtPSOsub" text="emission"/><Text width="5px"/><Text text="×"/><Text width="5px"/>
+						<Text text="\{ K"/><Text class="txtPSOsub" text="NOx"/><Text width="5px"/><Text text="×"/><Text width="5px"/>
+						<Text text="FG - NOx(1) \}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text text="K"/><Text width="65px" class="txtPSOsub" text="NOx"/>
+						<Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_nox_k}"/>
+						<Text width="15px"/>
+						<Text text="(ex: 7.53/10 ; 7.53$ Per 10 mg/h)"/>
+					</HBox>
+					<FlexBox height="2px"/>
+					<HBox alignItems="Center" height="30px">
+						<Text text="C"/><Text class="txtPSOsub" text="equipment"/><Text width="5px"/><Text text="×"/><Text width="5px"/>
+						<Text text="\{ K"/><Text class="txtPSOsub" text="FGT"/><Text width="5px"/><Text text="×"/><Text width="5px"/>
+						<Text text="FG - T.D. + K"/><Text class="txtPSOsub" text="RHspray-D."/><Text width="5px"/><Text text="×"/>
+						<Text width="5px"/><Text text="RHspray-D. +"/><Text width="5px"/>
+						<Text text="K"/><Text class="txtPSOsub" text="O2-D."/><Text width="5px"/><Text text="×"/><Text width="5px"/>
+						<Text text="Eco O2-D.\}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text text="K"/><Text width="65px" class="txtPSOsub" text="FGT"/>
+						<Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_fgt_k}"/>
+						<Text width="15px"/>
+						<Text text="(ex: 5/10 ; $5.00 Per 10 ℃/h)"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text text="K"/><Text width="65px" class="txtPSOsub" text="RHspray-D."/>
+						<Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_rh_spary_d_k}"/>
+						<Text width="15px"/>
+						<Text text="(ex: 5/10 ; $5.00 Per 10 ton/h)"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text text="K"/><Text width="65px" class="txtPSOsub" text="O2-D."/>
+						<Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_o2_d_k}"/>
+						<Text width="15px"/>
+						<Text text="(ex: 5/0.1 ; $5.00 Per 0.1 %/h)"/>
+					</HBox>
+					<FlexBox height="2px"/>
+					<HBox alignItems="Center">
+						<Text text="O"/><Text class="txtPSOsub" text="2"/><Text text="avg"/><Text width="36px"/><Text text="&lt;"/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_o2_avg_boundary}"/>
+						<Text width="50px"/>
+						<Text text="Penalty"/><Text width="40px" class="txtPSOsub" text="Ramp"/><Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_o2_avg_penaly_weight}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text text="O"/><Text class="txtPSOsub" text="2"/><Text text="Min"/><Text width="36px"/><Text text="&lt;"/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_o2_min_boundary}"/>
+						<Text width="50px"/>
+						<Text text="Penalty"/><Text width="40px" class="txtPSOsub" text="Ramp"/><Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_o2_min_penaly_weight}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text width="248px" text="Load(MW) Op Load"/>
+						<Text text="Penalty"/><Text width="40px" class="txtPSOsub" text="Ramp"/><Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_load_penaly_weight}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text width="248px" text="Load(MW) Op Load Setpoint"/>
+						<Text text="Penalty"/><Text width="40px" class="txtPSOsub" text="Ramp"/><Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_load_setpont_penaly_weight}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text width="100px" text="NOx(mg)"/><Text text="&lt;"/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_nox_boundary}"/>
+						<Text width="25px"/>
+						<Text text="Penalty"/><Text width="40px" class="txtPSOsub" text="Ramp"/><Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_nox_penalty_weight}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text width="100px" text="Stack CO(mg)"/><Text text="&gt;"/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_stack_co_boundary}"/>
+						<Text width="25px"/>
+						<Text text="Penalty"/><Text width="40px" class="txtPSOsub" text="Ramp"/><Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_stack_co_penalty_weight}"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Text width="100px" text="FG Temp"/><Text text="&gt;"/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_fg_temp_boundary}"/>
+						<Text width="25px"/>
+						<Text text="Penalty"/><Text width="40px" class="txtPSOsub" text="Ramp"/><Text text="="/><Text width="15px"/>
+						<Input textAlign="Center" type="Number" width="100px" value="{PSO>/result/function_fg_temp_penalty_weight}"/>
+					</HBox>
+				</l:VerticalLayout>
+			</l:HorizontalLayout>
+			<FlexBox height="20px"/>
+			<FlexBox alignItems="Center" justifyContent="Center">
+				<Button width="180px" icon="sap-icon://save" text="Save" press="onPressPSO"/>
+			</FlexBox>
+		</l:VerticalLayout>
+		<l:VerticalLayout class="outputController" visible="{= ${settings>/key}==='output'?true:false }">
+			<l:HorizontalLayout>
+				<Text width="30px"/> 
+				<l:VerticalLayout class="vbLeft">
+					<Text class="sapTableIcon" text="Variable Settings"/>
+					<l:VerticalLayout class="conVHBox" width="{widthOutput>/box}">
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="MV Damper Rate"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/mv_damper_change_rate}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="MV Damper SP * Rate"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/mv_damper_star_change_rate}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="MV Total Air Rate"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/mv_total_air_change_rate}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="MV Total Air SP * Rate"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/mv_total_air_star_change_rate}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="DV Tag Differance"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/dv_tag_change_value}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="DV Tag Rate"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/dv_tag_change_rate}" width="{widthOutput>/right}"/>
+						</HBox>
+					</l:VerticalLayout>
+					
+					<Text class="sapTableIcon sapUiTinyMarginTop" text="Burner Settings"/>
+					<l:VerticalLayout class="conVHBox">
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="Permit Value Per Minutes"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/burner_permit_value_per_minutes}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="Bias Min Value"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/burner_bias_min_value}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="Bias Max Value"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/burner_bias_max_value}" width="{widthOutput>/right}"/>
+						</HBox>
+					</l:VerticalLayout>
+					
+					<Text class="sapTableIcon sapUiTinyMarginTop" text="OFA Settings"/>
+					<l:VerticalLayout class="conVHBox">
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="Permit Value Per Minutes"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/ofa_permit_value_per_minutes}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="Bias Min Value"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/ofa_bias_min_value}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="Bias Max Value"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/ofa_bias_max_value}" width="{widthOutput>/right}"/>
+						</HBox>
+					</l:VerticalLayout>
+				</l:VerticalLayout>
+				<FlexBox width="30px"/>
+				<l:VerticalLayout class="vbRight">
+					<Text class="sapTableIcon" text="Total Air Setting"/>
+					<l:VerticalLayout class="conVHBox" width="{widthOutput>/box}">
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="CER(Current Excess Ratio) 1"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/total_air_cer1}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="CER(Current Excess Ratio) 2"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/total_air_cer2}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="CER(Current Excess Ratio) 3"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/total_air_cer3}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="CER(Current Excess Ratio) 4"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/total_air_cer4}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox class="sapUiSmallMarginTop" alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="NFO(New FG O2) 1"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/total_air_nfo1}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="NFO(New FG O2) 2"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/total_air_nfo2}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="NFO(New FG O2) 3"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/total_air_nfo3}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="NFO(New FG O2) 4"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/total_air_nfo4}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox class="sapUiSmallMarginTop" alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="Permit Value Per Minutes"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/total_air_permit_value_per_minutes}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="Bias Min Value"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/total_air_bias_min_value}" width="{widthOutput>/right}"/>
+						</HBox>
+						<HBox alignItems="Center">
+							<Text class="txtConIcon" width="{widthOutput>/left}" text="Bias Max Value"/>
+							<Input textAlign="Center" type="Number" value="{output>/result/total_air_bias_max_value}" width="{widthOutput>/right}"/>
+						</HBox>
+					</l:VerticalLayout>
+				</l:VerticalLayout>
+			</l:HorizontalLayout>
+			<FlexBox height="10px"/>
+			<FlexBox alignItems="Center" justifyContent="Center">
+				<Button width="180px" icon="sap-icon://save" text="Save" press="onPressOutput"/>
+			</FlexBox>
+		</l:VerticalLayout>
+	</l:VerticalLayout>
+</mvc:View>

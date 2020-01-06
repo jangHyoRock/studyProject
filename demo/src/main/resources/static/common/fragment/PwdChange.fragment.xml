@@ -1,0 +1,47 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog id="dlgPwdChange"
+		contentWidth="482px"
+		showHeader="true"
+		draggable="true"
+		class="sapUiContentPadding"
+		title="비밀번호 변경">
+		<content>
+			<FlexBox height="100%" alignItems="Center" justifyContent="Center" direction="Column">
+				<items>
+					<Input id="iptChangePwd" width="20rem" type="Password" class="sapUiSmallMarginBottom"
+						valueStateText="Password must not be empty. Maximum 255 characters."
+						placeholder="Enter Password ..."
+						value="{
+							path : '/pwdChange',
+							type : 'sap.ui.model.type.String',
+							constraints : {
+								minLength: 1,
+								maxLength: 255
+							}
+						}"
+					/>
+					<Input id="iptChangePwdConfirm" width="20rem" type="Password" class="sapUiSmallMarginBottom"
+						valueStateText="Password confirm must not be empty. Maximum 255 characters."
+						placeholder="Enter Password conrirm ..."
+						value="{
+							path : '/pwdChangeConfirm',
+							type : 'sap.ui.model.type.String',
+							constraints : {
+								minLength: 1,
+								maxLength: 255
+							}
+						}"
+					/>
+				</items>
+			</FlexBox>
+		</content>
+		<beginButton>
+			<Button text="Modify" press="onPwdChange" />
+		</beginButton>
+		<endButton>
+			<Button text="Close" press="onCloseDialog" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+
+	<FlexBox class="exportPrint" alignItems="Start" justifyContent="End" direction="Row">
+		<Button id="btnReport" class="btnReport" width="75px" text="Report" visible="false" press="onPressReport" />
+		<Button id="btnExport" class="sapUiTinyMarginBegin btnExport" width="75px" text="Export" press="onPressExport"/>
+		<Button id="btnPrint" class="sapUiTinyMarginBegin btnPrint" width="70px" text="Print" press="onPrint"/>
+	</FlexBox>
+
+</core:FragmentDefinition>

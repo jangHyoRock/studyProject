@@ -1,0 +1,30 @@
+<mvc:View
+	width="100%"
+	id="header"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	controllerName="dhi.optimizer.controller.Header">
+
+	<l:HorizontalLayout class="headerMenuLayout">
+		<l:content>
+			<Text width="31px"/>
+			<Image width="102px" src="/common/img/Tips_Logo_3C_RGB.png" press="onMain" class="headerLogo"/>
+			<l:HorizontalLayout>
+				<Text class="systemTitle" text="OPTIMIZER"/>
+				<HBox class="headerUserHBox" width="530px" justifyContent="End">
+					<core:Icon class="headerUserIcon" src="sap-icon://customer" size="35px" color="#cccccc"/>
+					<Text text="{user>/userName}" class="sapUserName" />
+					<Text text="{user>/roleName}" class="sapRoleName sapUiMediumMarginBeginEnd" />
+				</HBox>
+				<Select width="210px" selectedKey="{/systemId}" change="onChangeSystem" items="{path:'systemLink>/list', templateShareable:true}">
+					<core:Item key="{systemLink>system_id}" text="{systemLink>system_name}" />
+				</Select>
+				<Text width="10px"/>
+				<Button class="logout" text="logout" press="onLogout" width="160px" />
+			</l:HorizontalLayout>
+		</l:content>
+	</l:HorizontalLayout>
+	
+</mvc:View>

@@ -1,0 +1,55 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	controllerName="dhi.optimizer.controller.Operation">
+	<VBox width="1018px" height="652px" class="conHBox marginLeft25 marginTop25 padding10">
+		<core:Fragment id="exportPrint" fragmentName="dhi.common.fragment.ExportPrint" type="XML" />
+		<HBox>
+			<Text width="50px"/>
+			<VBox>
+				<Label text="Combustion Optimizer" design="Bold" class="sapUiLargeMarginTop font18 sapControlIcon"/>
+				<SegmentedButton id="btnOperationOptimizer" selectionChange="selectionChange"
+					selectedKey="{/result/optimize_mode/0/status}">
+					<items>
+						<SegmentedButtonItem width="225px" text="OFF" key="OFF" />
+						<SegmentedButtonItem width="225px" text="ON" key="ON" />
+					</items>
+				</SegmentedButton>
+				<Label text="Learning Mode" design="Bold" class="font18 sapUiLargeMarginTop sapControlIcon" />
+				<SegmentedButton id="btnOperationLearing" selectionChange="selectionChange"
+					selectedKey="{/result/optimize_mode/1/status}">
+					<items>
+						<SegmentedButtonItem width="225px" text="OFF" key="OFF"/>
+						<SegmentedButtonItem width="225px" text="ON" key="ON"/>
+						<SegmentedButtonItem width="225px" text="Self ON" key="Self ON"/>
+					</items>
+				</SegmentedButton>
+				<HBox>
+					<Label text="Control Mode" design="Bold" class="font18 sapUiLargeMarginTop sapControlIcon" />
+					<Text width="60px"/>
+					<Image class="sapUiLargeMarginTop" width="60px" height="25px" src="{= (${/result/optimize_mode/2/status}==='RUN' &amp;&amp; 
+						${/result/optimize_mode/4/status}!=='true')?'img/hold.png':'img/invisibleMask.png' }"/>
+				</HBox>
+				<SegmentedButton id="btnOperationController" selectionChange="selectionChange"
+					selectedKey="{/result/optimize_mode/2/status}"
+					enabled="{= ${/result/optimize_mode/2/status}==='RUN'||
+					(${/result/optimize_mode/0/status}==='ON' &amp;&amp; ${/result/optimize_mode/4/status}==='true') }">
+					<items>
+						<SegmentedButtonItem width="225px" text="STOP" key="STOP"/>
+						<SegmentedButtonItem width="225px" text="RUN" key="RUN"/> 
+					</items>
+				</SegmentedButton>
+				<Label text="Optimization Mode" design="Bold" class="font18 sapUiLargeMarginTop sapControlIcon" />
+				<SegmentedButton id="btnOperationPSO" selectionChange="selectionChange"
+					selectedKey="{/result/optimize_mode/3/status}">
+					<items>
+						<SegmentedButtonItem width="225px" text="Profit" key="Profit" />
+						<SegmentedButtonItem width="225px" text="Emission" key="Emission"/>
+						<SegmentedButtonItem width="225px" text="Equipment" key="Equipment"/>
+					</items>
+				</SegmentedButton>
+			</VBox>
+		</HBox>
+	</VBox>
+</mvc:View>

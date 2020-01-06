@@ -1,0 +1,55 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core">
+	<Dialog 
+		draggable="true"
+		class="sapUiContentPadding" >
+		<customHeader>
+			<Bar>
+	            <contentMiddle>
+	                <Title text="Tips Mode – MT Temp"/>
+	            </contentMiddle>
+	            <contentRight>
+	            	<core:Icon src="sap-icon://decline" class="fragIconLine" size="18px" press="onClosePress"/>
+	            </contentRight>
+        	</Bar>
+		</customHeader>
+		<content>
+			<html:svg name="svgMtTemp" height="810" width="900" style="margin-left:70px;">
+				<html:g stroke-width="3" stroke="gray" fill="none">
+					<html:rect x="180" y="105" width="530" height="590"/>
+				
+					<html:g item="rectG" fill="skyblue" stroke-width="0"/>
+					<html:g item="rectSpiralG" fill="skyblue" stroke-width="0"/>
+					<html:g item="rectVerticalG" fill="#ebbe87" stroke-width="0"/>
+					<html:g item="rectMaximumG" fill="#ff3434" stroke-width="0"/>
+					<html:g item="borderG" stroke-width="1" stroke="gray"/>
+					<html:g item="txtG" stroke-width="1" style="font-size:12px;letter-spacing:2px;"/>
+					<html:g item="tubeG" stroke-width="0" fill="gray" style="font-size:11px;"/>
+					
+					<html:g stroke-width="0" style="font-size:20px;letter-spacing:2px;fill:gray;">
+						<html:text item="txtLeftAverage" x="385" y="135"/>
+						<html:text item="txtRightAverage" x="370" y="683"/>
+						<html:text item="txtFrontAverage" x="-359" y="212" transform="rotate(270 50,50)"/>
+						<html:text item="txtRearAverage" x="-359" y="693" transform="rotate(270 50,50)"/>
+						<html:text item="txtCenterName1" x="400" y="385"/>
+						<html:text item="txtCenterName2" x="332" y="410"/>
+					</html:g>
+				</html:g>
+			</html:svg>
+			<SegmentedButton id="sgmtMtTemp" selectionChange="onSelectionChange">
+				<items>
+					<SegmentedButtonItem width="70px" text="Spiral" key="1" />
+					<SegmentedButtonItem width="70px" text="Vertical" key="2" />
+					<SegmentedButtonItem width="70px" text="Both" key="3" />
+				</items>
+			</SegmentedButton>
+			<CheckBox id="ckbMtTempMinimum" text="Set Minimum" select="onCheckBoxMinimum" selected="false"/>
+			<Input id="inputMtTempMinimum" width="50px" type="Number" liveChange="onLiveChangeMinimum" value="0"/>
+			<CheckBox id="ckbMtTempMaximum" text="Show Maximum" select="onCheckBoxMaximum" selected="true"/>
+			<CheckBox id="ckbMtTempNumber" text="Show Number" select="onCheckBoxNumber" selected="true"/>
+			<CheckBox id="ckbMtTempBorder" text="Show Border" select="onCheckBoxBorder" selected="true"/>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

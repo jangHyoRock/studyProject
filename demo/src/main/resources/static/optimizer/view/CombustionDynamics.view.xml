@@ -1,0 +1,130 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mc="sap.suite.ui.microchart"
+	controllerName="dhi.optimizer.controller.CombustionDynamics">
+	<l:VerticalLayout height="652px" class="conHBox marginLeft25 marginTop25 padding10 minWidth1016">
+		<core:Fragment id="exportPrint" fragmentName="dhi.common.fragment.ExportPrint" type="XML" />
+		<l:HorizontalLayout class="combustionDynamicsLayout">
+			<VBox width="400px" height="560px">
+				<html:div class="dynamicsImgContainer sapUiMediumMarginTop sapUiLargeMarginBegin">
+					<Image id="cbtImg" src="img/engine_l.png" class="sapUiTinyMarginTop dynamicsImg" useMap="cbtAreas"></Image>
+					<html:div class="fakeImageLeftArea">
+						<Image id="inv1" src="img/invisibleMaskL.png" press="onLclick"></Image>
+					</html:div>
+					<html:div class="fakeImageRightArea">
+						<Image id="inv2" src="img/invisibleMaskR.png" press="onRclick"></Image>
+					</html:div>
+				</html:div>
+				<html:svg name="dynamicsShort" style="position:absolute;top: -298px;left: 329px; z-index:1; visibility:hidden;" height="10px" width="100px">
+					<html:g stroke-width="3" stroke="#9D9D9D" fill="#9D9D9D">
+						<html:path shape-rendering="crispedges" stroke-width="1" fill="none" d="M0 5 h93" />
+						<html:circle cx="3" cy="5" r="3" />
+						<html:circle cx="93" cy="5" r="3" />
+					</html:g>
+				</html:svg>
+				<html:svg name="dynamicsLong" style="position:absolute;top: -248px;left: 187px; z-index:1; visibility:hidden;" height="10px" width="250px">
+					<html:g stroke-width="3" stroke="#9D9D9D" fill="#9D9D9D">
+						<html:path shape-rendering="crispedges" stroke-width="1" fill="none" d="M0 5 h235" />
+						<html:circle cx="2" cy="5" r="3" />
+						<html:circle cx="235" cy="5" r="3" />
+					</html:g>
+				</html:svg>
+			</VBox>
+			<VBox width="600px" height="560px">
+				<Text id="contourTitleId" class="txtOverViewTitle marginBottom12 sapChartIcon" text="{ttData>/titleNm}"></Text>
+				<Panel id="heatmapArea" height="330px" width="534px" class="dynamicsChartBox">
+					<VBox height="330px" width="350px">
+						<html:svg style="width: 403px; height: 282px; position: absolute; top: 24px; left: 25px; opacity: 0.7;">
+							<html:rect y="0" height="282" x="0" width="403" fill="rgba(255, 255, 255, 0.5)"/>
+						</html:svg>
+						<html:div id="chart" class="hmChart"></html:div>
+						<html:svg
+							style="position:absolute;top: 140px;left: 9px; z-index:1;"
+							height="50px" width="20px">
+							<html:text x="0" y="20"
+								style="font-size:9px; font-weight:bold;"
+								transform="rotate(-90 15,25)">FRONT</html:text>
+						</html:svg>
+						<html:svg
+							style="position:absolute;top: 9px;left: 202px; z-index:1;"
+							height="20px" width="50px">
+							<html:text x="13" y="11"
+								style="font-size:9px; font-weight:bold;">LEFT</html:text>
+						</html:svg>
+						<html:svg
+							style="position:absolute;top: 308px;left: 202px; z-index:1;"
+							height="20px" width="50px">
+							<html:text x="10" y="11"
+								style="font-size:9px; font-weight:bold;">RIGHT</html:text>
+						</html:svg>
+						<html:svg
+							style="position:absolute;top: 138px;left: 425px; z-index:1;"
+							height="50px" width="20px">
+							<html:text x="2" y="22"
+								style="font-size:9px; font-weight:bold;"
+								transform="rotate(-90 15,25)">REAR</html:text>
+						</html:svg>
+						<html:svg
+							style="position:absolute;top: 21px;left: 441px; z-index:1;"
+							height="180px" width="10px">
+							<html:rect x="0" y="16" height="16" width="8" fill="rgb(226,225,225)" stroke="black"/>
+							<html:rect x="0" y="31" height="16" width="8" fill="rgb(232,212,188)" stroke="black"/>
+							<html:rect x="0" y="46" height="16" width="8" fill="rgb(238,199,151)" stroke="black"/>
+							<html:rect x="0" y="61" height="16" width="8" fill="rgb(243,186,113)" stroke="black"/>
+							<html:rect x="0" y="76" height="16" width="8" fill="rgb(249,173,76)" stroke="black"/>
+							<html:rect x="0" y="91" height="16" width="8" fill="rgb(255,166,58)" stroke="black"/>
+							<html:rect x="0" y="106" height="16" width="8" fill="rgb(255,136,33)" stroke="black"/>
+							<html:rect x="0" y="121" height="16" width="8" fill="rgb(255,104,25)" stroke="black"/>
+							<html:rect x="0" y="136" height="16" width="8" fill="rgb(255,80,20)" stroke="black"/>
+							<html:rect x="0" y="151" height="16" width="8" fill="rgb(255,0,0)" stroke="black"/>
+						</html:svg>
+						<VBox id="chartInfo" class="rmChart">
+							<mc:RadialMicroChart id="radChart" size="M"></mc:RadialMicroChart>
+						</VBox>
+						<HBox id="hbLoading" class="hbLoading" width="403px" height="282px" busyIndicatorDelay="0"/>
+					</VBox>
+				</Panel>
+				<HBox class="conVHBox sapUiSmallMarginTop" width="534px">
+					<l:VerticalLayout class="sapUiSmallMarginBegin">
+						<HBox class="paddingBottom15">
+							<Text width="140px" class="txtConIcon" text="Mean Value" />
+							<Text width="38px" class="sapUiTinyMarginBeginEnd txtNumber" text="{info>/cross/mean_value}" />
+							<Text class="txtConT" text="℃" />
+						</HBox>
+						<HBox class="paddingBottom15">
+							<Text width="140px" class="txtConIcon" text="Maximum Value" />
+							<Text width="38px" class="sapUiTinyMarginBeginEnd txtNumber" text="{info>/cross/max_value}" />
+							<Text class="txtConT" text="℃" />
+						</HBox>
+						<HBox class="paddingBottom15">
+							<Text width="140px" class="txtConIcon" text="Minimum Value" />
+							<Text width="38px" class="sapUiTinyMarginBeginEnd txtNumber" text="{info>/cross/min_value}" />
+							<Text class="txtConT" text="℃" />
+						</HBox>
+						<HBox>
+							<Text width="140px" class="txtConIcon" text="Standard Deviation" />
+							<Text width="38px" class="sapUiTinyMarginBeginEnd txtNumber" text="{info>/cross/standard_deviation}" />
+							<Text class="txtConT" text="" />
+						</HBox>
+					</l:VerticalLayout>
+					<l:VerticalLayout class="sapUiLargeMarginBegin">
+						<HBox class="paddingBottom15">
+							<Text width="140px" class="txtConIcon" text="Left Mean" />
+							<Text width="38px" class="sapUiTinyMarginBeginEnd txtNumber" text="{info>/cross/left_mean}" />
+							<Text class="txtConT" text="℃" />
+						</HBox>
+						<HBox>
+							<Text width="140px" class="txtConIcon" text="Right Mean" />
+							<Text width="38px" class="sapUiTinyMarginBeginEnd txtNumber" text="{info>/cross/right_mean}" />
+							<Text class="txtConT" text="℃" />
+						</HBox>
+					</l:VerticalLayout>
+				</HBox>
+			</VBox>
+		</l:HorizontalLayout>
+	</l:VerticalLayout>
+</mvc:View>

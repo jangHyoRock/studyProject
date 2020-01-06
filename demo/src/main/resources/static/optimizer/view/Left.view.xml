@@ -1,0 +1,69 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	controllerName="dhi.optimizer.controller.Left">
+
+	<HBox class="leftListHeader" height="35px" alignItems="Center">
+		<core:Icon class="leftIcon" src="sap-icon://grid" size="20px" color="#6d6d6d"/>
+		<Text text="Plant List"/>
+	</HBox>
+	<ScrollContainer id="leftUnits" height="20%" width="100%" vertical="true" class="leftUnits">
+		<List id="leftList" items="{plantUnits>/company}" >
+			<CustomListItem>
+				<Panel expandable="true" expanded="{path: 'plantUnits>plant', formatter: '.formatExpanded'}" width="auto">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="{plantUnits>company_name}" />
+						</Toolbar>
+					</headerToolbar>
+					<content>
+						<List class="leftList" mode="SingleSelectMaster" items="{path : 'plantUnits>plant', templateShareable : false}" selectionChange="onUnitItemPressed">
+							<items>
+								<StandardListItem info="{plantUnits>plant_unit_id}" title="{plantUnits>plant_unit_name}" icon="sap-icon://factory"/>
+							</items>
+						</List>
+					</content>
+				</Panel>
+			</CustomListItem>
+		</List>
+	</ScrollContainer>
+
+	<HBox class="leftListHeader" height="35px" alignItems="Center">
+		<core:Icon class="leftIcon" src="sap-icon://menu2" size="20px" color="#6d6d6d"/>
+		<Text text="Menu List"/>
+	</HBox>
+	<l:VerticalLayout id="menuLayout" class="menuLayout"/>
+
+	<FlexBox height="35px" class="systemInformationTitleBox" direction="Column" alignItems="Center">
+		<Text text="{i18nCommon>left.sysinfo.title}" />
+	</FlexBox>
+	<t:Table id="tblSystemInfo" class="systemInfomationTable" rows="{systemInfo>/}" selectionMode="None" editable="false" visible="false"
+			 enableColumnReordering="false" columnHeaderVisible="false" visibleRowCount="4">
+		<t:columns>
+			<t:Column width="60%" hAlign="Begin" resizable="false">
+				<t:template>
+					<Text text="{systemInfo>item_name}" class="sapUiTinyMarginEnd" />
+				</t:template>
+			</t:Column>
+			<t:Column width="40%" resizable="false">
+				<t:template>
+					<ObjectNumber textAlign="End" number="{systemInfo>current}" unit="{systemInfo>unit}" />
+				</t:template>
+			</t:Column>
+		</t:columns>
+	</t:Table>
+
+	<FlexBox width="192px" class="leftBottomBox" justifyContent="Center" alignItems="Center" direction="Column">
+		<l:HorizontalLayout class="sapUiSmallMarginTop">
+			<Text id="txtFTDay" class="txtFTDay sapUiTinyMarginEnd" textAlign="Center"/>
+			<Text id="txtFTTime" class="txtFTTime" textAlign="Center"/>
+		</l:HorizontalLayout>
+		<Image class="sapUiMediumMarginTop" src="/common/img/footerTipsLogo.png"/>
+		<Text class="txtFTCopy" textAlign="Center"
+			  text="COPYRIGHT &#169; 2018 Tips\nHEAVY INDUSTRIES &amp; CONSTRUCTION\nALL RIGHT RESERVED"/>
+	</FlexBox>
+	
+</mvc:View>

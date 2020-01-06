@@ -1,0 +1,106 @@
+{
+	"_version": "1.0.0",
+	"sap.app": {
+		"id": "dhi.common",
+		"type": "application",
+		"i18nCommon": "i18n/i18n.properties",
+		"title": "DHI Common setting",
+		"description": "DHI Common setting",
+		"properties" : "../../application.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": false,
+			"phone": false
+		},
+		"supportedThemes": [
+			"sap_belize",
+			"sap_bluecrystal"
+		]
+  	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "dhi.common.view.Index",
+			"type": "XML",
+			"async": true
+		},
+		"dependencies": {
+			"minUI5Version": "1.52.0",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.52.0"
+				},
+				"sap.m": {
+					"minVersion": "1.52.0"
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.52.0"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"resources": {
+			"css": [
+			{
+				"uri": "css/style.css"
+			}]
+		},
+		"models": {
+			"i18nCommon": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "dhi.common.i18n.i18n"
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "dhi.common.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "show",
+				"bypassed": {
+					"target": "notFound"
+				},
+				"async": true
+			},
+			"routes": [
+				{
+					"name": "login",
+					"pattern": "",
+					"target": "login"
+				},
+				{
+					"name": "systemList",
+					"pattern": "systemList",
+					"target": "systemList"
+				}
+			],
+			"targets": {
+				"login": {
+					"viewName": "Login",
+					"viewLevel": 1,
+					"viewId": "login"
+				},
+				"systemList": {
+					"viewName": "SystemList",
+					"viewId": "systemList",
+					"viewLevel": 2
+				},
+				"notFound": {
+					"viewName": "NotFound"
+				}
+			}
+		}
+	}
+}

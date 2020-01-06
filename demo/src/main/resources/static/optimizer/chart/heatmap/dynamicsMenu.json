@@ -1,0 +1,34 @@
+{
+	"menu": [
+		{
+			"place": "Left",
+			"category": [
+				{
+					"menuId": 0,
+					"menuName": "FOT"
+				}
+			]
+		},
+		{
+			"place": "Right",
+			"category": [
+				{
+					"menuId": 0,
+					"menuName": "O2"
+				},
+				{
+					"menuId": 1,
+					"menuName": "NOx"
+				},
+				{
+					"menuId": 2,
+					"menuName": "CO"
+				},
+				{
+					"menuId": 3,
+					"menuName": "Temp"
+				}
+			]
+		}
+	]
+}

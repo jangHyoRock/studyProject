@@ -1,0 +1,128 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="dhi.optimizer.controller.algorithm.OutputController">
+	
+	<VBox class="marginLeft25 marginTop25 conHBox padding10" width="1018px" height="652px">
+		<HBox>
+			<Text width="30px"/> 
+			<VBox id="vbLeft">
+				<Text class="sapTableIcon" text="Variable Settings"/>
+				<VBox class="conVHBox" width="{width>/box}">
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="MV Damper Rate"/>
+						<Input textAlign="Center" type="Number" value="{/result/mv_damper_change_rate}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="MV Damper SP * Rate"/>
+						<Input textAlign="Center" type="Number" value="{/result/mv_damper_star_change_rate}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="MV Total Air Rate"/>
+						<Input textAlign="Center" type="Number" value="{/result/mv_total_air_change_rate}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="MV Total Air SP * Rate"/>
+						<Input textAlign="Center" type="Number" value="{/result/mv_total_air_star_change_rate}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="DV Tag Differance"/>
+						<Input textAlign="Center" type="Number" value="{/result/dv_tag_change_value}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="DV Tag Rate"/>
+						<Input textAlign="Center" type="Number" value="{/result/dv_tag_change_rate}" width="{width>/right}"/>
+					</FlexBox>
+				</VBox>
+				
+				<Text class="sapTableIcon sapUiTinyMarginTop" text="Burner Settings"/>
+				<VBox class="conVHBox">
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="Permit Value Per Minutes"/>
+						<Input textAlign="Center" type="Number" value="{/result/burner_permit_value_per_minutes}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="Bias Min Value"/>
+						<Input textAlign="Center" type="Number" value="{/result/burner_bias_min_value}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="Bias Max Value"/>
+						<Input textAlign="Center" type="Number" value="{/result/burner_bias_max_value}" width="{width>/right}"/>
+					</FlexBox>
+				</VBox>
+				
+				<Text class="sapTableIcon sapUiTinyMarginTop" text="OFA Settings"/>
+				<VBox class="conVHBox">
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="Permit Value Per Minutes"/>
+						<Input textAlign="Center" type="Number" value="{/result/ofa_permit_value_per_minutes}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="Bias Min Value"/>
+						<Input textAlign="Center" type="Number" value="{/result/ofa_bias_min_value}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="Bias Max Value"/>
+						<Input textAlign="Center" type="Number" value="{/result/ofa_bias_max_value}" width="{width>/right}"/>
+					</FlexBox>
+				</VBox>
+			</VBox>
+			<FlexBox width="30px"/>
+			<VBox id="vbRight">
+				<Text class="sapTableIcon" text="Total Air Setting"/>
+				<VBox class="conVHBox" width="{width>/box}">
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="CER(Current Excess Ratio) 1"/>
+						<Input textAlign="Center" type="Number" value="{/result/total_air_cer1}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="CER(Current Excess Ratio) 2"/>
+						<Input textAlign="Center" type="Number" value="{/result/total_air_cer2}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="CER(Current Excess Ratio) 3"/>
+						<Input textAlign="Center" type="Number" value="{/result/total_air_cer3}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="CER(Current Excess Ratio) 4"/>
+						<Input textAlign="Center" type="Number" value="{/result/total_air_cer4}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox class="sapUiSmallMarginTop" alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="NFO(New FG O2) 1"/>
+						<Input textAlign="Center" type="Number" value="{/result/total_air_nfo1}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="NFO(New FG O2) 2"/>
+						<Input textAlign="Center" type="Number" value="{/result/total_air_nfo2}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="NFO(New FG O2) 3"/>
+						<Input textAlign="Center" type="Number" value="{/result/total_air_nfo3}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="NFO(New FG O2) 4"/>
+						<Input textAlign="Center" type="Number" value="{/result/total_air_nfo4}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox class="sapUiSmallMarginTop" alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="Permit Value Per Minutes"/>
+						<Input textAlign="Center" type="Number" value="{/result/total_air_permit_value_per_minutes}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="Bias Min Value"/>
+						<Input textAlign="Center" type="Number" value="{/result/total_air_bias_min_value}" width="{width>/right}"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="row">
+						<Text class="txtConIcon" width="{width>/left}" text="Bias Max Value"/>
+						<Input textAlign="Center" type="Number" value="{/result/total_air_bias_max_value}" width="{width>/right}"/>
+					</FlexBox>
+				</VBox>
+			</VBox>
+		</HBox>
+		<FlexBox height="10px"/>
+		<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+			<Button width="180px" icon="sap-icon://save" text="Save" press="onPress"/>
+		</FlexBox>
+	</VBox>
+</mvc:View>

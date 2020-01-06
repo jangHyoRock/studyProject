@@ -1,0 +1,643 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="dhi.optimizer.controller.algorithm.Navigator">
+	
+	<html:div style="height:10px;"/>
+	<HBox>
+		<html:div style="width:10px;"/>
+		<VBox>
+			<t:Table class="fde sa0" width="140px" selectionMode="None" editable="false" enableColumnReordering="false" visibleRowCount="8" rowHeight="20px"
+				rows="{/result/combustion_status/combustion_sa/0/sa}">
+				<t:columns>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="SA1" />
+						<t:template>
+							<Text text="{item_nm}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Yaw" />
+						<t:template>
+							<Input type="Number" value="{yaw}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Pos" />
+						<t:template>
+							<Text text="{pos}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="FDE" />
+						<t:template>
+							<Text text="{fde}"/>
+						</t:template>
+					</t:Column>
+					<t:Column visible="false">
+						<t:template>
+							<Text text="{fde}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+			<html:div style="height:10px;"/> 
+			<t:Table class="fde uofa3" width="140px" selectionMode="None" editable="false" enableColumnReordering="false" visibleRowCount="5" rowHeight="24px"
+				rows="{/result/combustion_status/combustion_uofa/3/uofa}">
+				<t:columns>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="UOFA" />
+						<t:template>
+							<Text text="{item_nm}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Yaw" />
+						<t:template>
+							<Input type="Number" value="{yaw}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Pos" />
+						<t:template>
+							<Text text="{pos}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="FDE" />
+						<t:template>
+							<Text text="{fde}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+			<html:div style="height:10px;"/>
+			<t:Table class="fde sa3" width="140px" selectionMode="None" editable="false" enableColumnReordering="false" visibleRowCount="8" rowHeight="20px"
+				rows="{/result/combustion_status/combustion_sa/3/sa}">
+				<t:columns>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="SA4" />
+						<t:template>
+							<Text text="{item_nm}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Yaw" />
+						<t:template>
+							<Input type="Number" value="{yaw}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Pos" />
+						<t:template>
+							<Text text="{pos}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="FDE" />
+						<t:template>
+							<Text text="{fde}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+		</VBox>
+		<html:div style="width:10px;"/>
+		<VBox>
+			<Text class="saFlow" textAlign="Center" width="140px" text="{/result/combustion_status/combustion_flow/0/flow/0/item_nm}" />
+			<Text class="saFlowBottom" textAlign="Center" width="140px"
+				text="{/result/combustion_status/combustion_flow/0/flow/0/flow} {/result/combustion_status/combustion_flow/0/flow/0/flow_unit}" />
+			<FlexBox height="27px"/>
+			<t:Table class="fde uofa0" width="140px" selectionMode="None" editable="false" enableColumnReordering="false" visibleRowCount="5" rowHeight="24px"
+				rows="{/result/combustion_status/combustion_uofa/0/uofa}">
+				<t:columns>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="UOFA" />
+						<t:template>
+							<Text text="{item_nm}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Yaw" />
+						<t:template>
+							<Input type="Number" value="{yaw}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Pos" />
+						<t:template>
+							<Text text="{pos}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="FDE" />
+						<t:template>
+							<Text text="{fde}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+			<html:div style="height:25px;"/>
+			<VBox height="130px" width="140px">
+				<html:svg class="sap_viz_ext_heatmap_lines" width="100" height="80" style="left:17px;stroke-width:0.666667;position:absolute;top:30px;">
+					<html:line x1="14.285714285714286" y1="0" x2="14.285714285714286" y2="80"/>
+					<html:line x1="28.571428571428573" y1="0" x2="28.571428571428573" y2="80"/>
+					<html:line x1="42.857142857142854" y1="0" x2="42.857142857142854" y2="80"/>
+					<html:line x1="57.142857142857146" y1="0" x2="57.142857142857146" y2="80"/>
+					<html:line x1="71.42857142857143" y1="0" x2="71.42857142857143" y2="80"/>
+					<html:line x1="85.71428571428571" y1="0" x2="85.71428571428571" y2="80"/>
+					<html:line x1="0" y1="11.428571428571429" x2="100" y2="11.428571428571429"/>
+					<html:line x1="0" y1="22.857142857142858" x2="100" y2="22.857142857142858"/>
+					<html:line x1="0" y1="34.285714285714285" x2="100" y2="34.285714285714285"/>
+					<html:line x1="0" y1="45.714285714285715" x2="100" y2="45.714285714285715"/>
+					<html:line x1="0" y1="57.142857142857146" x2="100" y2="57.142857142857146"/>
+					<html:line x1="0" y1="68.57142857142857" x2="100" y2="68.57142857142857"/>
+				</html:svg>
+			</VBox>
+			<html:div style="height:31px;"/>
+			<t:Table class="fde uofa2" width="140px" selectionMode="None" editable="false" enableColumnReordering="false" visibleRowCount="5" rowHeight="24px"
+				rows="{/result/combustion_status/combustion_uofa/2/uofa}">
+				<t:columns>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="UOFA" />
+						<t:template>
+							<Text text="{item_nm}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Yaw" />
+						<t:template>
+							<Input type="Number" value="{yaw}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Pos" />
+						<t:template>
+							<Text text="{pos}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="FDE" />
+						<t:template>
+							<Text text="{fde}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+			<html:div style="height:27px;"/>
+			<Text class="saFlow" textAlign="Center" width="140px" text="{/result/combustion_status/combustion_flow/1/flow/0/item_nm}" />
+			<Text class="saFlowBottom" textAlign="Center" width="140px"
+				text="{/result/combustion_status/combustion_flow/1/flow/0/flow} {/result/combustion_status/combustion_flow/1/flow/0/flow_unit}" />
+		</VBox>
+		<html:div style="width:10px;"/>
+		<VBox>
+			<t:Table class="fde sa1" width="140px" selectionMode="None" editable="false" enableColumnReordering="false" visibleRowCount="8" rowHeight="20px"
+				rows="{/result/combustion_status/combustion_sa/1/sa}">
+				<t:columns>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="SA2" />
+						<t:template>
+							<Text text="{item_nm}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Yaw" />
+						<t:template>
+							<Input type="Number" value="{yaw}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Pos" />
+						<t:template>
+							<Text text="{pos}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="FDE" />
+						<t:template>
+							<Text text="{fde}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+			<html:div style="height:10px;"/>
+			<t:Table class="fde uofa1" width="140px" selectionMode="None" editable="false" enableColumnReordering="false" visibleRowCount="5" rowHeight="24px"
+				rows="{/result/combustion_status/combustion_uofa/1/uofa}">
+				<t:columns>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="UOFA" />
+						<t:template>
+							<Text text="{item_nm}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Yaw" />
+						<t:template>
+							<Input type="Number" value="{yaw}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Pos" />
+						<t:template>
+							<Text text="{pos}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="FDE" />
+						<t:template>
+							<Text text="{fde}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+			<html:div style="height:10px;"/>
+			<t:Table class="fde sa2" width="140px" selectionMode="None" editable="false" enableColumnReordering="false" visibleRowCount="8" rowHeight="20px"
+				rows="{/result/combustion_status/combustion_sa/2/sa}">
+				<t:columns>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="SA3" />
+						<t:template>
+							<Text text="{item_nm}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Yaw" />
+						<t:template>
+							<Input type="Number" value="{yaw}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="Pos" />
+						<t:template>
+							<Text text="{pos}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="35px" hAlign="Center" resizable="false">
+						<Label text="FDE" />
+						<t:template>
+							<Text text="{fde}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+		</VBox>
+		<html:div style="width:10px;"/>
+		<html:svg name="svgDeg" style="position:absolute;left:-310px;top:250px;" height="170" width="160">
+			<html:g stroke-width="0" style="fill:#bbbbbb;font-size:12px;">
+				<html:text item="txtLeftAverage" x="50" y="35"/>
+				<html:text item="txtRightAverage" x="50" y="155"/>
+				<html:text item="txtFrontAverage" x="-19" y="17" transform="rotate(270 50,50)"/>
+				<html:text item="txtRearAverage" x="-19" y="148" transform="rotate(270 50,50)"/>
+			</html:g>
+			<html:circle item="fireball" stroke-width="1" stroke="#ffc033" fill="#ff1e13" cx="100" cy="100" r="5"/>
+			<html:text item="fireballText" style="fill:#747474;font-size:11px;" x="100" y="100"/>
+		</html:svg>
+		<Image class="navigatorMask" src="./img/invisibleMask.png" width="151px" height="141px" press="onMaskPress"/>
+		<VBox>
+			<t:Table id="tblBnr" width="510px" selectionMode="None" editable="false" enableColumnReordering="false" visibleRowCount="7" rowHeight="24px"
+				rows="{/result/combustion_status/combustion_coal_status}">
+				<t:columns>
+					<t:Column hAlign="Center" resizable="false">
+						<Label text="BNR" />
+						<t:template>
+							<Text text="{item_nm}"/>
+						</t:template>
+					</t:Column>
+					<t:Column hAlign="Center" resizable="false">
+						<Label text="O.P." />
+						<t:template>
+							<ObjectStatus icon="sap-icon://circle-task-2" state="{path: 'status', formatter: '.formatStatus'}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="50px" hAlign="Center" resizable="false">
+						<Label text="Flow {/result/combustion_status/combustion_coal_status/0/flow_unit}" />
+						<t:template>
+							<Text text="{flow}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="45px" headerSpan="2" hAlign="Center" resizable="false">
+						<t:multiLabels>
+							<Label text="1"/>
+							<Label text="Yaw" />
+						</t:multiLabels>
+						<t:template>
+							<Input type="Number" value="{yaw1}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="45px" hAlign="Center" resizable="false">
+						<t:multiLabels>
+							<Label text="" />
+							<Label text="Dir" />
+						</t:multiLabels>
+						<t:template>
+							<Text text="{dir1}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="45px" headerSpan="2" hAlign="Center" resizable="false">
+						<t:multiLabels>
+							<Label text="2" />
+							<Label text="Yaw" />
+						</t:multiLabels>
+						<t:template>
+							<Input type="Number" value="{yaw2}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="45px" hAlign="Center" resizable="false">
+						<t:multiLabels>
+							<Label text="2" />
+							<Label text="Dir" />
+						</t:multiLabels>
+						<t:template>
+							<Text text="{dir2}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="45px" headerSpan="2" hAlign="Center" resizable="false">
+						<t:multiLabels>
+							<Label text="3" />
+							<Label text="Yaw" />
+						</t:multiLabels>
+						<t:template>
+							<Input type="Number" value="{yaw3}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="45px" hAlign="Center" resizable="false">
+						<t:multiLabels>
+							<Label text="3" />
+							<Label text="Dir" />
+						</t:multiLabels>
+						<t:template>
+							<Text text="{dir3}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="45px" headerSpan="2" hAlign="Center" resizable="false">
+						<t:multiLabels>
+							<Label text="4" />
+							<Label text="Yaw" />
+						</t:multiLabels>
+						<t:template>
+							<Input type="Number" value="{yaw4}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="45px" hAlign="Center" resizable="false">
+						<t:multiLabels>
+							<Label text="4" />
+							<Label text="Dir" />
+						</t:multiLabels>
+						<t:template>
+							<Text text="{dir4}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+			<html:svg name="svgNavigator" style="position:absolute;top:-10px;left:18px;" height="390" width="570">
+				<html:g stroke-width="3" stroke="gray" fill="white">
+					<html:polygon points="17,50 490,50 490,380 310,380 310,132 17,132" fill="silver" stroke="orangeRed"/>
+				
+					<html:rect x="5" y="17" width="25" height="70"/>
+					<html:rect x="5" y="95" width="25" height="70"/>
+					
+					<html:polyline points="40,29 35,29 35,56" stroke="deepSkyBlue"/>
+					<html:polyline points="40,152 35,152 35,125" stroke="deepSkyBlue"/>
+					<html:circle cx="35" cy="56" r="4" stroke="deepSkyBlue"/>
+					<html:circle cx="35" cy="125" r="4" stroke="deepSkyBlue"/> 
+					
+					<html:rect x="40" y="17" width="70" height="25"/>
+					<html:rect x="40" y="58" width="70" height="25" stroke="chocolate" fill="#ffc000"/>
+					<html:rect x="40" y="99" width="70" height="25" stroke="chocolate" fill="#ffc000"/>
+					<html:rect x="40" y="140" width="70" height="25"/>
+					
+					<html:rect x="120" y="17" width="25" height="70"/>
+					<html:rect x="120" y="95" width="25" height="70"/>
+					
+					<html:polyline points="155,29 150,29 150,56" stroke="deepSkyBlue"/>
+					<html:polyline points="155,152 150,152 150,125" stroke="deepSkyBlue"/>
+					<html:polyline points="305,29 310,29 310,56" stroke="deepSkyBlue"/>
+					<html:polyline points="305,152 310,152 310,125" stroke="deepSkyBlue"/>
+					<html:circle cx="150" cy="56" r="4" stroke="deepSkyBlue"/>
+					<html:circle cx="150" cy="125" r="4" stroke="deepSkyBlue"/>
+					<html:circle cx="310" cy="56" r="4" stroke="deepSkyBlue"/>
+					<html:circle cx="310" cy="125" r="4" stroke="deepSkyBlue"/>
+
+					<html:rect x="155" y="17" width="70" height="25"/>
+					<html:rect x="155" y="58" width="70" height="25" stroke="forestGreen" fill="limeGreen"/>
+					<html:rect x="155" y="99" width="70" height="25" stroke="forestGreen" fill="limeGreen"/>
+					<html:rect x="155" y="140" width="70" height="25"/>
+					
+					
+					<html:rect x="235" y="17" width="70" height="25"/>
+					<html:rect x="235" y="58" width="70" height="25"/>
+					<html:rect x="235" y="99" width="70" height="25"/>
+					<html:rect x="235" y="140" width="70" height="25"/>
+					
+					<html:rect x="315" y="84" width="35" height="40"/>
+					<html:rect x="360" y="84" width="35" height="40"/>
+					<html:rect x="405" y="84" width="35" height="40"/>
+					<html:rect x="450" y="84" width="35" height="40"/>
+					
+					<html:rect x="315" y="140" width="80" height="25" stroke="forestGreen" fill="limeGreen"/>
+					<html:rect x="315" y="175" width="80" height="25" stroke="forestGreen" fill="limeGreen"/>
+					
+					<html:rect x="405" y="140" width="80" height="25" stroke="chocolate" fill="#ffc000"/>
+					<html:rect x="405" y="175" width="80" height="25" stroke="chocolate" fill="#ffc000"/>
+					
+					<html:rect x="315" y="210" width="35" height="40"/>
+					<html:rect x="360" y="210" width="35" height="40"/>
+					<html:rect x="405" y="210" width="35" height="40"/>
+					<html:rect x="450" y="210" width="35" height="40"/>
+					
+					<html:g stroke="ForestGreen">
+						<html:rect x="315" y="260" width="80" height="80"/>
+						<html:line x1="355" y1="260" x2="355" y2="340"/>
+						<html:line x1="315" y1="280" x2="395" y2="280"/>
+						<html:line x1="315" y1="300" x2="395" y2="300"/>
+						<html:line x1="315" y1="320" x2="395" y2="320"/>
+					</html:g>
+					
+					<html:g stroke="orange">
+						<html:rect x="405" y="260" width="80" height="80"/>
+						<html:line x1="445" y1="260" x2="445" y2="340"/>
+						<html:line x1="405" y1="280" x2="485" y2="280"/>
+						<html:line x1="405" y1="300" x2="485" y2="300"/>
+						<html:line x1="405" y1="320" x2="485" y2="320"/>
+					</html:g>
+					
+					<html:rect x="315" y="350" width="80" height="25"/>
+					<html:rect x="405" y="350" width="80" height="25"/>
+					
+					<html:rect x="255" y="305" width="50" height="20"/>
+					<html:rect x="255" y="330" width="50" height="20"/>
+					<html:rect x="255" y="355" width="50" height="20"/>
+					
+					<html:g stroke-width="0" fill="black" stroke="balck">
+						<html:line x1="230" y1="307" x2="250" y2="323" stroke-width="2"/>
+						<html:line x1="230" y1="332" x2="250" y2="348" stroke-width="2"/>
+						<html:line x1="230" y1="357" x2="250" y2="373" stroke-width="2"/>
+						<html:circle cx="240" cy="315" r="4"/>
+						<html:circle cx="240" cy="340" r="4"/>
+						<html:circle cx="240" cy="365" r="4"/>
+					</html:g>
+					
+					<html:rect x="495" y="305" width="50" height="20"/>
+					<html:rect x="495" y="330" width="50" height="20"/>
+					<html:rect x="495" y="355" width="50" height="20"/>
+					
+					<html:g stroke-width="0" fill="black" stroke="balck">
+						<html:line x1="550" y1="307" x2="570" y2="323" stroke-width="2"/>
+						<html:line x1="550" y1="332" x2="570" y2="348" stroke-width="2"/>
+						<html:line x1="550" y1="357" x2="570" y2="373" stroke-width="2"/>
+						<html:circle cx="560" cy="315" r="4"/>
+						<html:circle cx="560" cy="340" r="4"/>
+						<html:circle cx="560" cy="365" r="4"/>
+					</html:g>
+				</html:g>
+				<html:g style="font-size:12px;">
+					<html:text x="19" y="22" transform="rotate(270 50,50)"></html:text>
+					<html:text x="-59" y="22" transform="rotate(270 50,50)"></html:text>
+					<html:text x="54" y="35"></html:text>
+					<html:text x="54" y="158"></html:text>
+					<html:text item="sh_dsh2_spray_left" x="49" y="76" fill="white"/>
+					<html:text item="sh_dsh2_spray_right" x="49" y="117" fill="white"/>
+					
+					<html:text item="horizontal_gas_press_left" x="16" y="137" transform="rotate(270 50,50)"/>
+					<html:text item="horizontal_gas_press_left_unit" x="48" y="137" transform="rotate(270 50,50)" style="font-size:10px;"/>
+					<html:text item="horizontal_gas_press_right" x="-62" y="137" transform="rotate(270 50,50)"/>
+					<html:text item="horizontal_gas_press_right_unit" x="-30" y="137" transform="rotate(270 50,50)" style="font-size:10px;"/>
+					
+					<html:text item="horizontal_gas_temp_left" x="157" y="35"/>
+					<html:text item="horizontal_gas_temp_left_unit" x="195" y="35" style="font-size:11px;"/>
+					<html:text item="rh_dsh2_spray_left" x="165" y="76" fill="white"/>
+					<html:text item="rh_dsh2_spray_right" x="165" y="117" fill="white"/>
+					<html:text item="horizontal_gas_temp_right" x="157" y="158"/>
+					<html:text item="horizontal_gas_temp_right_unit" x="195" y="158" style="font-size:11px;"/>
+					
+					<html:text item="rh_finish_out_temp_left" x="239" y="35"/>
+					<html:text item="rh_finish_out_temp_left_unit" x="275" y="35" style="font-size:11px;"/>
+					<html:text item="rh_finish_out_press_left" x="239" y="76"/>
+					<html:text item="rh_finish_out_press_left_unit" x="270" y="76" style="font-size:10px;"/>
+					<html:text item="rh_finish_out_press_right" x="239" y="117"/>
+					<html:text item="rh_finish_out_press_right_unit" x="270" y="117" style="font-size:10px;"/>
+					<html:text item="rh_finish_out_temp_right" x="239" y="158"/>
+					<html:text item="rh_finish_out_temp_right_unit" x="275" y="158" style="font-size:11px;"/>
+					
+					<html:text item="primry_rh_in_flue_gas_press_left" x="319" y="101"/>
+					<html:text item="primry_rh_in_flue_gas_press_left_unit" x="316" y="117" style="font-size:10px;"/>
+					<html:text item="primry_rh_in_flue_gas_press_right" x="364" y="101"/>
+					<html:text item="primry_rh_in_flue_gas_press_right_unit" x="361" y="117" style="font-size:10px;"/>
+					<html:text item="primry_sh_in_flue_gas_press_left" x="409" y="101"/>
+					<html:text item="primry_sh_in_flue_gas_press_left_unit" x="406" y="117" style="font-size:10px;"/>
+					<html:text item="primry_sh_in_flue_gas_press_right" x="454" y="101"/>
+					<html:text item="primry_sh_in_flue_gas_press_right_unit" x="451" y="117" style="font-size:10px;"/>
+					
+					<html:text item="rh_dsh1_spray_left" x="329" y="158" fill="white"/>
+					<html:text item="rh_dsh1_spray_right" x="329" y="193" fill="white"/>
+					
+					<html:text item="sh_dsh1_spray_left" x="419" y="158" fill="white"/>
+					<html:text item="sh_dsh1_spray_right" x="419" y="193" fill="white"/>
+					
+					<html:text item="primry_rh_out_flue_gas_press_left" x="319" y="227"/>
+					<html:text item="primry_rh_out_flue_gas_press_left_unit" x="316" y="243" style="font-size:10px;"/>
+					<html:text item="primry_rh_out_flue_gas_press_right" x="364" y="227"/>
+					<html:text item="primry_rh_out_flue_gas_press_right_unit" x="361" y="243" style="font-size:10px;"/>
+					<html:text item="primry_sh_out_flue_gas_press_left" x="409" y="227"/>
+					<html:text item="primry_sh_out_flue_gas_press_left_unit" x="406" y="243" style="font-size:10px;"/>
+					<html:text item="primry_sh_out_flue_gas_press_rigt" x="454" y="227"/>
+					<html:text item="primry_sh_out_flue_gas_press_rigt_unit" x="451" y="243" style="font-size:10px;"/>
+					
+					<html:text item="gas_analyzer_front1_0" x="322" y="275"/>
+					<html:text item="gas_analyzer_front1_1" x="362" y="275"/>
+					<html:text item="gas_analyzer_front1_2" x="412" y="275"/>
+					<html:text item="gas_analyzer_front1_3" x="452" y="275"/>
+					
+					<html:text item="gas_analyzer_front2_0" x="322" y="294"/>
+					<html:text item="gas_analyzer_front2_1" x="362" y="294"/>
+					<html:text item="gas_analyzer_front2_2" x="412" y="294"/>
+					<html:text item="gas_analyzer_front2_3" x="452" y="294"/>
+					
+					<html:text item="gas_analyzer_rear1_0" x="322" y="314"/>
+					<html:text item="gas_analyzer_rear1_1" x="362" y="314"/>
+					<html:text item="gas_analyzer_rear1_2" x="412" y="314"/>
+					<html:text item="gas_analyzer_rear1_3" x="452" y="314"/>
+					
+					<html:text item="gas_analyzer_rear2_0" x="322" y="334"/>
+					<html:text item="gas_analyzer_rear2_1" x="362" y="334"/>
+					<html:text item="gas_analyzer_rear2_2" x="412" y="334"/>
+					<html:text item="gas_analyzer_rear2_3" x="452" y="334"/>
+					
+					<html:text item="econ_out_flue_gas_press_left" x="322" y="368"/>
+					<html:text item="econ_out_flue_gas_press_right" x="412" y="368"/>
+					
+					<html:text item="econ_gas_damper_position_a_left" x="258" y="320"/>
+					<html:text item="econ_gas_damper_position_b_left" x="258" y="345"/>
+					<html:text item="econ_gas_damper_position_c_left" x="258" y="370"/>
+					
+					<html:text item="econ_gas_damper_position_a_right" x="499" y="320"/>
+					<html:text item="econ_gas_damper_position_b_right" x="499" y="345"/>
+					<html:text item="econ_gas_damper_position_c_right" x="499" y="370"/>
+				</html:g>
+			</html:svg>
+			<html:div style="height:163px;"/>
+			<HBox>
+				<html:div style="width:50px"/>
+				<Text class="saFlow" textAlign="Center" width="45px" text="G.A." />
+				<Text class="saFlow" textAlign="Center" width="45px" text="Front" />
+				<Text class="saFlow" textAlign="Center" width="45px" text="Rear" />
+				<Text class="saFlow" textAlign="Center" width="45px" text="All" />
+			</HBox>
+			<HBox>
+				<html:div style="width:50px"/>
+				<Text class="fakeTd" textAlign="Center" width="45px" text="min" />
+				<Text id="front_min" class="fakeTd" textAlign="Center" width="45px"/>
+				<Text id="rear_min" class="fakeTd" textAlign="Center" width="45px"/>
+				<Text id="all_min" class="fakeTd" textAlign="Center" width="45px"/>
+			</HBox>
+			<HBox>
+				<html:div style="width:50px"/>
+				<Text class="fakeTd" textAlign="Center" width="45px" text="max" />
+				<Text id="front_max" class="fakeTd" textAlign="Center" width="45px"/>
+				<Text id="rear_max" class="fakeTd" textAlign="Center" width="45px"/>
+				<Text id="all_max" class="fakeTd" textAlign="Center" width="45px"/>
+			</HBox>
+			<HBox>
+				<html:div style="width:50px"/>
+				<Text class="fakeTd" textAlign="Center" width="45px" text="AVE" />
+				<Text id="front_avg" class="fakeTd" textAlign="Center" width="45px"/>
+				<Text id="rear_avg" class="fakeTd" textAlign="Center" width="45px"/>
+				<Text id="all_avg" class="fakeTd" textAlign="Center" width="45px"/>
+			</HBox>
+			<html:div style="height:10px;"/>
+			<t:Table class="noHeaderTable" width="210px" selectionMode="None" editable="false" visibleRowCount="6" rowHeight="20px"
+				rows="{/result/combustion_status/combustion_flow/2/flow}" columnHeaderVisible="false" enableColumnReordering="false">
+				<t:columns>
+					<t:Column width="120px" hAlign="End" resizable="false">
+						<t:template>
+							<Text text="{item_nm}"/>
+						</t:template>
+					</t:Column>
+					<t:Column width="90px" hAlign="Center" resizable="false">
+						<t:template>
+							<Text text="{flow} {flow_unit}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+		</VBox>
+		<html:div style="width:15px"/>
+		<VBox>
+			<core:Fragment id="navigatorExportPrint" fragmentName="dhi.optimizer.fragment.NavigatorExport" type="XML" class="sapMBtnNavigatorExport" />
+			<Button width="76px" text="Trend" press="onDialogPress"/>
+			<Button width="76px" text="Limits" press="onDialogPress"/>
+			<Button width="76px" text="Settings" press="onDialogPress"/>
+			<Button width="76px" text="MT Temp." press="onDialogPress" class="myTemp"/>
+			<Button width="76px" text="Tube Project Set" press="onDialogPress" class="tubeProjectSet"/>			
+			<Button width="76px" text="Save" press="onSave"/>
+			<VBox height="10px"/>
+			<ToggleButton id="tgBtnO2" width="76px" text="O2" pressed="true" press="onEmissionPress"/>
+			<ToggleButton id="tgBtnCO" width="76px" text="CO" press="onEmissionPress"/>
+			<ToggleButton id="tgBtnNOx" width="76px" text="NOx" press="onEmissionPress"/>
+			<ToggleButton id="tgBtnT" width="76px" text="T" press="onEmissionPress"/>
+		</VBox>
+	</HBox>
+</mvc:View>

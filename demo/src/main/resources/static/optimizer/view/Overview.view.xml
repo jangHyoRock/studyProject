@@ -1,0 +1,138 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:t="sap.ui.table"
+	xmlns:core="sap.ui.core"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:l="sap.ui.layout"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="dhi.optimizer.controller.Overview">
+
+	<l:VerticalLayout class="conHBox marginLeft25 padding10 minWidth1016">
+		<core:Fragment id="exportPrint" fragmentName="dhi.common.fragment.ExportPrint" type="XML"/>
+		<l:HorizontalLayout class="overviewLayout">
+			<Text width="42px"/>
+			<VBox width="363px">
+				<Text class="txtOverViewTitle sapUiTinyMarginTop marginBottom12 sapChartIcon" text="Combustion &amp; Emission Status"/>
+				<viz:VizFrame id="chartOverview" class="sapUiMediumMarginTop" width="350px" height="350px" uiConfig="{applicationSet:'fiori'}"
+							  busyIndicatorDelay="0" renderComplete="renderComplete" />
+				<Image class="optimumCross" width="350px" height="350px" src='img/optimumCross.png' />
+				<Text class="txtOptimumZone" text="OPTIMUM\nZONE" textAlign="Center"/>
+				<Image class="optimumMask" width="360px" height="360px" src="img/invisibleMask.png"/>
+				<html:div style="height:22px;"/>
+				<html:div class="conModeBox">
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="Row">
+						<Text class="cursor txtConIcon" width="110px" text="{/result/optimizer_mode/0/item}" wrapping="false"/>
+						<Text width="75px"/>
+						<Text id="txtCombst" textAlign="Center" text="{/result/optimizer_mode/0/status}" width="110px" class="modeBlueText"/>
+					</FlexBox>
+					<FlexBox class="sapUiTinyMarginTopBottom" alignItems="Center" justifyContent="Begin" direction="Row">
+						<Text class="cursor txtConIcon" width="110px" text="{/result/optimizer_mode/1/item}" wrapping="false"/>
+						<Text width="75px"/>
+						<Text id="txtCtrl" textAlign="Center" text="{/result/optimizer_mode/1/status}" width="110px" class="modeBlueText"/>
+					</FlexBox>
+					<FlexBox alignItems="Center" justifyContent="Begin" direction="Row">
+						<Text class="cursor txtConIcon" width="110px" text="{/result/optimizer_mode/2/item}" wrapping="false"/>
+						<Text width="75px"/>
+						<Text id="txtOpt" textAlign="Center" text="{/result/optimizer_mode/2/status}" width="110px" class="modeBlueText"/>
+					</FlexBox>
+				</html:div>
+				<Image class="overviewChartMask" width="357px" height="134px" press="tableOptimizerClick" src="img/invisibleMask.png"/>
+				<Image class="imgCtrlNotReady" src="{= (${/result/optimizer_mode/1/status}==='RUN')?'img/hold.png':'img/notReady.png' }"
+					   width="{= (${/result/optimizer_mode/1/status}==='RUN')?50:75 }px" height="21px" load="onImageLoad"
+					   visible="{= (${/result/optimizer_mode/3/status}==='true')?false:true}" press="tableOptimizerClick" alt="check Alarm &amp; Event"/>
+			</VBox>
+			<Text width="100px"/>
+			<l:VerticalLayout class="marginLeft20">
+				<VBox height="9px"/>
+				<Text id="txtBalancing" class="txtOverViewTitle sapTableIcon" text="Efficiency Status"/>
+				<t:Table class="sapUiTinyMarginTop tableOverView" width="424px"
+						 id="tblBalancing"
+						 rows="{/result/efficiency_status}"
+						 selectionMode="None"
+						 editable="false"
+						 visibleRowCount="2">
+					<t:columns>
+						<t:Column width="50%" hAlign="Begin" resizable="false">
+							<Label text="" />
+							<t:template>
+								<Text text="{item} ({unit})" />
+							</t:template>
+						</t:Column>
+						<t:Column width="25%" hAlign="Center" resizable="false">
+							<Label text="Baseline" />
+							<t:template>
+								<Label text="{baseline}" />
+							</t:template>
+						</t:Column>
+						<t:Column width="25%" hAlign="Center" resizable="false">
+							<Label text="Current" />
+							<t:template>
+								<Label text="{current}" />
+							</t:template>
+						</t:Column>
+					</t:columns>
+				</t:Table>
+				<VBox height="46px"/>
+				<Text class="txtOverViewTitle sapTableIcon" text="Slagging &amp; Fouling Status"/>
+				<t:Table class="sapUiTinyMarginTop tableOverView" width="424px"
+						 rows="{/result/fireball_status}"
+						 selectionMode="None"
+						 editable="false"
+						 enableColumnReordering="false"
+						 visibleRowCount="2">
+					<t:columns>
+						<t:Column width="50%" hAlign="Begin" resizable="false">
+							<Label text="" />
+							<t:template>
+								<Text text="{item}" />
+							</t:template>
+						</t:Column>
+						<t:Column width="25%" hAlign="Center" resizable="false">
+							<Label text="Baseline" />
+							<t:template>
+								<Label text="{current}" />
+							</t:template>
+						</t:Column>
+						<t:Column width="25%" hAlign="Center" resizable="false">
+							<Label text="Current" />
+							<t:template>
+								<Label text="{current}" />
+							</t:template>
+						</t:Column>
+					</t:columns>
+				</t:Table>
+				<FlexBox height="46px"/>
+				<Text class="txtOverViewTitle sapTableIcon" text="Emission Status"></Text>
+				<t:Table class="tableOverView marginTop8" width="424px"
+						 rows="{/result/emission_status}"
+						 selectionMode="None"
+						 editable="false"
+						 enableColumnReordering="false"
+						 visibleRowCount="3">
+					<t:columns>
+						<t:Column width="30%" hAlign="Begin" resizable="false">
+							<Label text="" />
+							<t:template>
+								<Text text="{item} ({unit})" wrapping="false" />
+							</t:template>
+						</t:Column>
+						<t:Column width="35%" hAlign="Center" resizable="false">
+							<Label text="Baseline" />
+							<t:template>
+								<Label text="{baseline}" />
+							</t:template>
+						</t:Column>
+						<t:Column width="35%" hAlign="Center" resizable="false">
+							<Label text="Current" />
+							<t:template>
+								<Label text="{current}" />
+							</t:template>
+						</t:Column>
+					</t:columns>
+				</t:Table>
+				<FlexBox height="21px"/>
+			</l:VerticalLayout>
+		</l:HorizontalLayout>
+	</l:VerticalLayout>
+</mvc:View>
