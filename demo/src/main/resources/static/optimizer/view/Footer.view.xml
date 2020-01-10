@@ -1,0 +1,73 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:t="sap.ui.table"
+	xmlns:l="sap.ui.layout"
+	controllerName="dhi.optimizer.controller.Footer">
+
+	<t:Table class="responsiveWidth txtFTCopy footerTable" columnHeaderHeight="50px" enableColumnReordering="false" selectionMode="None"
+			 editable="false" visibleRowCount="3" fixedRowCount="1" rows="{/result/data}">
+		<t:columns>
+			<t:Column width="8%" hAlign="Center" resizable="false">
+				<Text textAlign="Center" text="" />
+				<t:template>
+					<Text text="{plant}" />
+				</t:template>
+			</t:Column>
+			<t:Column width="10%" hAlign="Center" resizable="false">
+				<Text textAlign="Center" text="{/result/column/load_unit}" />
+				<t:template>
+					<Text text="{load}" />
+				</t:template>
+			</t:Column>
+			<t:Column width="10%" hAlign="Center" resizable="false">
+				<Text textAlign="Center" text="{/result/column/freq_unit}" />
+				<t:template>
+					<Text text="{freq}" />
+				</t:template>
+			</t:Column>
+			<t:Column width="10%" hAlign="Center" resizable="false">
+				<Text textAlign="Center" text="{/result/column/af_unit}" />
+				<t:template>
+					<Text text="{af}" />
+				</t:template>
+			</t:Column>
+			<t:Column width="10%" hAlign="Center" resizable="false">
+				<Text textAlign="Center" text="{/result/column/fp_unit}" />
+				<t:template>
+					<Text text="{fp}" />
+				</t:template>
+			</t:Column>
+			<t:Column width="10%" hAlign="Center" resizable="false">
+				<Text textAlign="Center" text="{/result/column/cf_unit}" />
+				<t:template>
+					<Text text="{cf}" />
+				</t:template>
+			</t:Column>
+			<t:Column width="10%" hAlign="Center" resizable="false">
+				<Text textAlign="Center" text="{/result/column/o2_unit}" />
+				<t:template>
+					<Text text="{o2}" />
+				</t:template>
+			</t:Column>
+			<t:Column width="10%" hAlign="Center" resizable="false">
+				<Text textAlign="Center" text="{/result/column/combst opt_unit}" />
+				<t:template>
+					<Text text="{combst opt}" />
+				</t:template>
+			</t:Column>
+			<t:Column width="10%" hAlign="Center" resizable="false">
+				<Text textAlign="Center" text="{/result/column/ctrl mode_unit}" />
+				<t:template>
+					<Text text="{ctrl mode}" />
+				</t:template>
+			</t:Column>
+			<t:Column hAlign="Center" resizable="false">
+				<Text textAlign="Center" text="{/result/column/opt mode_unit}" />
+				<t:template>
+					<Text text="{opt mode}" />
+				</t:template>
+			</t:Column>
+		</t:columns>
+	</t:Table>
+</mvc:View>

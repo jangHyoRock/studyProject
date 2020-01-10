@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<title>Tips Demo Login Page</title>
+	<script id="sap-ui-bootstrap"
+		src="https://sapui5.hana.ondemand.com/1.71.0/resources/sap-ui-core.js"
+		data-sap-ui-libs="sap.m"
+		data-sap-ui-theme="sap_belize"
+		data-sap-ui-compatVersion="edge"
+		data-sap-ui-xx-waitForTheme="true"
+		data-sap-ui-logLevel="2"
+		data-sap-ui-resourceroots='{"dhi.common": "./common"}'>
+	</script>
+	
+	<script>
+		sap.ui.getCore().attachInit(function() {
+			new sap.ui.core.ComponentContainer("dhiCommon", {
+				height : "100%",
+				name : "dhi.common"
+			}).placeAt("content");
+		});
+	</script>
+
+</head>
+<body id="content" class="sapUiBody">
+</body>
+</html>

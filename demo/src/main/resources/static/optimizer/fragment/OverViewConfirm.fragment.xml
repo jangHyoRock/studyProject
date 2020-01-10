@@ -1,0 +1,34 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Popover
+		contentWidth="450px"
+		placement="Bottom"
+		showArrow="false"
+		beforeOpen="beforeOpen"
+		afterOpen="afterOpen"
+		afterClose="afterClose"
+		class="sapUiContentPadding" >
+		<content>
+			<Label class="font18" text="You Changed mode" design="Bold" width="100%"/>
+			<Label class="font40 marginTop12 redText" textAlign="Center" design="Bold" width="100%"/>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button width="55px" text="YES" press="onYes" />
+				<Button width="55px" text="NO" press="onCloseDialog" />
+			</Toolbar>
+		</footer>
+		<customHeader>
+			<Bar>
+	            <contentMiddle>
+	                <Title />
+	            </contentMiddle>
+	            <contentRight>
+	            	<core:Icon src="sap-icon://decline" class="fragIconLine" size="18px" press="onClosePress"/>
+	            </contentRight>
+        	</Bar>
+		</customHeader>
+	</Popover>
+</core:FragmentDefinition>

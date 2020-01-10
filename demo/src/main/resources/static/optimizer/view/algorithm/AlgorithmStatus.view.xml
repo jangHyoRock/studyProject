@@ -1,0 +1,255 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="dhi.optimizer.controller.algorithm.AlgorithmStatus">
+	
+	<HBox class="marginLeft25 marginTop25 conHBox padding10" width="1018px" height="652px">
+		<Image class="flowArrow1" width="20px" src="./img/arrow.png"/>
+		<Image class="flowArrow2" width="20px" src="./img/arrow.png"/>
+		<Image class="flowArrow3" width="20px" src="./img/arrow.png"/>
+		<Image class="flowArrow4" width="20px" src="./img/arrow.png"/>
+		<Image class="flowArrow5" width="20px" src="./img/arrow.png"/>
+		<VBox class="sapUiSmallMarginBegin">
+			<VBox class="conVHBox" height="250px">
+				<Text class="sapTableIcon" text="1. Data Preprocessor"/>
+				<HBox>
+					<Text width="280px" class="txtConIcon" text="LAST PROCESSING DATA TIME" />
+					<Text width="150px" text="{path:'/result/data_pre_process/last_processing_time', formatter:'.dateFormat'}" />
+				</HBox>
+				<HBox>
+					<Text width="280px" class="txtConIcon" text="LAST SAVING TRAINING DATA TIME" />
+					<Text width="150px" text="{path:'/result/data_pre_process/last_saving_training_time', formatter:'.dateFormat'}" />
+				</HBox>
+				<VBox class="statusVBox sapUiTinyMarginTop">
+					<HBox>
+						<Text textAlign="Center" text="1.1.ANYBYPASS VALVE OPEN"/>
+						<Text textAlign="Center" text="1.2.ANY OIL BNR FIRING ON"/>
+						<Text textAlign="Center" text="1.3.RUNBACK ACTIVE ON"/>
+					</HBox>
+					<HBox>
+						<ObjectStatus icon="sap-icon://circle-task-2"
+							text="{path:'/result/data_pre_process/any_by_pass_valve_open_status', formatter:'.formatStatusText'}"
+							state="{path:'/result/data_pre_process/any_by_pass_valve_open_status', formatter:'.formatStatus'}" />
+						<ObjectStatus icon="sap-icon://circle-task-2"
+							text="{path:'/result/data_pre_process/any_oil_bnr_firing_on_status', formatter:'.formatStatusText'}"
+							state="{path:'/result/data_pre_process/any_oil_bnr_firing_on_status', formatter:'.formatStatus'}" />
+						<ObjectStatus icon="sap-icon://circle-task-2"
+							text="{path:'/result/data_pre_process/runback_active_on_status', formatter:'.formatStatusText'}"
+							state="{path:'/result/data_pre_process/runback_active_on_status', formatter:'.formatStatus'}" />
+					</HBox>
+					<HBox>
+						<Text textAlign="Center" text="1.4.UNIT LOAD TARGET LOW"/>
+						<Text textAlign="Center" text="1.5.LOAD CHANGE DETECTED"/>
+						<Text textAlign="Center" text="1.6.FREQ. CORRECTION ON"/>
+					</HBox>
+					<HBox>
+						<ObjectStatus icon="sap-icon://circle-task-2"
+							text="{path:'/result/data_pre_process/unit_load_target_low_status', formatter:'.formatStatusText'}"
+							state="{path:'/result/data_pre_process/unit_load_target_low_status', formatter:'.formatStatus'}" />
+						<ObjectStatus icon="sap-icon://circle-task-2"
+							text="{path:'/result/data_pre_process/load_change_detected_status', formatter:'.formatStatusText'}"
+							state="{path:'/result/data_pre_process/load_change_detected_status', formatter:'.formatStatus'}" />
+						<ObjectStatus icon="sap-icon://circle-task-2"
+							text="{path:'/result/data_pre_process/freq_correction_on_status', formatter:'.formatStatusText'}"
+							state="{path:'/result/data_pre_process/freq_correction_on_status', formatter:'.formatStatus'}" />
+					</HBox>
+				</VBox>
+			</VBox>
+			<VBox class="sapUiMediumMarginTop conVHBox" height="400px">
+				<Text class="sapTableIcon" text="4. Output Controller"/>
+				<HBox>
+					<Text width="280px" class="txtConIcon" text="LAST CALCULATION TIME" />
+					<Text width="150px" text="{path:'/result/output_controller/last_calculation_time', formatter:'.dateFormat'}" />
+				</HBox>
+				<t:Table id="algorithmMVstatusTable" class="sapUiTinyMarginTop sapUiSmallMarginEnd" width="420px"
+					rows="{/result/output_controller/mv_status/mv_status}"
+					selectionMode="None"
+					editable="false"
+					enableColumnReordering="false"
+					visibleRowCount="9">
+					<t:columns>
+						<t:Column width="25%" resizable="false">
+							<VBox>
+								<Text class="sapUiTinyMarginBegin linehight20" text="INITIALIZE"/>
+								<Text class="sapUiTinyMarginBegin linehight20" text="FULL HOLD"/>
+							</VBox>
+							<t:template>
+								<Text class="sapUiTinyMarginBegin" text="{item}" />
+							</t:template>
+						</t:Column>
+						<t:Column width="15%" hAlign="Center" resizable="false">
+							<VBox>
+								<ObjectStatus icon="sap-icon://circle-task-2"
+									text="{path:'/result/output_controller/mv_status/initialize_status', formatter:'.formatStatusText'}"
+									state="{path:'/result/output_controller/mv_status/initialize_status', formatter:'.formatStatus'}" />
+								<ObjectStatus icon="sap-icon://circle-task-2"
+									text="{path:'/result/output_controller/mv_status/all_hold_status', formatter:'.formatStatusText'}"
+									state="{path:'/result/output_controller/mv_status/all_hold_status', formatter:'.formatStatus'}" />
+							</VBox>
+							<t:template>
+								<ObjectStatus icon="sap-icon://circle-task-2" state="{path:'status', formatter:'.formatStatus'}"
+									text="{path:'status', formatter:'.formatStatusText'}"/>
+							</t:template>
+						</t:Column>
+						<t:Column width="15%" hAlign="Center" resizable="false">
+							<Label text="MIN" />
+							<t:template>
+								<Text textAlign="Center" text="{min}" />
+							</t:template>
+						</t:Column>
+						<t:Column width="15%" hAlign="Center" resizable="false">
+							<Label textAlign="Center" text="BIAS OUTPUT" />
+							<t:template>
+								<Text textAlign="Center" text="{bias}" />
+							</t:template>
+						</t:Column>
+						<t:Column width="15%" hAlign="Center" resizable="false">
+							<Label text="TARGET" />
+							<t:template>
+								<Text textAlign="Center" text="{target}" />
+							</t:template>
+						</t:Column>
+						<t:Column width="15%" hAlign="Center" resizable="false">
+							<Label text="MAX" />
+							<t:template>
+								<Text textAlign="Center" text="{max}" />
+							</t:template>
+						</t:Column>
+					</t:columns>	
+				</t:Table>
+			</VBox>
+		</VBox>
+		<Text width="30px"/>
+		<VBox>
+			<VBox class="conVHBox" height="250px" width="482px">
+				<Text class="sapTableIcon" text="2. NN Model Generator"/>
+				<HBox>
+					<Text width="290px" class="txtConIcon" text="PREV. MODEL GENERATION TIME" />
+					<Text width="150px" text="{path:'/result/nn_model_generator/pre_model_generation_time', formatter:'.dateFormat'}" />
+				</HBox>
+				<HBox>
+					<Text width="290px" class="txtConIcon" text="LAST MODEL GENERATION TIME" />
+					<Text width="150px" text="{path:'/result/nn_model_generator/last_model_generation_time', formatter:'.dateFormat'}" />
+				</HBox>
+				<VBox class="statusVBox sapUiTinyMarginTop statusVBox2">
+					<HBox>
+						<Text textAlign="Center" text="2.1.SEED MODEL 1 SAVE TIME"/>
+						<Text textAlign="Center" text="2.2.SEED MODEL 2 SAVE TIME"/>
+						<Text textAlign="Center" text="2.3.LAST MODEL VALID ERROR(MSE)"/>
+					</HBox>
+					<HBox>
+						<Text textAlign="Center"
+							text="{path:'/result/nn_model_generator/seed_model_1_save_time', formatter:'.dateFormat'}"/>
+						<Text textAlign="Center"
+							text="{path:'/result/nn_model_generator/seed_model_2_save_time', formatter:'.dateFormat'}"/>
+						<Text textAlign="Center" text="{/result/nn_model_generator/last_model_valid_error}"/>
+					</HBox>
+					<HBox>
+						<Text textAlign="Center" text="2.4.FRUIT MODEL 1 SAVE TIME"/>
+						<Text textAlign="Center" text="2.5.FRUIT MODEL 2 SAVE TIME"/>
+						<Text textAlign="Center" text="2.6.FRUIT MODEL 3 SAVE TIME"/>
+					</HBox>
+					<HBox>
+						<Text textAlign="Center"
+							text="{path:'/result/nn_model_generator/fruit_model_1_save_time', formatter:'.dateFormat'}"/>
+						<Text textAlign="Center"
+							text="{path:'/result/nn_model_generator/fruit_model_2_save_time', formatter:'.dateFormat'}"/>
+						<Text textAlign="Center"
+							text="{path:'/result/nn_model_generator/fruit_model_3_save_time', formatter:'.dateFormat'}"/>
+					</HBox>
+				</VBox>
+			</VBox>
+			<VBox class="sapUiMediumMarginTop conVHBox" height="400px" width="482px">
+				<Text class="sapTableIcon" text="3. Static Optimizer (PSO)"/>
+				<HBox>
+					<Text width="290px" class="txtConIcon" text="LAST PSO RUNNING TIME" />
+					<Text width="150px" text="{path:'/result/static_optimizer/last_pso_running_time', formatter:'.dateFormat'}" />
+				</HBox>
+				<HBox>
+					<t:Table id="algorithmOptimalBiasTable" class="sapUiTinyMarginTop tableOverView" width="90px"
+						rows="{/result/static_optimizer/optimal_bias}"
+						rowHeight="55"
+						selectionMode="None"
+						editable="false"
+						enableColumnReordering="false"
+						visibleRowCount="9">
+						<t:columns>
+							<t:Column hAlign="Center" resizable="false">
+								<Label textAlign="Center" text="OPTIMAL BIAS" />
+								<t:template>
+									<Text text="{}" />
+								</t:template>
+							</t:Column>
+						</t:columns>	
+					</t:Table>
+					<Text width="10px"/>
+					<VBox>
+						<HBox class="sapUiTinyMarginTop">
+							<Text width="100px" class="txtConIcon" text="MODEL TEST" />
+							<Text width="95px" textAlign="Center" text="{/result/static_optimizer/model_test_error_sum}" />
+							<Text width="45px" textAlign="Center" text="≤" />
+							<Text width="95px" textAlign="Center" text="{/result/static_optimizer/model_test_error_limit}" />
+						</HBox>
+						<HBox class="sapUiTinyMarginTop">
+							<Text width="100px" class="txtConIcon" text="OBJ. FUNC." />
+							<Text width="95px" textAlign="Center" text="{/result/static_optimizer/object_function_f_val}" />
+							<Text width="45px" textAlign="Center" text="▶" />
+							<Text width="95px" textAlign="Center" text="{/result/static_optimizer/object_function_optimal_f_val}" />
+						</HBox>
+						<html:svg style="position:absolute;top:5px;left:10px;" height="20" width="300">
+							<html:text x="50" y="10" style="font-size:14px;">Optimization Performance Prediction</html:text>
+						</html:svg>
+						<html:svg style="position:absolute;top:11px;left:150px;" height="30" width="200">
+							<html:rect fill="#b2b2b2" x="10" y="10" width="12" height="12"/>
+							<html:text x="28" y="20" style="font-size: 10px;">CURRENT</html:text>
+							<html:rect x="110" y="10" width="12" height="3" fill="#9bca3f"/>
+							<html:rect x="110" y="13" width="12" height="3" fill="#4cb6e3"/>
+							<html:rect x="110" y="16" width="12" height="3" fill="#ff6666"/>
+							<html:rect x="110" y="19" width="12" height="3" fill="#f0ab00"/>
+							<html:text x="128" y="20" style="font-size:10px;">PREDICT</html:text>
+						</html:svg>
+						<html:svg style="position:absolute;top:38px;left:37px;" height="20" width="300">
+							<html:g style="font-size:12px;">
+								<html:text item="impact1" x="1" y="10"/>
+								<html:text item="impact2" x="1" y="10"/>
+								<html:text item="impact3" x="1" y="10"/>
+								<html:text item="impact4" x="1" y="10"/>
+							</html:g>
+						</html:svg>
+						<html:svg style="position:absolute;top:150px;left:37px;" height="50" width="320">
+							<html:g style="font-size:12px;">
+								<html:text item="unit1" x="1" y="45"/>
+								<html:text item="unit2" x="1" y="45"/>
+								<html:text item="unit3" x="1" y="45"/>
+								<html:text item="unit4" x="1" y="45"/>
+							</html:g>
+						</html:svg>
+						<viz:VizFrame id="algorithmStatusChart" height="150px" width="360px"
+							renderComplete="renderComplete" uiConfig="{applicationSet:'fiori'}" busyIndicatorDelay="0"/>
+						<HBox class="sapUiTinyMarginTop font12">
+							<Text width="36px" text="Left" />
+							<Text width="40px" textAlign="Center" text="{/result/static_optimizer/optimization_performance_prediction/0/before_left}" />
+							<Text width="40px" textAlign="Center" text="{/result/static_optimizer/optimization_performance_prediction/0/after_left}" />
+							<Text width="40px" textAlign="Center" text="{/result/static_optimizer/optimization_performance_prediction/1/before_left}" />
+							<Text width="40px" textAlign="Center" text="{/result/static_optimizer/optimization_performance_prediction/1/after_left}" />
+							<Text width="40px" textAlign="Center" text="{/result/static_optimizer/optimization_performance_prediction/2/before_left}" />
+							<Text width="40px" textAlign="Center" text="{/result/static_optimizer/optimization_performance_prediction/2/after_left}" />
+						</HBox>
+						<HBox class="sapUiTinyMarginTop font12">
+							<Text width="36px" text="Right" />
+							<Text width="40px" textAlign="Center" text="{/result/static_optimizer/optimization_performance_prediction/0/before_right}" />
+							<Text width="40px" textAlign="Center" text="{/result/static_optimizer/optimization_performance_prediction/0/after_right}" />
+							<Text width="40px" textAlign="Center" text="{/result/static_optimizer/optimization_performance_prediction/1/before_right}" />
+							<Text width="40px" textAlign="Center" text="{/result/static_optimizer/optimization_performance_prediction/1/after_right}" />
+							<Text width="40px" textAlign="Center" text="{/result/static_optimizer/optimization_performance_prediction/2/before_right}" />
+							<Text width="40px" textAlign="Center" text="{/result/static_optimizer/optimization_performance_prediction/2/after_right}" />
+						</HBox>
+					</VBox>
+				</HBox>
+			</VBox>
+		</VBox>
+	</HBox>
+</mvc:View>

@@ -1,0 +1,103 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:t="sap.ui.table"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="dhi.optimizer.controller.AlarmEvent">
+
+	<VBox width="1018px" height="652px" class="conHBox marginLeft25 marginTop25 padding10">
+		<core:Fragment id="exportPrint" fragmentName="dhi.common.fragment.ExportPrint" type="XML" />
+		<VBox class="sapUiTinyMarginTop dateSearchBox">
+			<core:Fragment id="dateSearchFragment" fragmentName="dhi.common.fragment.DateSearch" type="XML" />
+		</VBox>
+		<Toolbar>
+			<Label text="Total: {count>/index} / {count>/cnt}"/>
+			<ToolbarSpacer />
+			<Button text="Clear Sort" press="clearSort" icon="sap-icon://decline"/>
+			<Button text="Clear All Filters" press="clearAllFilters" icon="sap-icon://decline"/>
+		</Toolbar>
+		<t:Table
+			id="alarmTable"
+			enableColumnReordering="false"
+			selectionMode="None"
+			firstVisibleRowChanged="rowScrolling"
+			rows="{alarmData>/alarm_event}"
+			rowHeight="50px"
+			visibleRowCount="8"
+			busyIndicatorDelay="0"
+			ariaLabelledBy="title">
+			<t:columns>
+				<t:Column
+					id="datetimeCol"
+					width="17%"
+					resizable="false"
+					hAlign="Center"
+					filterProperty="datetime"
+					sortProperty="sortDate">
+					<Label text="DATETIME" />
+					<t:template>
+						<Text text="{alarmData>datetime}"/>
+					</t:template>
+				</t:Column>
+				<t:Column
+					width="13%"
+					resizable="false"
+					hAlign="Center"
+					filterProperty="type"
+					defaultFilterOperator="StartsWith">
+					<Label text="TYPE" />
+					<t:template>
+						<Text text="{alarmData>type}" />
+					</t:template>
+				</t:Column>
+				<t:Column
+					width="20%"
+					resizable="false"
+					hAlign="Center"
+					filterProperty="item"
+					sortProperty="item">
+					<Label text="NAME" />
+					<t:template>
+						<Text text="{alarmData>item}" />
+					</t:template>
+				</t:Column>
+				<t:Column
+					width="15%"
+					resizable="false"
+					hAlign="Center"
+					filterProperty="status"
+					sortProperty="status">
+					<Label text="STATUS" />
+					<t:template>
+						<ObjectStatus
+							text="{alarmData>status}"
+							state="{
+								parts: [
+									{path: 'alarmData>status'}
+								],
+								formatter: 'dhi.optimizer.util.AlarmFormatter.alarmTextState'
+							}"
+							icon="{
+								parts: [
+									{path: 'alarmData>status'}
+								],
+								formatter: 'dhi.optimizer.util.AlarmFormatter.alarmTextIcons'
+						}"/>
+					</t:template>
+				</t:Column>
+				<t:Column
+					width="35%"
+					resizable="false"
+					hAlign="Left"
+					filterProperty="description">
+					<Label text="DESCRIPTION" />
+					<t:template>
+						<TextArea height="50px" cols="40" value="{alarmData>description}" editable="false" textAlign="Left"/>
+					</t:template>
+				</t:Column>
+			</t:columns>
+		</t:Table>
+	</VBox>
+</mvc:View>

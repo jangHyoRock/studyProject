@@ -1,0 +1,282 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="dhi.optimizer.controller.PerformanceEfficiency">
+    <l:VerticalLayout class="conHBox marginLeft25 marginTop25 padding10 minWidth1016">
+        <core:Fragment id="exportPrint" fragmentName="dhi.common.fragment.ExportPrintReport" type="XML" />
+        <HBox class="performanceEfficiencyLayout">
+            <l:VerticalLayout>
+                <Text class="sapTableIcon" text="Performance Summary"/>
+                <t:TreeTable width="440px"
+                             enableColumnReordering="false"
+                             selectionMode="None"
+                             editable="false"
+                             expandFirstLevel="true"
+                             rows="{/result/efficiency_kpi}"
+                             visibleRowCount="6">
+                    <t:columns>
+                        <t:Column hAlign="Center" width="60%" resizable="false">
+                            <Label class="theadHeight font14" text="Efficiency KPI"/>
+                            <t:template> <Text class="trHeight" text="{item}({unit})"/> </t:template>
+                        </t:Column>
+                        <t:Column hAlign="Center" width="20%" resizable="false">
+                            <Label class="theadHeight font14" text="Baseline"/>
+                            <t:template> <Text class="trHeight" text="{baseline}"/> </t:template>
+                        </t:Column>
+                        <t:Column hAlign="Center" width="20%" resizable="false">
+                            <Label class="theadHeight font14" text="Current"/>
+                            <t:template> <Text class="trHeight" text="{current}"/> </t:template>
+                        </t:Column>
+                    </t:columns>
+                </t:TreeTable>
+
+                <FlexBox height="10px"/>
+
+                <Text class="sapTableIcon" text="Fuel Information"/>
+                <l:HorizontalLayout class="conVHBox width423">
+                    <l:VerticalLayout>
+                        <HBox>
+                            <Text width="135px" class="txtConIcon" text="{/result/fuel_information/0/item}"/>
+                            <Text width="51px" class="sapUiTinyMarginEnd txtNumber" text="{/result/fuel_information/0/current}"/>
+                            <Text class="txtConT" text="{/result/fuel_information/0/unit}"/>
+                        </HBox>
+                        <HBox class="sapUiTinyMarginTopBottom">
+                            <Text width="135px" class="txtConIcon" text="{/result/fuel_information/2/item}"/>
+                            <Text width="51px" class="sapUiTinyMarginEnd txtNumber" text="{/result/fuel_information/2/current}"/>
+                            <Text class="txtConT" text="{/result/fuel_information/2/unit}"/>
+                        </HBox>
+                        <HBox>
+                            <Text width="135px" class="txtConIcon" text="{/result/fuel_information/3/item}"/>
+                            <Text width="51px" class="sapUiTinyMarginEnd txtNumber" text="{/result/fuel_information/3/current}"/>
+                            <Text class="txtConT" text="{/result/fuel_information/3/unit}"/>
+                        </HBox>
+                    </l:VerticalLayout>
+                    <l:VerticalLayout class="sapUiSmallMarginBegin">
+                        <HBox>
+                            <Text width="55px" class="txtConIcon" text="{/result/fuel_information/1/item}"/>
+                            <Text width="51px" class="sapUiTinyMarginEnd txtNumber" text="{/result/fuel_information/1/current}"/>
+                            <Text class="txtConT" text="{/result/fuel_information/1/unit}"/>
+                        </HBox>
+                        <HBox class="sapUiTinyMarginTop">
+                            <Text width="55px" class="txtConIcon" text="{/result/fuel_information/4/item}"/>
+                            <Text width="51px" class="sapUiTinyMarginEnd txtNumber" text="{/result/fuel_information/4/current}"/>
+                            <Text class="txtConT" text="{/result/fuel_information/4/unit}"/>
+                        </HBox>
+                    </l:VerticalLayout>
+                </l:HorizontalLayout>
+
+                <FlexBox height="10px"/>
+
+                <Text class="sapTableIcon" text="Combustion Condition"/>
+                <l:HorizontalLayout class="conVHBox width423">
+                    <l:VerticalLayout>
+                        <l:HorizontalLayout class="paddingBottom10">
+                            <Text width="100px" class="txtConIcon" text="{/result/combustion_condition/0/item}"/>
+                            <Text width="51px" class="sapUiTinyMarginEnd txtNumber" text="{/result/combustion_condition/0/current}"/>
+                            <Text class="txtConT" text="{/result/combustion_condition/0/unit}"/>
+                        </l:HorizontalLayout>
+                        <l:HorizontalLayout class="paddingBottom10">
+                            <Text width="100px" class="txtConIcon" text="{/result/combustion_condition/1/item}"/>
+                            <Text width="51px" class="sapUiTinyMarginEnd txtNumber" text="{/result/combustion_condition/1/current}"/>
+                            <Text class="txtConT" text="{/result/combustion_condition/1/unit}"/>
+                        </l:HorizontalLayout>
+                        <l:HorizontalLayout>
+                            <Text class="txtConIcon" text="{/result/combustion_condition/4/item}"/>
+                            <Text class="sapUiTinyMarginBegin sapUiMediumMarginEnd txtNumber" text="{/result/combustion_condition/4/current}"/>
+                        </l:HorizontalLayout>
+                    </l:VerticalLayout>
+                    <l:VerticalLayout class="sapUiMediumMarginBegin">
+                        <l:HorizontalLayout class="paddingBottom10">
+                            <Text width="95px" class="txtConIcon" text="{/result/combustion_condition/2/item}"/>
+                            <Text width="51px" class="sapUiTinyMarginEnd txtNumber" text="{/result/combustion_condition/2/current}"/>
+                            <Text class="txtConT" text="{/result/combustion_condition/2/unit}"/>
+                        </l:HorizontalLayout>
+                        <l:HorizontalLayout class="paddingBottom10">
+                            <Text width="95px" class="txtConIcon" text="{/result/combustion_condition/3/item}"/>
+                            <Text width="51px" class="sapUiTinyMarginEnd txtNumber" text="{/result/combustion_condition/3/current}"/>
+                            <Text class="txtConT" text="{/result/combustion_condition/3/unit}"/>
+                        </l:HorizontalLayout>
+                        <l:HorizontalLayout>
+                            <Text class="divPEmill" />
+                        </l:HorizontalLayout>
+                    </l:VerticalLayout>
+                </l:HorizontalLayout>
+            </l:VerticalLayout>
+            <Text/>
+            <l:VerticalLayout>
+                <Text class="sapTableIcon" text="Cost Saving Information"/>
+                <l:HorizontalLayout height="281px" class="conVHBox CostBg costSavingInformation">
+                    <l:VerticalLayout>
+                        <FlexBox class="sapUiTinyMarginBegin" alignItems="Begin" justifyContent="Begin" direction="Row">
+                            <l:VerticalLayout>
+                                <FlexBox height="20px"/>
+                                <Text class="txtPETitle" text="The Current Effect"/>
+                                <FlexBox height="10px"/>
+                            </l:VerticalLayout>
+                            <FlexBox width="388px" justifyContent="End">
+                                <Button id="btnReset" visible="false" width="90px" text="reset" press="onReset" icon="sap-icon://refresh"/>
+                            </FlexBox>
+                        </FlexBox>
+                        <l:HorizontalLayout>
+                            <Text width="13px"/>
+                            <Text class="marginTop12 txtConT" text="{/result/cost_saving_information_version_sasan/0/item}"/>
+                            <Text class="sapUiTinyMarginBeginEnd costSavingRound03"
+                                  text="{path:'/result/cost_saving_information_version_sasan/0/hourly',formatter:'.formatDot'}"/>
+                            <Image id="imgCostSavingDotHourly1" class="CostSavingDot0" src="img/CostSavingDot.png"/>
+                            <Text class="txtUnit" text="{/result/cost_saving_information_version_sasan/0/hourly_unit}"/>
+
+                            <Text class="marginTop12 txtConT sapUiSmallMarginBegin" text="{/result/cost_saving_information_version_sasan/1/item}"/>
+                            <Text class="sapUiTinyMarginBeginEnd costSavingRound03"
+                                  text="{path:'/result/cost_saving_information_version_sasan/1/hourly',formatter:'.formatDot'}"/>
+                            <Image id="imgCostSavingDotHourly2" class="CostSavingDot0" src="img/CostSavingDot.png"/>
+                            <Text class="txtUnit" text="{/result/cost_saving_information_version_sasan/1/hourly_unit}"/>
+
+                            <Text class="sapUiTinyMarginTop txtConT sapUiSmallMarginBegin" width="37px" text="Aux Power"/>
+                            <Text class="sapUiTinyMarginBeginEnd costSavingRound03"
+                                  text="{path:'/result/cost_saving_information_version_sasan/2/hourly',formatter:'.formatDot'}"/>
+                            <Image id="imgCostSavingDotHourly3" class="CostSavingDot0" src="img/CostSavingDot.png"/>
+                            <Text class="txtUnit" text="{/result/cost_saving_information_version_sasan/2/hourly_unit}"/>
+                        </l:HorizontalLayout>
+                        <FlexBox height="20px"/>
+                        <Text class="sapUiTinyMarginBegin txtPETitle" text="The Cumulative Effects"/>
+                        <l:HorizontalLayout class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+                            <Text width="133px" textAlign="Right" class="txtConT" text="Last 1 Day"/>
+                            <Text width="164px" textAlign="Right" class="txtConT" text="Last 1 Month"/>
+                            <Text width="150px" textAlign="Right" class="txtConT" text="Last 1 Year"/>
+                        </l:HorizontalLayout>
+                        <l:HorizontalLayout class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+                            <Text width="5px"/>
+                            <Text class="marginTop12 txtConT" width="35px" text="{/result/cost_saving_information_version_sasan/0/item}"/>
+                            <Text class="sapUiTinyMarginBeginEnd costSavingRound04"
+                                  text="{path:'/result/cost_saving_information_version_sasan/0/daily',formatter:'.formatDot'}"/>
+                            <Image id="imgCostSavingDotDaily1" class="CostSavingDot0" src="img/CostSavingDot.png"/>
+                            <Text class="txtUnit" width="25px" text="{/result/cost_saving_information_version_sasan/0/daily_unit}"/>
+                            <Text class="sapUiTinyMarginBeginEnd costSavingRound04"
+                                  text="{path:'/result/cost_saving_information_version_sasan/0/monthly',formatter:'.formatDot'}"/>
+                            <Image id="imgCostSavingDotMonthly1" class="CostSavingDot0" src="img/CostSavingDot.png"/>
+                            <Text class="txtUnit" width="25px" text="{/result/cost_saving_information_version_sasan/0/monthly_unit}"/>
+                            <Text class="sapUiTinyMarginBeginEnd costSavingRound04"
+                                  text="{path:'/result/cost_saving_information_version_sasan/0/annually',formatter:'.formatDot'}"/>
+                            <Image id="imgCostSavingDotAnnually1" class="CostSavingDot0" src="img/CostSavingDot.png"/>
+                            <Text class="txtUnit" text="{/result/cost_saving_information_version_sasan/0/annually_unit}"/>
+                        </l:HorizontalLayout>
+                        <l:HorizontalLayout class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+                            <Text width="5px"/>
+                            <Text class="marginTop12 txtConT" width="35px" text="{/result/cost_saving_information_version_sasan/2/item}"/>
+                            <Text class="sapUiTinyMarginBeginEnd costSavingRound04"
+                                  text="{path:'/result/cost_saving_information_version_sasan/2/daily',formatter:'.formatDot'}"/>
+                            <Image id="imgCostSavingDotDaily3" class="CostSavingDot0" src="img/CostSavingDot.png"/>
+                            <Text class="txtUnit" width="25px" text="{/result/cost_saving_information_version_sasan/2/daily_unit}"/>
+                            <Text class="sapUiTinyMarginBeginEnd costSavingRound04"
+                                  text="{path:'/result/cost_saving_information_version_sasan/2/monthly',formatter:'.formatDot'}"/>
+                            <Image id="imgCostSavingDotMonthly3" class="CostSavingDot0" src="img/CostSavingDot.png"/>
+                            <Text class="txtUnit" width="25px" text="{/result/cost_saving_information_version_sasan/2/monthly_unit}"/>
+                            <Text class="sapUiTinyMarginBeginEnd costSavingRound04"
+                                  text="{path:'/result/cost_saving_information_version_sasan/2/annually',formatter:'.formatDot'}"/>
+                            <Image id="imgCostSavingDotAnnually3" class="CostSavingDot0" src="img/CostSavingDot.png"/>
+                            <Text class="txtUnit" text="{/result/cost_saving_information_version_sasan/2/annually_unit}"/>
+                        </l:HorizontalLayout>
+                    </l:VerticalLayout>
+                </l:HorizontalLayout>
+
+                <l:HorizontalLayout>
+                    <l:VerticalLayout width="270px">
+                        <Text class="sapTableIcon" text="Process Status"/>
+                        <l:HorizontalLayout class="conVHBox">
+                            <l:VerticalLayout>
+                                <Text class="sapUiTinyMarginBottom txtSTitle" text="Furnace Temperature"/>
+                                <HBox class="paddingBottom10">
+                                    <Text class="txtConIcon" width="65px" text="{/result/process_status/furnace_temperature/0/item}"/>
+                                    <Text width="45px" class="sapUiTinyMarginEnd txtNumber" text="{/result/process_status/furnace_temperature/0/current}"/>
+                                    <Text class="txtConT" text="{/result/process_status/furnace_temperature/0/unit}"/>
+                                </HBox>
+                                <HBox class="paddingBottom10">
+                                    <Text class="txtConIcon" width="65px" text="{/result/process_status/furnace_temperature/1/item}"/>
+                                    <Text width="45px" class="sapUiTinyMarginEnd txtNumber" text="{/result/process_status/furnace_temperature/1/current}"/>
+                                    <Text class="txtConT" text="{/result/process_status/furnace_temperature/1/unit}"/>
+                                </HBox>
+                                <HBox>
+                                    <Text class="txtConIcon" width="65px" text="{/result/process_status/furnace_temperature/2/item}"/>
+                                    <Text width="45px" class="sapUiTinyMarginEnd txtNumber" text="{/result/process_status/furnace_temperature/2/current}"/>
+                                    <Text class="txtConT" text="{/result/process_status/furnace_temperature/2/unit}"/>
+                                </HBox>
+                                <html:svg width="100%" height="1px">
+                                    <html:line x1="0" x2="92%" y1="0" y2="0" style="stroke:#d6d4d4;stroke-width:1"/>
+                                </html:svg>
+                                <Text class="marginTop10 sapUiSmallMarginTop sapUiTinyMarginBottom txtSTitle" text="RH Spray Flow"/>
+                                <HBox class="paddingBottom10">
+                                    <Text class="txtConIcon" width="85px" text="{/result/process_status/rh_spray_flow/0/item}"/>
+                                    <Text class="sapUiTinyMarginEnd txtNumber minWidth20" text="{/result/process_status/rh_spray_flow/0/current}"/>
+                                    <Text class="txtConT" text="{/result/process_status/rh_spray_flow/0/unit}"/>
+                                </HBox>
+                                <HBox class="paddingBottom10">
+                                    <Text class="txtConIcon" width="85px" text="{/result/process_status/rh_spray_flow/1/item}"/>
+                                    <Text class="sapUiTinyMarginEnd txtNumber minWidth20" text="{/result/process_status/rh_spray_flow/1/current}"/>
+                                    <Text class="txtConT" text="{/result/process_status/rh_spray_flow/1/unit}"/>
+                                    <Text class="sapUiSmallMarginBegin sapUiTinyMarginBeginEnd txtConIcon" text="R"/>
+                                    <Text class="sapUiTinyMarginEnd txtNumber minWidth20" text="{/result/process_status/rh_spray_flow/2/current}"/>
+                                    <Text class="txtConT" text="{/result/process_status/rh_spray_flow/2/unit}"/>
+                                </HBox>
+                                <HBox>
+                                    <Text class="txtConIcon" width="85px" text="{/result/process_status/rh_spray_flow/3/item}"/>
+                                    <Text class="sapUiTinyMarginEnd txtNumber minWidth20" text="{/result/process_status/rh_spray_flow/3/current}"/>
+                                    <Text class="txtConT" text="{/result/process_status/rh_spray_flow/3/unit}"/>
+                                    <Text class="sapUiSmallMarginBegin sapUiTinyMarginEnd txtConIcon" text="R"/>
+                                    <Text class="sapUiTinyMarginEnd txtNumber minWidth20" text="{/result/process_status/rh_spray_flow/4/current}"/>
+                                    <Text class="txtConT" text="{/result/process_status/rh_spray_flow/4/unit}"/>
+                                </HBox>
+                            </l:VerticalLayout>
+                        </l:HorizontalLayout>
+                    </l:VerticalLayout>
+
+                    <l:VerticalLayout class="sapUiSmallMarginBegin" width="244px">
+                        <Text class="sapTableIcon" text="Emission Status"/>
+                        <l:HorizontalLayout class="conVHBox">
+                            <l:VerticalLayout>
+                                <Text class="sapUiTinyMarginBottom txtSTitle" text="Eco Outlet Flue Gas"/>
+                                <HBox class="paddingBottom10">
+                                    <Text class="txtConIcon" width="60px" text="{/result/emission_status/eco_outlet_flue_gas/0/item}"/>
+                                    <Text class="sapUiTinyMarginEnd txtNumber" width="48px" text="{/result/emission_status/eco_outlet_flue_gas/0/current}"/>
+                                    <Text class="txtConT" text="{/result/emission_status/eco_outlet_flue_gas/0/unit}"/>
+                                </HBox>
+                                <HBox class="paddingBottom10">
+                                    <Text class="txtConIcon" width="60px" text="{/result/emission_status/eco_outlet_flue_gas/1/item}"/>
+                                    <Text class="sapUiTinyMarginEnd txtNumber" width="48px" text="{/result/emission_status/eco_outlet_flue_gas/1/current}"/>
+                                    <Text class="txtConT" text="{/result/emission_status/eco_outlet_flue_gas/1/unit}"/>
+                                </HBox>
+                                <HBox>
+                                    <Text class="txtConIcon" width="60px" text="{/result/emission_status/eco_outlet_flue_gas/2/item}"/>
+                                    <Text class="sapUiTinyMarginEnd txtNumber" width="48px" text="{/result/emission_status/eco_outlet_flue_gas/2/current}"/>
+                                    <Text class="txtConT" text="{/result/emission_status/eco_outlet_flue_gas/2/unit}"/>
+                                </HBox>
+                                <html:svg width="100%" height="1px" style="left:-10px;">
+                                    <html:line x1="0" x2="92%" y1="0" y2="0" style="stroke:#d6d4d4;stroke-width:1"/>
+                                </html:svg>
+                                <Text class="sapUiSmallMarginTop sapUiTinyMarginBottom txtSTitle" text="Stack Flue Gas"/>
+                                <HBox class="paddingBottom10">
+                                    <Text class="txtConIcon" width="60px" text="{/result/emission_status/stack_flue_gas/0/item}"/>
+                                    <Text class="sapUiTinyMarginEnd txtNumber" width="48px" text="{/result/emission_status/stack_flue_gas/0/current}"/>
+                                    <Text class="txtConT" text="{/result/emission_status/stack_flue_gas/0/unit}"/>
+                                </HBox>
+                                <HBox class="paddingBottom10">
+                                    <Text class="txtConIcon" width="60px" text="{/result/emission_status/stack_flue_gas/1/item}"/>
+                                    <Text class="sapUiTinyMarginEnd txtNumber" width="48px" text="{/result/emission_status/stack_flue_gas/1/current}"/>
+                                    <Text class="txtConT" text="{/result/emission_status/stack_flue_gas/1/unit}"/>
+                                </HBox>
+                                <HBox>
+                                    <Text class="txtConIcon" width="60px" text="{/result/emission_status/stack_flue_gas/2/item}"/>
+                                    <Text class="sapUiTinyMarginEnd txtNumber" width="48px" text="{/result/emission_status/stack_flue_gas/2/current}"/>
+                                    <Text class="txtConT" text="{/result/emission_status/stack_flue_gas/2/unit}"/>
+                                </HBox>
+                            </l:VerticalLayout>
+                        </l:HorizontalLayout>
+                    </l:VerticalLayout>
+                </l:HorizontalLayout>
+            </l:VerticalLayout>
+        </HBox>
+    </l:VerticalLayout>
+</mvc:View>

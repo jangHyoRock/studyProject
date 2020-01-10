@@ -1,0 +1,127 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+	xmlns:t="sap.ui.table"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="dhi.optimizer.controller.algorithm.PsoMVConf">
+	<VBox width="1018px" height="652px" class="conHBox marginLeft25 marginTop25 padding10">
+		<Toolbar>
+			<Title class="txtContentTitle btmsTitleTableIcon" text="PsoMV Conf" level="H2"  width="90%"/>
+			<ToolbarSpacer />
+			<Text width="150px" textAlign="End" text="Total: {= ${uploadData>/}.length }"/>
+			<Text width="10px"/>
+			<Button text="Clear Sort" press="clearSort" icon="sap-icon://decline"/>
+			<Button text="Clear All Filters" press="clearAllFilters" icon="sap-icon://decline"/>
+			<Button id="downloadTmp" text="Export" press="onTemplateDownload" icon="sap-icon://download" type="Emphasized"/>
+			<u:FileUploader id="psoUploader"
+				buttonText="Import"
+				buttonOnly="true"
+				icon="sap-icon://upload"
+				uploadUrl="upload/"
+				fileType="csv"
+				change="onExcelUpload"
+				uploadComplete="handleUploadComplete"/>
+			<Button id="saveTmp" text="SAVE" press="onSavePress" icon="sap-icon://save"/>
+		</Toolbar>
+		<t:Table
+			id="psoConfTable"
+			width="996px"
+			enableColumnReordering="false"
+			rows="{uploadData>/}"
+			selectionMode="None"
+			visibleRowCount="8"
+			busyIndicatorDelay="0"
+			rowHeight="65px">
+			<t:columns>
+				<t:Column
+					filterProperty="pso_mv"
+					sortProperty="pso_mv"
+					width="9%"
+					hAlign="Center"
+					resizable="false">
+					<Label text="PsoMv" textAlign="Center"/>
+					<t:template>
+						<Input class="conf" value="{uploadData>pso_mv}" wrapping="false" valueLiveUpdate="true"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="10%"
+					filterProperty="pso_mv_type"
+					sortProperty="pso_mv_type"
+					hAlign="Center"
+					resizable="false">
+					<Label text="PsoMv Type" textAlign="Center"/>
+					<t:template>
+						<Input class="conf" value="{uploadData>pso_mv_type}" wrapping="false" valueLiveUpdate="true"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="7%"
+					sortProperty="pso_mv_max"
+					hAlign="Center"
+					resizable="false">
+					<Label text="PsoMv Max" textAlign="Center"/>
+					<t:template>
+						<Input class="conf" value="{uploadData>pso_mv_max}" type="Number" wrapping="false" valueLiveUpdate="true"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="7%"
+					sortProperty="pso_mv_min"
+					hAlign="Center"
+					resizable="false">
+					<Label text="PsoMv Min" textAlign="Center"/>
+					<t:template>
+						<Input class="conf" value="{uploadData>pso_mv_min}" type="Number" wrapping="false" valueLiveUpdate="true"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="7%"
+					sortProperty="pso_mv_order"
+					hAlign="Center"
+					resizable="false">
+					<Label text="PsoMv Order" textAlign="Center"/>
+					<t:template>
+						<Input class="conf" value="{uploadData>pso_mv_order}" type="Number" wrapping="false" valueLiveUpdate="true"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="15%"
+					filterProperty="auto_mode_tag_id"
+					sortProperty="auto_mode_tag_id"
+					hAlign="Center"
+					resizable="false">
+					<Label text="AutoMode TagID" textAlign="Center"/>
+					<t:template>
+						<Input class="conf" value="{uploadData>auto_mode_tag_id}" type="Text" wrapping="false" valueLiveUpdate="true"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="15%"
+					filterProperty="hold_tag_id"
+					sortProperty="hold_tag_id"
+					hAlign="Center"
+					resizable="false">
+					<Label text="Hold TagID" textAlign="Center"/>
+					<t:template>
+						<Input class="conf" value="{uploadData>hold_tag_id}" type="Text" wrapping="false" valueLiveUpdate="true"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="15%"
+					filterProperty="input_bias_tag_id"
+					hAlign="Center"
+					resizable="false">
+					<Label text="Input Bias TagID" textAlign="Center"/>
+					<t:template>
+						<Input class="conf" value="{uploadData>input_bias_tag_id}" type="Text" wrapping="false" valueLiveUpdate="true"/>
+					</t:template>
+				</t:Column>
+				<t:Column width="15%"
+					filterProperty="output_bias_tag_id"
+					hAlign="Center"
+					resizable="false">
+					<Label text="Output Bias TagID" textAlign="Center"/>
+					<t:template>
+						<Input class="conf" value="{uploadData>output_bias_tag_id}" type="Text" wrapping="false" valueLiveUpdate="true"/>
+					</t:template>
+				</t:Column>
+			</t:columns>
+		</t:Table>
+	</VBox>
+</mvc:View>

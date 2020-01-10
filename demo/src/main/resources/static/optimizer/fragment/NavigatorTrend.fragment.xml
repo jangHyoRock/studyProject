@@ -1,0 +1,77 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:core="sap.ui.core">
+	<Dialog
+		showHeader="true"
+		draggable="true"
+		afterOpen="afterTrendOpen"
+		beforeClose="beforeTrendClose"
+		class="sapUiContentPadding" >
+		<customHeader>
+			<Bar>
+	            <contentMiddle>
+	                <Title text="Tips Mode – Trends"/>
+	            </contentMiddle>
+	            <contentRight>
+	            	<core:Icon src="sap-icon://decline" class="fragIconLine" size="18px" press="onClosePress"/>
+	            </contentRight>
+        	</Bar>
+		</customHeader>
+		<content>
+			<VBox>
+				<FlexBox class="dateSearchBox sapUiSmallMarginBottom" alignItems="Center" justifyContent="Begin" direction="Row">
+					<Text width="100px" textAlign="Center" text="Period"/>
+					<Button class="marginLeft5" width="60px" text="1D" press="setPeriodD" app:type="d" />
+					<Button class="marginLeft5" width="60px" text="1W" press="setPeriodD" app:type="w" />
+					<Button class="marginLeft5" width="60px" text="3W" press="setPeriodD" app:type="3w" />
+					<Button class="marginLeft5" width="60px" text="1M" press="setPeriodD" app:type="m" />
+					<Button class="marginLeft5" width="60px" text="3M" press="setPeriodD" app:type="3m" />
+					<Button class="marginLeft5" width="60px" text="6M" press="setPeriodD" app:type="6m" />
+					<DateTimePicker id="datePickerStartNavigatorTrend" class="sapUiMediumMarginBegin dateTimePickerPadding" textAlign="Center" width="200px" valueFormat="dd-MM-yyyy HH:mm:ss" displayFormat="dd-MM-yyyy HH:mm:ss" change="dpHandleChange"/>
+					<Text class="marginTop12 font20" textAlign="Center" width="27px" text="~"></Text>
+					<DateTimePicker id="datePickerEndNavigatorTrend"  class="dateTimePickerPadding" textAlign="Center" width="200px" valueFormat="dd-MM-yyyy HH:mm:ss" displayFormat="dd-MM-yyyy HH:mm:ss" change="dpHandleChange"/>
+					<Button id="buttonSearchNavigatorTrend" press="onSearch" class="sapUiMediumMarginBegin dateSearch" width="100px" text="Search" busyIndicatorDelay="0"/>
+				</FlexBox>
+				<FlexBox alignItems="Begin" direction="Row"> 
+					<Select id="selectNavigatorTrend1" width="200px" items="{ path: 'category>/result' }" change="onSelectChange" busyIndicatorDelay="0">
+						<core:Item text="{category>value}" key="{category>key}"/>
+					</Select>
+					<viz:VizSlider id="sliderNavigatorTrend1" class="sapUiMediumMarginBegin" rangeChanged="rangeChanged" busyIndicatorDelay="0"
+						uiConfig="{applicationSet:'fiori'}" showPercentageLabel="false" showStartEndLabel="false" height="50px" width="290px" />
+					<Select id="selectNavigatorTrend2" class="sapUiMediumMarginBeginEnd" width="200px" items="{ path: 'category>/result' }"
+						change="onSelectChange" busyIndicatorDelay="0">
+						<core:Item text="{category>value}" key="{category>key}"/>
+					</Select>
+					<viz:VizSlider id="sliderNavigatorTrend2" rangeChanged="rangeChanged" busyIndicatorDelay="0"
+						uiConfig="{applicationSet:'fiori'}" showPercentageLabel="false" showStartEndLabel="false" height="50px" width="290px" />
+				</FlexBox>
+				<HBox>
+					<viz:VizFrame id="chartNavigatorTrend1" width="550px" height="260px" renderComplete="renderComplete" busyIndicatorDelay="0"/>
+					<FlexBox width="10px"/>
+					<viz:VizFrame id="chartNavigatorTrend2" width="550px" height="260px" renderComplete="renderComplete" busyIndicatorDelay="0"/>
+				</HBox>
+				<FlexBox height="10px"/>
+				<FlexBox alignItems="Begin" direction="Row"> 
+					<Select id="selectNavigatorTrend3" width="200px" items="{ path: 'category>/result' }" change="onSelectChange" busyIndicatorDelay="0">
+						<core:Item text="{category>value}" key="{category>key}"/>
+					</Select>
+					<viz:VizSlider id="sliderNavigatorTrend3" class="sapUiMediumMarginBegin" rangeChanged="rangeChanged" busyIndicatorDelay="0"
+						uiConfig="{applicationSet:'fiori'}" showPercentageLabel="false" showStartEndLabel="false" height="50px" width="290px" />
+					<Select id="selectNavigatorTrend4" class="sapUiMediumMarginBeginEnd" width="200px" items="{ path: 'category>/result' }"
+						change="onSelectChange" busyIndicatorDelay="0">
+						<core:Item text="{category>value}" key="{category>key}"/>
+					</Select>
+					<viz:VizSlider id="sliderNavigatorTrend4" rangeChanged="rangeChanged" busyIndicatorDelay="0"
+						uiConfig="{applicationSet:'fiori'}" showPercentageLabel="false" showStartEndLabel="false" height="50px" width="290px" />
+				</FlexBox>
+				<HBox>
+					<viz:VizFrame id="chartNavigatorTrend3" width="550px" height="260px" renderComplete="renderComplete" busyIndicatorDelay="0"/>
+					<FlexBox width="10px"/>
+					<viz:VizFrame id="chartNavigatorTrend4" width="550px" height="260px" renderComplete="renderComplete" busyIndicatorDelay="0"/>
+				</HBox>
+			</VBox>
+		</content>
+	</Dialog>
+</core:FragmentDefinition>

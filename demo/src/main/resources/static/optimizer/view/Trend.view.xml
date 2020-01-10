@@ -1,0 +1,76 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="dhi.optimizer.controller.Trend">
+	
+	<VBox width="1018px" height="652px" class="conHBox marginLeft25 marginTop25 padding10">
+		<core:Fragment fragmentName="dhi.common.fragment.ExportPrint" type="XML" />
+		<VBox class="sapUiTinyMarginTop dateSearchBox">
+			<HBox class="sapUiTinyMarginTop">
+				<FlexBox alignItems="Center" justifyContent="Center">
+					<Text textAlign="Center" width="75px" text="Balance"/>
+				</FlexBox>
+				<MultiComboBox id="tagId" width="350px" selectionChange="selectionChange"
+					items="{ path: 'tag>/result' }">
+					<core:Item key="{tag>key}" text="{tag>value}" />
+				</MultiComboBox>
+				<FlexBox alignItems="Center" justifyContent="End" width="662px">
+					<CheckBox id="ckb24" />
+					<Text class="txtTC24 sapUiTinyMarginEnd" text="{i18n>trendCheck24}"/>
+				</FlexBox>
+			</HBox>
+			<core:Fragment id="dateSearchFragment" fragmentName="dhi.optimizer.fragment.TrendSearch" type="XML" />
+		</VBox>
+		<VBox class="sapUiTinyMarginTop">
+			<HBox>
+				<FlexBox width="12px"/>
+				<Text id="txtUnit1" class="unit1Color" width="100px"/>
+				<FlexBox width="733px" justifyContent="End">
+					<Text id="txtUnit2" class="unit2Color" width="100px" textAlign="End"/>
+				</FlexBox>
+			</HBox>
+			<HBox>
+				<viz:Popover id="idPopOver"/>
+				<viz:VizFrame id="trendChart" height="330px" width="855px" 
+					renderComplete="renderComplete" uiConfig="{applicationSet:'fiori'}" busyIndicatorDelay="0"/>
+				<html:svg name="svgTR" style="margin-top:13px;" height="100" width="150">
+					<html:g transform="translate(0,0)">
+						<html:path transform="translate(19,10)" fill="#E5E5E5" stroke-width="1" stroke="transparent" opacity="1" d="M-7,-7L7,-7L7,7L-7,7Z"/>
+						<html:text text-anchor="start" transform="translate(39, 4)" height="21">
+							<html:tspan y="0" x="0" font-weight="normal" font-family="Arial,Helvetica,sans-serif" font-size="12px" font-style="normal" dy="0.85em">Optimizer On</html:tspan>
+						</html:text>
+					</html:g>
+					<html:g transform="translate(0,21)">
+						<html:path transform="translate(19,10)" fill="transparent" stroke-width="1" stroke="#E5E5E5" opacity="1" d="M-7,-7L7,-7L7,7L-7,7Z"/>
+						<html:text text-anchor="start" transform="translate(39, 4)" height="21">
+							<html:tspan y="0" x="0" font-weight="normal" font-family="Arial,Helvetica,sans-serif" font-size="12px" font-style="normal" dy="0.85em">Optimizer Off</html:tspan>
+						</html:text>
+					</html:g>
+					<html:g name="firstBalance" transform="translate(0,42)">
+						<html:g transform="translate(19,10)">
+							<html:line x1="-14" y1="0" x2="14" y2="0" stroke="#5899DA" stroke-width="2"/>
+							<html:path fill="#5899da" stroke-width="1" stroke="#ffffff" opacity="1" d="M-3,0 A3,3 0 1,0 3,0 A3,3 0 1,0 -3,0z"/>
+						</html:g>
+						<html:text text-anchor="start" transform="translate(39, 4)" height="21">
+							<html:tspan y="0" x="0" font-weight="normal" font-family="Arial,Helvetica,sans-serif" font-size="12px" font-style="normal" dy="0.85em"/>
+						</html:text>
+					</html:g>
+					<html:g name="secondBalance" transform="translate(0,63)" style="display:none;">
+						<html:g transform="translate(19,10)">
+							<html:line x1="-14" y1="0" x2="14" y2="0" stroke="#e8743b" stroke-width="2"/>
+							<html:path fill="#e8743b" stroke-width="1" stroke="#ffffff" opacity="1" d="M-3,0 A3,3 0 1,0 3,0 A3,3 0 1,0 -3,0z"/>
+						</html:g>
+						<html:text text-anchor="start" transform="translate(39, 4)" height="21">
+							<html:tspan y="0" x="0" font-weight="normal" font-family="Arial,Helvetica,sans-serif" font-size="12px" font-style="normal" dy="0.85em"/>
+						</html:text>
+					</html:g>
+				</html:svg>
+			</HBox>
+			<viz:VizSlider id="trendSlider" class="marginLeft40 sapUiSmallMarginTop" rangeChanged="rangeChanged" busyIndicatorDelay="0"
+				uiConfig="{applicationSet:'fiori'}" showPercentageLabel="true" showStartEndLabel="true" height="80px" width="777px" />
+		</VBox>
+	</VBox>
+</mvc:View>

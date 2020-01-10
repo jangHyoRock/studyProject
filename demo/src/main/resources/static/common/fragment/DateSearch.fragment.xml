@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:core="sap.ui.core">
+
+	<HBox class="sapUiTinyMarginTopBottom">
+		<FlexBox alignItems="Center" justifyContent="End" width="60px">
+			<Text text="Period"></Text>
+		</FlexBox>
+		<Button class="marginLeft15" width="60px" text="1D" press="setPeriodD" app:type="d" />
+		<Button class="marginLeft5" width="60px" text="1W" press="setPeriodD" app:type="w" />
+		<Button class="marginLeft5" width="60px" text="3W" press="setPeriodD" app:type="3w" />
+		<Button class="marginLeft5" width="60px" text="1M" press="setPeriodD" app:type="m" />
+		<Button class="marginLeft5" width="60px" text="3M" press="setPeriodD" app:type="3m" />
+		<Button class="marginLeft5" width="60px" text="6M" press="setPeriodD" app:type="6m" />
+		<DateTimePicker id="dpStart" class="marginLeft5 dateTimePickerPadding" textAlign="Center" width="185px" valueFormat="dd-MM-yyyy HH:mm:ss" displayFormat="dd-MM-yyyy HH:mm:ss" change="dpHandleChange"/>
+		<Text class="marginTop12 font20" textAlign="Center" width="27px" text="~"></Text>
+		<DateTimePicker id="dpEnd"  class="dateTimePickerPadding" textAlign="Center" width="185px" valueFormat="dd-MM-yyyy HH:mm:ss" displayFormat="dd-MM-yyyy HH:mm:ss" change="dpHandleChange"/>
+		<Button id="btnSearch" press="onSearch" class="marginLeft15 dateSearch" width="100px" text="Search" busyIndicatorDelay="0"></Button>
+	</HBox>
+
+</core:FragmentDefinition>

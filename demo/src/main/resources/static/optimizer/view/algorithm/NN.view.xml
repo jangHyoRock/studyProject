@@ -1,0 +1,130 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="dhi.optimizer.controller.algorithm.NN">
+	
+	<VBox class="marginLeft25 marginTop25 conHBox padding10" width="1018px" height="652px">
+		<Text class="sapTableIcon" text="Settings"/>
+		<HBox>
+			<FlexBox width="50px"/>
+			<VBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="{width>/left}" text="Learning Rate"/>
+					<Input textAlign="Center" type="Number" value="{/result/learning_rate}" width="{width>/right}"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="{width>/left}" text="Momentum"/>
+					<Input textAlign="Center" type="Number" value="{/result/momentum}" width="{width>/right}"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="{width>/left}" text="Sigmoid's Alpha Values"/>
+					<Input textAlign="Center" type="Number" value="{/result/sigmoid_alpha_value}" width="{width>/right}"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="{width>/left}" text="Neurons in 1st Layer"/>
+					<Input textAlign="Center" type="Number" value="{/result/neruons_1st_layer}" width="{width>/right}"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="{width>/left}" text="Neurons in 2nd Layer"/>
+					<Input textAlign="Center" type="Number" value="{/result/neruons_2nd_layer}" width="{width>/right}"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="{width>/left}" text="Training Algotithm"/>
+					<Select width="{width>/right}" selectedKey="{select>/result/training_algorithm}">
+						<items>
+							<core:Item text="Backpropagation" key="Backpropagation"/>
+							<core:Item text="ResilientBackpropagation" key="ResilientBackpropagation"/>
+						</items>
+					</Select>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="{width>/left}" text="Iterations"/>
+					<Input textAlign="Center" type="Number" value="{/result/iterations}" width="{width>/right}"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="{width>/left}" text="Training Time"/>
+					<TimePicker textAlign="Center" value="{/result/training_time}" valueFormat="HH:mm:ss" displayFormat="HH:mm:ss" width="{width>/right}"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="{width>/left}" text="MU"/>
+					<Input textAlign="Center" type="Number" value="{/result/mu}" width="{width>/right}"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="{width>/left}" text="Validation Check"/>
+					<Input textAlign="Center" type="Number" value="{/result/validation_check}" width="{width>/right}"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="{width>/left}" text="Training MSE"/>
+					<Input textAlign="Center" type="Number" value="{/result/training_mse}" width="{width>/right}"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+					<Text width="{width>/left}" text="Validation MSE"/>
+					<Input textAlign="Center" type="Number" value="{/result/validation_mse}" width="{width>/right}"/>
+				</FlexBox>
+			</VBox>
+			<FlexBox width="40px"/>
+			<VBox>
+				<FlexBox height="40px" alignItems="Center">
+					<Text text="Training Data Period (ex: 3 ~ 100 days)"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Start" direction="row">
+					<FlexBox width="30px"/>
+					<Text text="\{ D -"/>
+					<FlexBox width="8px"/>
+					<Input id="iptTrainTime" textAlign="Center" type="Number" width="100px" app:min="3" app:max="100" liveChange="validNumber"
+						value="{/result/training_data_last_days}"/>
+					<FlexBox width="8px"/>
+					<Text text="days \} ~ \{ Now - "/>
+					<FlexBox width="8px"/>
+					<Input id="iptValidTimeCopy" textAlign="Center" type="Number" width="100px" editable="false"
+						value="{/result/validation_data_last_hours}"/>
+					<FlexBox width="8px"/>
+					<Text text="hours }"/>
+				</FlexBox>
+				<FlexBox height="40px"/>
+				<FlexBox height="40px" alignItems="Center">
+					<Text text="Minimum Count of Training Data (ex: 100 ~ 10000)"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Start" direction="row">
+					<FlexBox width="30px"/>
+					<Input textAlign="Center" type="Number" width="100px" app:min="100" app:max="10000" liveChange="validNumber"
+						value="{/result/training_data_min_count}"/>
+				</FlexBox>
+				<FlexBox height="48px"/>
+				<FlexBox height="40px" alignItems="Center">
+					<Text text="Validation Data Period (ex: 2 ~ 200 hours)"/>
+				</FlexBox>
+				<FlexBox height="40px" alignItems="Center" justifyContent="Start" direction="row">
+					<FlexBox width="30px"/>
+					<Text text="\{ Now -"/>
+					<FlexBox width="8px"/>
+					<Input id="iptValidTime" textAlign="Center" type="Number" width="100px" app:min="2" app:max="200" liveChange="validNumber"
+						value="{/result/validation_data_last_hours}"/>
+					<FlexBox width="8px"/>
+					<Text text="hours \} ~ \{ Now \}"/>
+				</FlexBox>
+				<FlexBox height="40px"/>
+				<FlexBox height="40px" alignItems="Center">
+					<Text text="Minimum Count of Validation Data (ex: 10 ~ 1000)"/>
+				</FlexBox>
+				<FlexBox alignItems="Center" justifyContent="Start" direction="row">
+					<FlexBox width="30px"/>
+					<Input textAlign="Center" type="Number" width="100px" app:min="10" app:max="1000" liveChange="validNumber"
+						value="{/result/validation_data_min_count}"/>
+				</FlexBox>
+			</VBox>
+		</HBox>
+		<FlexBox height="30px"/>
+		<FlexBox alignItems="Center" justifyContent="Center" direction="row">
+			<Button width="140px" icon="sap-icon://save" text="Save" press="onPress"/>
+			<Button width="140px" class="sapUiTinyMarginBeginEnd" text="Upload" press="onExcelUpload" icon="sap-icon://upload" busyIndicatorDelay="0"/>
+			<Button width="140px" text="Data Studio" press="onStudioDialog" icon="sap-icon://business-objects-experience"/>
+		</FlexBox>
+		<u:FileUploader class="fileUpload" name="NNFileUpload" buttonOnly="true" fileType="xml,mdl"
+			change="handleUploadPress" typeMissmatch="typeMissmatch" sameFilenameAllowed="true"/>
+	</VBox>
+</mvc:View>

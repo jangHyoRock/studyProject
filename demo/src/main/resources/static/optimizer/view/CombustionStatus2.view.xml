@@ -1,0 +1,278 @@
+<mvc:View
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:t="sap.ui.table"
+		xmlns:core="sap.ui.core"
+		xmlns:html="http://www.w3.org/1999/xhtml"
+		xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+		controllerName="dhi.optimizer.controller.CombustionStatus">
+	<VBox width="1018px" class="conHBox marginLeft25 marginTop25 padding10">
+		<core:Fragment id="exportPrint" fragmentName="dhi.common.fragment.ExportPrint" type="XML" />
+		<HBox class="sapUiTinyMarginTop">
+			<VBox>
+				<Label class="lblCSTitle sapTableIcon" text="Coal Property"/>
+				<HBox class="hbCSCoalProperty">
+					<FlexBox class="bgLightGray padding5" alignItems="Center" justifyContent="Center" direction="Column">
+						<Text class="lblBold" textAlign="Center" width="100%" text="Chemical Composition"/>
+						<FlexBox height="5px"/>
+						<HBox>
+							<FlexBox class="bgWhite" width="50px" height="38px" alignItems="Center" justifyContent="Center" direction="Row">
+								<Text id="txtCSChemicalComposition1" textAlign="Center" />
+							</FlexBox>
+							<FlexBox width="6px"/>
+							<FlexBox class="bgWhite" width="50px" height="38px" alignItems="Center" justifyContent="Center" direction="Row">
+								<Text id="txtCSChemicalComposition2" textAlign="Center" />
+							</FlexBox>
+							<FlexBox width="6px"/>
+							<FlexBox class="bgWhite" width="50px" height="38px" alignItems="Center" justifyContent="Center" direction="Row">
+								<Text id="txtCSChemicalComposition3" textAlign="Center" />
+							</FlexBox>
+							<FlexBox width="6px"/>
+							<FlexBox class="bgWhite" width="50px" height="38px" alignItems="Center" justifyContent="Center" direction="Row">
+								<Text id="txtCSChemicalComposition4" textAlign="Center" />
+							</FlexBox>
+						</HBox>
+					</FlexBox>
+					<FlexBox width="5px"/>
+					<FlexBox width="65px" class="bgLightGray" alignItems="Center" justifyContent="Center" direction="Column">
+						<Text class="lblBold" textAlign="Center" text="Moisture"/>
+						<FlexBox height="5px"/>
+						<FlexBox class="bgWhite" height="38px" alignItems="Center" justifyContent="Center" direction="Row">
+							<Text width="55px" textAlign="Center" text="{/result/combustion_status/coal_property/coal_info/moisture}{/result/combustion_status/coal_property/coal_info/moisture_unit}"/>
+						</FlexBox>
+					</FlexBox>
+					<FlexBox width="5px"/>
+					<FlexBox width="95px" class="bgLightGray" alignItems="Center" justifyContent="Center" direction="Column">
+						<Text class="lblBold" textAlign="Center" text="GCV"/>
+						<FlexBox height="5px"/>
+						<FlexBox class="bgWhite" height="38px" alignItems="Center" justifyContent="Center" direction="Row">
+							<Text width="85px" textAlign="Center" text="{/result/combustion_status/coal_property/coal_info/gcv}
+								{/result/combustion_status/coal_property/coal_info/gcv_unit}"/>
+						</FlexBox>
+					</FlexBox>
+					<FlexBox width="5px"/>
+					<FlexBox width="57px" class="bgLightGray" alignItems="Center" justifyContent="Center" direction="Column">
+						<Text class="lblBold" textAlign="Center" text="Ash"/>
+						<FlexBox height="5px"/>
+						<FlexBox class="bgWhite" height="38px" alignItems="Center" justifyContent="Center" direction="Row">
+							<Text width="47px" textAlign="Center" text="{/result/combustion_status/coal_property/coal_info/ash}{/result/combustion_status/coal_property/coal_info/ash_unit}"/>
+						</FlexBox>
+					</FlexBox>
+				</HBox>
+				<FlexBox height="12px"/>
+				<HBox>
+					<Label class="lblCSTitle sapTableIcon" text="OFA Supply"/>
+					<Text id="txtOFA" class="txtCSTitle" text="(Left)"/>
+				</HBox>
+				<FlexBox class="bgGold padding10" alignItems="Center" justifyContent="Center" direction="Row">
+					<t:Table id="tblOfa1" width="215px"
+							 enableColumnReordering="false"
+							 selectionMode="None"
+							 editable="false"
+							 rows="{/result/combustion_status/position/0/ofa_supply1}"
+							 visibleRowCount="2">
+						<t:columns>
+							<t:Column hAlign="Center" resizable="false">
+								<Label textAlign="Center" text="OFA Location" />
+								<t:template>
+									<Text text="{item}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" resizable="false">
+								<Label textAlign="Center" text="Damper Open({/result/combustion_status/position/0/ofa_supply1/0/damper_unit})" />
+								<t:template>
+									<Text text="{damper_open_current}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" resizable="false">
+								<Label textAlign="Center" text="YAW({/result/combustion_status/position/0/ofa_supply1/0/yaw_unit})" />
+								<t:template>
+									<Text text="{yaw_current}" />
+								</t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table>
+					<FlexBox width="10px"/>
+					<t:Table id="tblOfa2" width="215px"
+							 enableColumnReordering="false"
+							 selectionMode="None"
+							 editable="false"
+							 rows="{/result/combustion_status/position/0/ofa_supply2}"
+							 visibleRowCount="2">
+						<t:columns>
+							<t:Column hAlign="Center" resizable="false">
+								<Label textAlign="Center" text="OFA Location" />
+								<t:template>
+									<Text text="{item}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" resizable="false">
+								<Label textAlign="Center" text="Damper Open({/result/combustion_status/position/0/ofa_supply2/0/damper_unit})" />
+								<t:template>
+									<Text text="{damper_open_current}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" resizable="false">
+								<Label textAlign="Center" text="YAW({/result/combustion_status/position/0/ofa_supply2/0/yaw_unit})" />
+								<t:template>
+									<Text text="{yaw_current}" />
+								</t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table>
+				</FlexBox>
+				<FlexBox height="12px"/>
+				<HBox>
+					<Label class="lblCSTitle sapTableIcon" text="Coal &amp; PA/SA Supply"/>
+					<Text id="txtCoal" class="txtCSTitle" text="(Front Left)"/>
+				</HBox>
+				<FlexBox class="bgLimeGreen padding10" alignItems="Begin" justifyContent="Center" direction="Row">
+					<t:Table id="tblCoal" width="275px"
+							 enableColumnReordering="false"
+							 selectionMode="None"
+							 editable="false"
+							 rows="{/result/combustion_status/position/0/coal_supply}"
+							 visibleRowCount="7">
+						<t:columns>
+							<t:Column hAlign="Center" resizable="false">
+								<Label textAlign="Center" text="Mill No." />
+								<t:template>
+									<Text text="{mill_number}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" resizable="false">
+								<Label textAlign="Center" text="Status" />
+								<t:template>
+									<ObjectStatus icon="sap-icon://circle-task-2" state="{path: 'status', formatter: '.formatStatus'}"/>
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" resizable="false">
+								<Label textAlign="Center" text="PA({/result/combustion_status/position/1/coal_supply/0/pa_unit})" />
+								<t:template>
+									<Text text="{pa_current}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" resizable="false">
+								<Label textAlign="Center" text="Coal({/result/combustion_status/position/1/coal_supply/0/coal_unit})" />
+								<t:template>
+									<Text text="{coal_current}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" resizable="false">
+								<Label textAlign="Center" text="SAD({/result/combustion_status/position/0/coal_supply/0/sad_unit})" />
+								<t:template>
+									<Text text="{sad_current}" />
+								</t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table>
+					<FlexBox width="10px"/>
+					<t:Table id="tblPaSa" width="155px"
+							 enableColumnReordering="false"
+							 selectionMode="None"
+							 editable="false"
+							 rows="{/result/combustion_status/position/0/pa_sa_supply}"
+							 visibleRowCount="8">
+						<t:columns>
+							<t:Column hAlign="Center" width="30%" resizable="false">
+								<Label textAlign="Center" text="SA No." />
+								<t:template>
+									<Text text="{sa_number}" />
+								</t:template>
+							</t:Column>
+							<t:Column hAlign="Center" width="70%" resizable="false">
+								<Label textAlign="Center" text="Damper Open({/result/combustion_status/position/0/pa_sa_supply/0/damper_unit})" />
+								<t:template>
+									<Text text="{damper_open_current}" />
+								</t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table>
+				</FlexBox>
+			</VBox>
+			<VBox class="sapUiSmallMarginBegin">
+				<Label class="lblCSTitle sapControlIcon" text="Fireball Position"/>
+				<FlexBox id="fbCSFireball" alignItems="Center" justifyContent="Center" direction="Column">
+					<Image class="imgCSFirewall" width="150px" height="150px" src="img/firewall.png"/>
+					<Image class="imgFireball" />
+					<Image class="imgCSEngine sapUiTinyMarginTop" width="240px" height="346px" src="img/combust_S.png"/>
+				</FlexBox>
+			</VBox>
+			<VBox class="sapUiSmallMarginBegin">
+				<FlexBox height="49px"/>
+				<Label class="lblCSTitle sapChartIcon" text="RH Spray Supply"/>
+				<Image class="outLinePurple" width="262px" height="450px" src="img/steamControl.png"/>
+			</VBox>
+			<html:svg name="svgCS" style="position:absolute;top: 33px;left: -541px;" height="450" width="281">
+				<html:g name="LeftTopRedBox" stroke-width="3" stroke="red" fill="none">
+					<html:rect x="77" y="17" width="90" height="25"/>
+					<html:path d="M38 340 h-10 v-311 h48" />
+				</html:g>
+				<html:g name="RightTopRedBox" stroke-width="0" stroke="red" fill="none">
+					<html:rect x="185" y="17" width="25" height="90"/>
+					<html:path d="M38 340 h-10 v-311 h156" />
+				</html:g>
+				<html:g name="LeftBottomRedBox" stroke-width="0" stroke="red" fill="none">
+					<html:rect x="77" y="60" width="25" height="90"/>
+					<html:path d="M38 340 h-10 v-203 h48" />
+				</html:g>
+				<html:g name="RightBottomRedBox" stroke-width="0" stroke="red" fill="none">
+					<html:rect x="120" y="125" width="90" height="25"/>
+					<html:path d="M38 340 h-10 v-203 h91"/>
+				</html:g>
+				<html:g name="redBoxBottom" stroke-width="3" stroke="red" fill="none">
+					<html:rect x="38" y="295" width="110" height="137"/>
+				</html:g>
+				<html:g name="purpleBox" stroke-width="3" stroke="DarkOrchid" fill="none">
+					<html:rect x="51" y="201" width="83" height="73" />
+				</html:g>
+				<html:g name="purpleConnect" stroke-width="3" stroke="#9D9D9D" fill="#9D9D9D">
+					<html:path shape-rendering="crispedges" stroke-width="1" fill="none" d="M137 235 h135" />
+					<html:circle cx="134" cy="236" r="3" />
+					<html:circle cx="275" cy="236" r="3" />
+				</html:g>
+				<html:g name="goldBox" stroke-width="3" stroke="gold" fill="rgba(255,225,46,0.4)">
+					<html:rect x="77" y="305" width="30" height="30" />
+				</html:g>
+				<html:g name="limeBox" stroke-width="3" stroke="limeGreen" fill="rgba(68,255,96,0.4)">
+					<html:rect x="51" y="346" width="20" height="75" />
+				</html:g>
+				<html:g name="topView" stroke-width="3" stroke="#9D9D9D" fill="#9D9D9D">
+					<html:path shape-rendering="crispedges" stroke-width="1" fill="none" d="M10 188 h5 v131 h59" />
+					<html:circle cx="6" cy="189" r="3" />
+					<html:circle cx="75" cy="319" r="3" />
+				</html:g>
+				<html:g name="sideView" stroke-width="3" stroke="#9D9D9D" fill="#9D9D9D">
+					<html:path shape-rendering="crispedges" stroke-width="1" fill="none" d="M10 374 h40" />
+					<html:circle cx="6" cy="375" r="3" />
+					<html:circle cx="49" cy="375" r="3" />
+				</html:g>
+				<html:text x="30" y="149">
+					<html:tspan x="27" y="167"></html:tspan>
+				</html:text>
+				<html:text x="27" y="402">
+					<html:tspan x="27" y="420"></html:tspan>
+				</html:text>
+			</html:svg>
+			<Image class="fireballLeftTopMask" src="img/invisibleMask.png" press="onPress" app:key="Left wall" app:index="0"/>
+			<Image class="fireballRightTopMask" src="img/invisibleMask.png" press="onPress" app:key="Right wall" app:index="1"/>
+			<Image class="fireballLeftBottomMask" src="img/invisibleMask.png" press="onPress" app:key="Front" app:index="2"/>
+			<Image class="fireballRightBottomMask" src="img/invisibleMask.png" press="onPress" app:key="Rear" app:index="3"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn11" text="{/result/combustion_status/rh_spray_supply/14/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn12" text="{/result/combustion_status/rh_spray_supply/13/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn13" text="{/result/combustion_status/rh_spray_supply/11/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn14" text="{/result/combustion_status/rh_spray_supply/10/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn15" text="{/result/combustion_status/rh_spray_supply/8/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn16" text="{/result/combustion_status/rh_spray_supply/7/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn21" text="{/result/combustion_status/rh_spray_supply/1/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn22" text="{/result/combustion_status/rh_spray_supply/12/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn23" text="{/result/combustion_status/rh_spray_supply/9/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn24" text="{/result/combustion_status/rh_spray_supply/6/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn31" text="{/result/combustion_status/rh_spray_supply/0/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn32" text="{/result/combustion_status/rh_spray_supply/2/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn33" text="{/result/combustion_status/rh_spray_supply/3/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn34" text="{/result/combustion_status/rh_spray_supply/4/current}"/>
+			<Text textAlign="Right" width="40px" class="txtCScolumn35" text="{/result/combustion_status/rh_spray_supply/5/current}"/>
+		</HBox>
+	</VBox>
+</mvc:View>
