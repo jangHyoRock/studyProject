@@ -1,0 +1,59 @@
+.sapUiBody {
+    margin: 0 !important;
+    color: #212121;
+    /*font-family: 'Rajdhani', sans-serif;*/
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.sapMText {
+    color: #212121;
+    /*font-family: 'Rajdhani', sans-serif;*/
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.sapMInputBaseInner {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/* When SAP Input Hover */
+.sapMInputBaseContentWrapper:not(.sapMInputBaseReadonlyWrapper):not(.sapMInputBaseContentWrapperState):not(.sapMInputBaseDisabledWrapper):hover{
+    background: #0A6ED150;
+    transition: all 0.5s;
+}
+
+/* When SAP Input Focus */
+.sapMFocus .sapMInputBaseContentWrapper {
+    background: #0A6ED150;
+    outline: 3px solid #0A6ED1;
+}
+
+.sapUiRootBackground, .sapMShellGlobalOuterBackground {
+    background: #FAFAFA;
+}
+
+.sapMShellBrandingBar {
+    height: 0 !important;
+    background: none;
+}
+
+html.sap-desktop .sapMShellCentralBox {
+    box-shadow: none;
+}
+
+.sapMShellCentralBox {
+    width: auto !important;
+    margin-left: 0 !important;
+    left: 0 !important;
+}
+
+.sapUiView {
+    height: 100%;
+}
+
+.sapUiView > div:nth-child(1) {
+}
+
+html.sap-desktop .sapMBtn:focus > .sapMFocusable {
+    outline: 2px solid #faa443 !important;
+    outline-offset: 0 !important;
+}

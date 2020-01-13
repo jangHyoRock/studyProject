@@ -1,0 +1,26 @@
+<mvc:View
+        controllerName="tipsvalley.controller.Main"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="sap.m"
+        xmlns:core="sap.ui.core"
+        xmlns:l="sap.ui.layout"
+>
+    <!--Header Area-->
+    <mvc:XMLView id="headerView" viewName="tipsvalley.view.Header" class="navigationArea"/>
+        <VBox class="MainArea">
+            <!--Content Area-->
+            <mvc:XMLView id="mainPage" viewName="tipsvalley.view.content.MainPage" height="100%" class=""/>
+            <!--Footer Area-->
+            <core:Fragment
+                    id="footerArea"
+                    fragmentName="tipsvalley.fragment.footer"
+                    class="footerArea"
+                    type="XML"/>
+        </VBox>
+    <!--Banner-->
+    <html:div class="HBox buildBy">
+        <html:span>This Web Build By</html:span>
+        <html:img src="../images/sapLogo.png"/>
+    </html:div>
+</mvc:View>

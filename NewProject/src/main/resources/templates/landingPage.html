@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="UTF-8">
+
+    <title>TipsValley</title>
+
+    <script id="sap-ui-bootstrap"
+            src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-compatVersion="edge"
+            data-sap-ui-resourceroots='{"tipsvalley": "./"}'>
+    </script>
+
+    <!--OpenUI5 CSS Custom-->
+    <link rel="stylesheet" type="text/css" href="css/sapStyle.css">
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200,300,400,600,700&display=swap" rel="stylesheet">
+        <!--[ How to Use ] .spaUiBody { font-family: 'Titillium Web', sans-serif; } -->
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700&display=swap" rel="stylesheet">
+        <!--[ How to Use ] .spaUiBody { font-family: 'Rajdhani', sans-serif; }-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
+        <!--[ How to Use ] .spaUiBody { font-family: 'Roboto', sans-serif; }-->
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            new sap.m.Shell({
+                app: new sap.ui.core.ComponentContainer({
+                    height: "100%",
+                    name: "tipsvalley"
+                })
+            }).placeAt("content");
+        });
+
+        function onClickedContect() {
+            alert('function');
+            sap.ui.getCore().attachInit(function () {
+                new sap.m.Shell({
+                    app: new sap.ui.core.ComponentContainer({
+                        height: "100%",
+                        name: "tipsvalley"
+                    })
+                }).placeAt("content");
+            });
+        }
+    </script>
+
+</head>
+
+<body class="sapUiBody" id="content">
+
+</body>
+</html>
