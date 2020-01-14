@@ -1,0 +1,21 @@
+server:
+  port: 8082
+
+spring:
+  batch:
+    initialize-schema: ALWAYS
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/batch_repository
+    username: postgres
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: auto
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: true
+    
+    
